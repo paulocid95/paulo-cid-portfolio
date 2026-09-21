@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="web_standard" name="shell-type"/>
+  <title>Paulo Cid | Portfólio - Estudante de Ciência da Computação</title>
+  <meta name="description" content="Portfólio de Paulo Cid - Estudante de Ciência da Computação focado em Python, SQL, Engenharia de Software e Análise de Dados."/>
+  
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+  <link rel="stylesheet" href="ProfileCard.css"/>
+  <link rel="stylesheet" href="GlowCursor.css"/>
+  <link rel="stylesheet" href="GhostFibers.css"/>
+
+  <style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      main > :first-child {
+        margin-top: 0 !important;
+      }
+      main > :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+    /* Estilização suave da barra de rolagem */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0f131c;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #262a34;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #38bdf8;
+    }
+  </style>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "error": "#ffb4ab",
+            "on-error-container": "#ffdad6",
+            "inverse-on-surface": "#2c303a",
+            "secondary-fixed": "#e1e0ff",
+            "on-surface-variant": "#bdc8d1",
+            "on-tertiary": "#490080",
+            "inverse-primary": "#00668a",
+            "error-container": "#93000a",
+            "surface-tint": "#7bd0ff",
+            "on-primary-container": "#004965",
+            "primary": "#8ed5ff",
+            "primary-fixed-dim": "#7bd0ff",
+            "on-tertiary-container": "#6400ac",
+            "on-background": "#dfe2ef",
+            "surface-bright": "#353943",
+            "secondary": "#c0c1ff",
+            "on-secondary-container": "#b0b2ff",
+            "on-primary-fixed": "#001e2c",
+            "surface-variant": "#31353f",
+            "surface-container-highest": "#31353f",
+            "secondary-container": "#3131c0",
+            "on-error": "#690005",
+            "inverse-surface": "#dfe2ef",
+            "on-secondary": "#1000a9",
+            "surface-dim": "#0f131c",
+            "tertiary-fixed-dim": "#ddb7ff",
+            "on-surface": "#dfe2ef",
+            "surface-container-low": "#181b25",
+            "tertiary-container": "#ce9bff",
+            "background": "#0f131c",
+            "tertiary": "#e1bfff",
+            "surface-container-lowest": "#0a0e17",
+            "primary-container": "#38bdf8",
+            "surface-container": "#1c1f29",
+            "outline": "#87929a",
+            "on-secondary-fixed": "#07006c",
+            "on-tertiary-fixed": "#2c0051",
+            "primary-fixed": "#c4e7ff",
+            "surface-container-high": "#262a34",
+            "on-tertiary-fixed-variant": "#6900b3",
+            "surface": "#0f131c",
+            "on-secondary-fixed-variant": "#2f2ebe",
+            "secondary-fixed-dim": "#c0c1ff",
+            "outline-variant": "#3e484f",
+            "tertiary-fixed": "#f0dbff",
+            "on-primary-fixed-variant": "#004c69",
+            "on-primary": "#00354a"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "margin-mobile": "1.25rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "margin": "3rem",
+            "space-xl": "2.5rem",
+            "space-lg": "1.5rem",
+            "gutter-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.25rem"
+          },
+          fontFamily: {
+            "body-sm": ["Inter", "sans-serif"],
+            "label-md": ["JetBrains Mono", "monospace"],
+            "label-sm": ["JetBrains Mono", "monospace"],
+            "headline-md": ["Plus Jakarta Sans", "sans-serif"],
+            "code-sm": ["JetBrains Mono", "monospace"],
+            "body-lg": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "headline-hero-mobile": ["Plus Jakarta Sans", "sans-serif"],
+            "code-md": ["JetBrains Mono", "monospace"],
+            "headline-lg-mobile": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-hero": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-sm": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          fontSize: {
+            "body-sm": ["13px", { lineHeight: "20px", letterSpacing: "0.005em", fontWeight: "400" }],
+            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.06em", fontWeight: "600" }],
+            "label-sm": ["10px", { lineHeight: "14px", letterSpacing: "0.08em", fontWeight: "600" }],
+            "headline-md": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "code-sm": ["12px", { lineHeight: "16px", letterSpacing: "0em", fontWeight: "500" }],
+            "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "400" }],
+            "body-md": ["15px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }],
+            "headline-hero-mobile": ["36px", { lineHeight: "44px", letterSpacing: "-0.025em", fontWeight: "700" }],
+            "code-md": ["14px", { lineHeight: "20px", letterSpacing: "-0.01em", fontWeight: "500" }],
+            "headline-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-hero": ["56px", { lineHeight: "64px", letterSpacing: "-0.03em", fontWeight: "700" }],
+            "headline-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.025em", fontWeight: "700" }],
+            "headline-sm": ["18px", { lineHeight: "26px", letterSpacing: "-0.01em", fontWeight: "600" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-background font-body-md text-body-md text-on-surface antialiased selection:bg-primary selection:text-on-primary">
+
+  <!-- React Bits GhostFibers Background (Full Page) -->
+  <div class="ghost-fibers-bg" id="ghost-fibers-container" aria-hidden="true"></div>
+
+  <!-- React Bits GlowCursor Canvas Overlay -->
+  <div class="glow-cursor--fullscreen" id="glow-cursor-container" aria-hidden="true">
+    <canvas class="glow-cursor__canvas"></canvas>
+  </div>
+
+  <!-- CABEÇALHO / NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-b border-surface-container-high/40">
+    <div class="h-16 max-w-[1200px] mx-auto px-margin-mobile lg:px-margin flex items-center justify-between gap-space-md">
+      
+      <!-- Logo -->
+      <a class="flex items-center gap-space-sm group text-decoration-none" data-path="inicio" href="#inicio">
+        <span class="font-code-md text-code-md text-primary font-bold tracking-tight px-space-sm py-space-xs rounded bg-surface-container border border-outline-variant/30 group-hover:border-primary/50 transition-colors">PC /&gt;</span>
+        <span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold hidden sm:inline-block">Paulo Cid</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-space-lg" id="nav-links">
+        <a class="nav-link font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#sobre">Sobre</a>
+        <a class="nav-link font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#trajetoria">Trajetória</a>
+        <a class="nav-link font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#tecnologias">Tecnologias</a>
+        <a class="nav-link font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#projetos">Projetos</a>
+        <a class="nav-link font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#contato">Contato</a>
+      </nav>
+
+      <!-- Botões de Ação & Mobile Menu Trigger -->
+      <div class="flex items-center gap-space-sm">
+        <a class="inline-flex items-center justify-center font-label-md text-label-md px-space-md py-space-sm rounded-lg bg-surface-container-high text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-all" href="#contato">
+          <span class="material-symbols-outlined text-[16px] mr-space-xs">description</span>Currículo
+        </a>
+        <a href="#contato" class="w-8 h-8 rounded-full overflow-hidden border border-primary/50 flex items-center justify-center hover:opacity-90 transition-opacity" title="Perfil de Paulo Cid">
+          <img src="./assets/paulo_cid.jpg" alt="Paulo Cid" class="w-full h-full object-cover"/>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-9 h-9 rounded-lg bg-surface-container text-on-surface hover:text-primary transition-colors" aria-label="Abrir Menu">
+          <span class="material-symbols-outlined text-[22px]">menu</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden px-margin-mobile py-4 bg-surface-container-lowest/95 border-b border-surface-container-high/60 backdrop-blur-2xl">
+      <div class="flex flex-col gap-3">
+        <a class="mobile-nav-link text-body-md text-on-surface-variant hover:text-primary py-1" href="#sobre">Sobre</a>
+        <a class="mobile-nav-link text-body-md text-on-surface-variant hover:text-primary py-1" href="#trajetoria">Trajetória</a>
+        <a class="mobile-nav-link text-body-md text-on-surface-variant hover:text-primary py-1" href="#tecnologias">Tecnologias</a>
+        <a class="mobile-nav-link text-body-md text-on-surface-variant hover:text-primary py-1" href="#projetos">Projetos</a>
+        <a class="mobile-nav-link text-body-md text-on-surface-variant hover:text-primary py-1" href="#contato">Contato</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="w-full pt-16 bg-transparent" id="inicio">
+    <div class="flex flex-col w-full">
+
+      <!-- AMBIENT ILLUMINATION & GLOWS (CONTAINED) -->
+      <div class="relative w-full overflow-hidden">
+        <div class="absolute top-10 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+        <div class="absolute top-72 right-10 w-96 h-96 bg-secondary-container/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+        <!-- 1. HERO SECTION -->
+        <section class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin pt-space-xl pb-space-xl md:py-24">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg lg:gap-gutter items-center">
+            
+            <!-- Text Content -->
+            <div class="lg:col-span-7 flex flex-col items-start">
+              
+              <!-- Status Pill -->
+              <div class="inline-flex items-center gap-space-xs px-3.5 py-1.5 rounded-full bg-surface-container-high/70 backdrop-blur-md shadow-sm mb-space-md border border-outline-variant/30">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-primary-container"></span>
+                </span>
+                <span class="font-label-sm text-label-sm text-primary tracking-wide">Aberto a oportunidades de estágio em Tecnologia</span>
+              </div>
+
+              <!-- Hero Typography -->
+              <div class="flex items-baseline gap-space-sm mb-space-xs">
+                <span class="font-code-sm text-code-sm text-outline uppercase tracking-wider">Software Dev Journey</span>
+                <span class="h-px w-8 bg-surface-variant"></span>
+              </div>
+
+              <h1 class="font-headline-hero text-headline-hero-mobile md:text-headline-hero text-on-surface font-bold tracking-tight mb-space-xs">
+                Paulo <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-container to-secondary">Cid</span>
+              </h1>
+
+              <h2 class="font-headline-md text-headline-md text-primary font-semibold mb-space-md">
+                Estudante de Ciência da Computação
+              </h2>
+
+              <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-space-lg leading-relaxed">
+                Construindo minha transição para a tecnologia através de programação sólida, engenharia de dados e projetos práticos aplicados.
+              </p>
+
+              <!-- CTAs -->
+              <div class="flex flex-wrap items-center gap-space-sm w-full sm:w-auto mb-space-lg">
+                <a class="w-full sm:w-auto inline-flex items-center justify-center font-label-md text-label-md px-6 py-3 rounded-lg bg-gradient-to-r from-primary-container to-secondary text-on-primary font-semibold shadow-lg hover:shadow-primary-container/25 hover:-translate-y-0.5 transition-all" href="#projetos">
+                  <span class="material-symbols-outlined text-[18px] mr-space-xs">terminal</span>
+                  Ver meus projetos
+                </a>
+                <a class="w-full sm:w-auto inline-flex items-center justify-center font-label-md text-label-md px-6 py-3 rounded-lg bg-surface-container-high/80 backdrop-blur-md text-on-surface hover:bg-surface-variant hover:text-primary transition-all shadow-sm" href="#contato">
+                  <span class="material-symbols-outlined text-[18px] mr-space-xs">mail</span>
+                  Entrar em contato
+                </a>
+              </div>
+
+              <!-- Direct Social Connections -->
+              <div class="flex items-center gap-space-sm flex-wrap">
+                <span class="font-label-sm text-label-sm text-outline mr-space-xs">LINKS //</span>
+                <a aria-label="GitHub de Paulo Cid" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container/60 hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all" href="https://github.com" rel="noopener noreferrer" target="_blank">
+                  <span class="material-symbols-outlined text-[18px]">code</span>
+                  <span class="font-code-sm text-code-sm">GitHub</span>
+                </a>
+                <a aria-label="LinkedIn de Paulo Cid" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container/60 hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+                  <span class="material-symbols-outlined text-[18px]">badge</span>
+                  <span class="font-code-sm text-code-sm">LinkedIn</span>
+                </a>
+                <a aria-label="Contato direto" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container/60 hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all" href="#contato">
+                  <span class="material-symbols-outlined text-[18px]">alternate_email</span>
+                  <span class="font-code-sm text-code-sm">E-mail</span>
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Right Side: ProfileCard (React Bits) & Terminal Showcase -->
+            <div class="lg:col-span-5 relative mt-space-lg lg:mt-0 flex flex-col items-center">
+              
+              <!-- Tab Switcher -->
+              <div class="flex items-center justify-between w-full max-w-[380px] mb-3 px-1">
+                <div class="inline-flex p-1 rounded-xl bg-surface-container-high/80 border border-surface-container-high backdrop-blur-md shadow-sm">
+                  <button id="view-profile-btn" type="button" class="px-3.5 py-1.5 rounded-lg text-code-sm font-semibold transition-all bg-primary-container text-on-primary shadow-sm flex items-center gap-1.5 cursor-pointer">
+                    <span class="material-symbols-outlined text-[16px]">badge</span> Profile Card
+                  </button>
+                  <button id="view-terminal-btn" type="button" class="px-3.5 py-1.5 rounded-lg text-code-sm font-semibold transition-all text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 cursor-pointer">
+                    <span class="material-symbols-outlined text-[16px]">terminal</span> Terminal
+                  </button>
+                </div>
+                <div class="flex items-center gap-1.5 font-code-sm text-[11px] text-primary">
+                  <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-primary-container"></span>
+                  </span>
+                  <span>3D Tilt</span>
+                </div>
+              </div>
+
+              <!-- 1. ProfileCard 3D (React Bits Integration) -->
+              <div id="hero-profile-card-view" class="w-full flex justify-center">
+                <div id="pc-wrap" class="pc-card-wrapper w-full max-w-[380px]" style="--behind-glow-color: rgba(56, 189, 248, 0.35); --behind-glow-size: 38%; --inner-gradient: linear-gradient(145deg, #1e1b4b66 0%, #0284c722 100%);">
+                  <div class="pc-behind"></div>
+                  <div id="pc-shell" class="pc-card-shell w-full">
+                    <section class="pc-card">
+                      <div class="pc-inside">
+                        <div class="pc-shine"></div>
+                        <div class="pc-glare"></div>
+                        <div class="pc-content pc-avatar-content">
+                          <img
+                            class="avatar"
+                            src="./assets/paulo_cid.jpg"
+                            alt="Paulo Cid avatar"
+                            loading="eager"
+                          />
+                          <div class="pc-user-info">
+                            <div class="pc-user-details">
+                              <div class="pc-mini-avatar">
+                                <img
+                                  src="./assets/paulo_cid.jpg"
+                                  alt="Paulo Cid mini avatar"
+                                  loading="lazy"
+                                />
+                              </div>
+                              <div class="pc-user-text">
+                                <div class="pc-handle">@paulocid</div>
+                                <div class="pc-status">Online</div>
+                              </div>
+                            </div>
+                            <a
+                              class="pc-contact-btn"
+                              href="#contato"
+                              aria-label="Contact Paulo Cid"
+                            >
+                              Contact Me
+                            </a>
+                          </div>
+                        </div>
+                        <div class="pc-content">
+                          <div class="pc-details">
+                            <h3>Paulo Cid</h3>
+                            <p>Computer Science Student</p>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 2. Terminal Mockup (Can be toggled) -->
+              <div id="hero-terminal-view" class="w-full hidden">
+                <div class="w-full rounded-xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-2xl border border-surface-container-high/50 overflow-hidden">
+                  
+                  <!-- Terminal Header -->
+                  <div class="px-4 py-3 bg-surface-container-high/70 flex items-center justify-between border-b border-surface-container-high">
+                    <div class="flex items-center gap-2">
+                      <span class="w-3 h-3 rounded-full bg-error/70 inline-block"></span>
+                      <span class="w-3 h-3 rounded-full bg-tertiary-container/70 inline-block"></span>
+                      <span class="w-3 h-3 rounded-full bg-primary-container/70 inline-block"></span>
+                      <span class="font-code-sm text-code-sm text-outline ml-2">paulo-cid ~ zsh</span>
+                    </div>
+                    <div class="flex items-center gap-1 text-on-surface-variant font-code-sm text-[11px]">
+                      <span class="px-2 py-0.5 rounded bg-surface-container">Python 3.11</span>
+                    </div>
+                  </div>
+
+                  <!-- Terminal Tabs -->
+                  <div class="flex bg-surface-container-low px-2 pt-1 gap-1 border-b border-surface-container-high/40">
+                    <div class="px-3 py-1.5 rounded-t font-code-sm text-code-sm text-primary bg-surface-container-lowest flex items-center gap-1.5 border-t-2 border-primary">
+                      <span class="material-symbols-outlined text-[14px] text-primary-container">data_object</span>
+                      pipeline.py
+                    </div>
+                    <div class="px-3 py-1.5 font-code-sm text-code-sm text-outline hover:text-on-surface transition-colors flex items-center gap-1.5">
+                      <span class="material-symbols-outlined text-[14px]">database</span>
+                      schema.sql
+                    </div>
+                  </div>
+
+                  <!-- Terminal Code Body -->
+                  <div class="p-4 font-code-sm text-code-sm leading-relaxed overflow-x-auto">
+                    <div class="text-outline-variant font-label-sm mb-2">// Definindo trajetória com precisão algorítmica</div>
+                    <p><span class="text-tertiary font-bold">class</span> <span class="text-primary-container font-semibold">CarreiraTransicao</span>:</p>
+                    <p class="pl-4"><span class="text-tertiary font-bold">def</span> <span class="text-primary font-semibold">__init__</span>(self):</p>
+                    <p class="pl-8 text-on-surface-variant">self.bagagem = <span class="text-secondary">"Organização &amp; Processos"</span></p>
+                    <p class="pl-8 text-on-surface-variant">self.curso = <span class="text-secondary">"Ciência da Computação — FAM"</span></p>
+                    <p class="pl-8 text-on-surface-variant">self.foco = [<span class="text-primary-fixed-dim">"Python"</span>, <span class="text-primary-fixed-dim">"SQL"</span>, <span class="text-primary-fixed-dim">"Eng. Software"</span>]</p>
+                    <p class="pl-4 mt-2"><span class="text-tertiary font-bold">def</span> <span class="text-primary font-semibold">executar_meta</span>(self):</p>
+                    <p class="pl-8 text-on-surface-variant"><span class="text-tertiary font-bold">return</span> {</p>
+                    <p class="pl-12 text-on-surface-variant"><span class="text-primary-fixed-dim">"objetivo"</span>: <span class="text-secondary">"Primeiro Estágio Tech"</span>,</p>
+                    <p class="pl-12 text-on-surface-variant"><span class="text-primary-fixed-dim">"mindset"</span>: <span class="text-secondary">"Aprender rápido + Gerar valor"</span>,</p>
+                    <p class="pl-12 text-on-surface-variant"><span class="text-primary-fixed-dim">"disponibilidade"</span>: <span class="text-primary-container">True</span></p>
+                    <p class="pl-8 text-on-surface-variant">}</p>
+                    
+                    <div class="mt-4 pt-3 bg-surface-container-high/40 rounded px-3 py-2 text-on-surface flex items-center justify-between border border-surface-container-high/60">
+                      <span class="text-primary font-bold flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[16px] text-primary-container">check_circle</span>
+                        Pronto para novos desafios
+                      </span>
+                      <span class="text-outline text-[11px] font-mono">2024-2028</span>
+                    </div>
+                  </div>
+
+                  <!-- Terminal Mini Stats Strip -->
+                  <div class="grid grid-cols-3 bg-surface-container py-2.5 px-4 text-center border-t border-surface-container-high">
+                    <div>
+                      <span class="block font-headline-sm text-headline-sm font-bold text-primary">100%</span>
+                      <span class="font-label-sm text-label-sm text-on-surface-variant">Comprometimento</span>
+                    </div>
+                    <div class="bg-surface-container-highest/50 rounded-lg py-0.5">
+                      <span class="block font-headline-sm text-headline-sm font-bold text-primary-container">FAM</span>
+                      <span class="font-label-sm text-label-sm text-on-surface-variant">Ciência da Computação</span>
+                    </div>
+                    <div>
+                      <span class="block font-headline-sm text-headline-sm font-bold text-secondary">Ativo</span>
+                      <span class="font-label-sm text-label-sm text-on-surface-variant">Código &amp; Dados</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 2. SEÇÃO SOBRE MIM -->
+        <section class="w-full bg-surface-container-low/50 py-space-xl border-y border-surface-container-high/40" id="sobre">
+          <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin">
+            
+            <!-- Section Header -->
+            <div class="flex flex-col mb-space-lg max-w-2xl">
+              <span class="font-label-md text-label-md text-primary tracking-widest uppercase">01 // Quem sou eu</span>
+              <h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">Sobre mim</h2>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-1">Conectando maturidade corporativa e determinação analítica à ciência da computação.</p>
+            </div>
+
+            <!-- Career Narrative Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+              
+              <!-- Text Box -->
+              <div class="lg:col-span-7 bg-surface-container/70 backdrop-blur-md p-space-lg rounded-xl shadow-md border border-surface-container-high/50 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-2 text-primary font-code-sm text-code-sm mb-space-sm">
+                    <span class="material-symbols-outlined text-[18px]">format_quote</span>
+                    <span>TRAJETÓRIA &amp; PROPÓSITO</span>
+                  </div>
+                  <p class="font-body-lg text-body-lg text-on-surface leading-relaxed mb-space-md">
+                    Sou estudante de Ciência da Computação e estou construindo minha carreira na área de tecnologia. Antes de iniciar essa transição, desenvolvi experiência profissional na área administrativa, onde aprendi sobre organização, responsabilidade, processos e relacionamento profissional.
+                  </p>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    Hoje estou direcionando essa experiência para tecnologia, aprofundando meus conhecimentos em programação, bancos de dados e desenvolvimento de soluções. Busco atuar com transparência e empenho absoluto na criação de código legível e soluções eficientes.
+                  </p>
+                </div>
+
+                <!-- Visual Flow Bar -->
+                <div class="mt-space-lg pt-space-md bg-surface-container-high/40 rounded-lg p-space-sm border border-surface-container-high">
+                  <div class="font-label-sm text-label-sm text-outline mb-space-xs uppercase">Evolução de Perfil</div>
+                  <div class="flex flex-col sm:flex-row items-center justify-between gap-2 font-code-sm text-code-sm text-on-surface">
+                    <span class="px-2.5 py-1 rounded bg-surface-container-highest text-on-surface-variant">Área Administrativa</span>
+                    <span class="material-symbols-outlined text-primary text-[16px] hidden sm:inline">arrow_forward</span>
+                    <span class="material-symbols-outlined text-primary text-[16px] sm:hidden">arrow_downward</span>
+                    <span class="px-2.5 py-1 rounded bg-primary/20 text-primary font-semibold">Ciência da Computação</span>
+                    <span class="material-symbols-outlined text-primary-container text-[16px] hidden sm:inline">arrow_forward</span>
+                    <span class="material-symbols-outlined text-primary-container text-[16px] sm:hidden">arrow_downward</span>
+                    <span class="px-2.5 py-1 rounded bg-primary-container text-on-primary font-bold">Tecnologia &amp; Software</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3 Pillars Grid -->
+              <div class="lg:col-span-5 flex flex-col gap-space-sm justify-between">
+                
+                <!-- Pillar 1 -->
+                <div class="p-space-md rounded-xl bg-surface-container-high/50 hover:bg-surface-container-high transition-all shadow-sm border border-surface-container-high/70">
+                  <div class="flex items-center gap-space-sm mb-1.5">
+                    <div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+                      <span class="material-symbols-outlined text-[20px]">tune</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Organização &amp; Processos</h3>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Bagagem administrativa prévia: gestão de prazos, clareza em documentação técnica e responsabilidade operacional consolidada.
+                  </p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="p-space-md rounded-xl bg-surface-container-high/50 hover:bg-surface-container-high transition-all shadow-sm border border-surface-container-high/70">
+                  <div class="flex items-center gap-space-sm mb-1.5">
+                    <div class="w-9 h-9 rounded-lg bg-secondary-container/40 flex items-center justify-center text-secondary">
+                      <span class="material-symbols-outlined text-[20px]">school</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Fundamentos Sólidos</h3>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Base acadêmica rigorosa na FAM em Ciência da Computação: estrutura de dados, teoria da computação e arquitetura de sistemas.
+                  </p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="p-space-md rounded-xl bg-surface-container-high/50 hover:bg-surface-container-high transition-all shadow-sm border border-surface-container-high/70">
+                  <div class="flex items-center gap-space-sm mb-1.5">
+                    <div class="w-9 h-9 rounded-lg bg-primary/20 flex items-center justify-center text-primary-container">
+                      <span class="material-symbols-outlined text-[20px]">data_table</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Soluções Tecnológicas</h3>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Foco técnico centrado em Python, ecossistemas de bancos de dados relacionais (SQL/MySQL) e automações orientadas à eficiência.
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 3. MINHA TRAJETÓRIA (TIMELINE) -->
+        <section class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin py-space-xl" id="trajetoria">
+          <div class="flex flex-col items-center text-center mb-space-xl max-w-2xl mx-auto">
+            <span class="font-label-md text-label-md text-primary tracking-widest uppercase">02 // Evolução Contínua</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-1">Minha Trajetória</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-2">A evolução consistente e estruturada de cada etapa da minha jornada profissional e acadêmica.</p>
+          </div>
+
+          <!-- Interactive Stepped Timeline -->
+          <div class="relative grid grid-cols-1 md:grid-cols-4 gap-space-md">
+            
+            <!-- Connecting Line for Desktop -->
+            <div class="hidden md:block absolute top-7 left-12 right-12 h-0.5 bg-surface-container-highest -z-0"></div>
+
+            <!-- Node 1 -->
+            <div class="relative flex flex-col items-start md:items-center text-left md:text-center p-space-md rounded-xl bg-surface-container/40 backdrop-blur hover:bg-surface-container transition-all border border-surface-container-high/40">
+              <div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant mb-space-sm shadow z-10 border-2 border-surface-container">
+                <span class="material-symbols-outlined text-[24px]">assignment</span>
+              </div>
+              <span class="font-code-sm text-code-sm text-outline mb-1">01 / BAGAGEM</span>
+              <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">Experiência Profissional</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                Experiência sólida na área administrativa com vivência prática em processos, fluxo de documentos, atendimento e organização metódica de rotinas.
+              </p>
+            </div>
+
+            <!-- Node 2 -->
+            <div class="relative flex flex-col items-start md:items-center text-left md:text-center p-space-md rounded-xl bg-surface-container/40 backdrop-blur hover:bg-surface-container transition-all border border-surface-container-high/40">
+              <div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-primary mb-space-sm shadow z-10 border-2 border-primary/40">
+                <span class="material-symbols-outlined text-[24px]">school</span>
+              </div>
+              <span class="font-code-sm text-code-sm text-primary mb-1">02 / ACADÊMICO</span>
+              <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">Ciência da Computação</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                Graduação na <strong class="text-on-surface">FAM (Faculdade das Américas)</strong>. Formação estrutural com previsão de conclusão para o 2º semestre de 2028.
+              </p>
+            </div>
+
+            <!-- Node 3 -->
+            <div class="relative flex flex-col items-start md:items-center text-left md:text-center p-space-md rounded-xl bg-surface-container/40 backdrop-blur hover:bg-surface-container transition-all border border-surface-container-high/40">
+              <div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-secondary mb-space-sm shadow z-10 border-2 border-secondary/40">
+                <span class="material-symbols-outlined text-[24px]">code</span>
+              </div>
+              <span class="font-code-sm text-code-sm text-secondary mb-1">03 / PRÁTICA</span>
+              <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">Tecnologia &amp; Código</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                Estudos aplicados e prática contínua em programação orientada a dados, manipulação de bancos relacionais e desenvolvimento de utilitários práticos.
+              </p>
+            </div>
+
+            <!-- Node 4: Pulsing Current Focus -->
+            <div class="relative flex flex-col items-start md:items-center text-left md:text-center p-space-md rounded-xl bg-gradient-to-b from-surface-container-high/80 to-surface-container/60 shadow-lg border border-primary-container/40">
+              <div class="relative w-14 h-14 rounded-full bg-primary-container flex items-center justify-center text-on-primary mb-space-sm shadow z-10">
+                <span class="material-symbols-outlined text-[26px]">rocket_launch</span>
+                <span class="animate-ping absolute inset-0 rounded-full bg-primary-container/40 -z-10"></span>
+              </div>
+              <span class="font-code-sm text-code-sm text-primary-container font-semibold mb-1">04 / ALVO ATUAL</span>
+              <h3 class="font-headline-sm text-headline-sm text-primary-container font-bold mb-2">Primeiro Estágio Tech</h3>
+              <p class="font-body-sm text-body-sm text-on-surface">
+                Pronto para contribuir com proatividade, aprender com equipes de engenharia ágeis e acelerar resultados com disciplina diária.
+              </p>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 4. TECNOLOGIAS & CONHECIMENTOS -->
+        <section class="w-full bg-surface-container-low/40 py-space-xl border-y border-surface-container-high/40" id="tecnologias">
+          <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg">
+              <div>
+                <span class="font-label-md text-label-md text-primary tracking-widest uppercase">03 // Stack &amp; Habilidades</span>
+                <h2 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-1">Tecnologias &amp; Conhecimentos</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-1">Representação transparente e honesta das ferramentas com as quais construo projetos.</p>
+              </div>
+              <div class="mt-4 md:mt-0 flex items-center gap-3 font-label-sm text-label-sm">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-secondary/15 text-secondary border border-secondary/30">
+                  <span class="w-2 h-2 rounded-full bg-secondary"></span> Praticando (Ação frequente)
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-primary/15 text-primary border border-primary/30">
+                  <span class="w-2 h-2 rounded-full bg-primary"></span> Estudando (Base ativa)
+                </span>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+              
+              <!-- Python -->
+              <div class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-primary/50 flex flex-col">
+                <div class="flex items-center justify-between mb-space-sm">
+                  <div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
+                    <span class="material-symbols-outlined text-[24px]">terminal</span>
+                  </div>
+                  <span class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-secondary/15 text-secondary font-semibold">Praticando</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">Python</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 mb-space-sm flex-grow">
+                  Manipulação de dados, automação de tarefas operacionais, leitura/escrita de arquivos estruturados e lógica funcional.
+                </p>
+                <div class="flex flex-wrap gap-1 mt-auto">
+                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Pandas</span>
+                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Scripts</span>
+                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">ETL</span>
+                </div>
+              </div>
+
+              <!-- SQL & MySQL -->
+              <div class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-primary-container/50 flex flex-col">
+                <div class="flex items-center justify-between mb-space-sm">
+                  <div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container group-hover:bg-primary-container/20 transition-colors">
+                    <span class="material-symbols-outlined text-[24px]">database</span>
+                  </div>
+                  <span class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-secondary/15 text-secondary font-semibold">Praticando</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary-container transition-colors">SQL &amp; MySQL</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 mb-space-sm flex-grow">
+                  Criação de esquemas relacionais, consultas avançadas (JOINs, agregações), triggers, índices e integridade referencial.
+                </p>
+                <div class="flex flex-wrap gap-1 mt-auto">
+                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">DML/DDL</span>
+                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Queries</span>
+                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">RDBMS</span>
+                </div>
+              </div>
+
+              <!-- Git & GitHub -->
+              <div class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-secondary/50 flex flex-col">
+                <div class="flex items-center justify-between mb-space-sm">
+                  <div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary group-hover:bg-secondary/20 transition-colors">
+                    <span class="material-symbols-outlined text-[24px]">fork_right</span>
+                  </div>
+                  <span class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-secondary/15 text-secondary font-semibold">Praticando</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-secondary transition-colors">Git &amp; GitHub</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 mb-space-sm flex-grow">
+                  Controle de versão semântico, fluxo de branching, commits padronizados e documentação técnica de repositórios.
+                </p>
+                <div class="flex flex-wrap gap-1 mt-auto">
+                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Git Flow</span>
+                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Commits</span>
+                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">README</span>
+                </div>
+              </div>
+
+              <!-- Lógica de Programação -->
+              <div class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-primary/50 flex flex-col">
+                <div class="flex items-center justify-between mb-space-sm">
+                  <div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
+                    <span class="material-symbols-outlined text-[24px]">memory</span>
+                  </div>
+                  <span class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-secondary/15 text-secondary font-semibold">Praticando</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">Lógica &amp; Algoritmos</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 mb-space-sm flex-grow">
+                  Resolução metódica de problemas computacionais, controle de fluxo, estruturas condicionais e modularização limpa.
+                </p>
+                <div class="flex flex-wrap gap-1 mt-auto">
+                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Eficiência</span>
+                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Refatoração</span>
+                </div>
+              </div>
+
+              <!-- C# -->
+              <div class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-tertiary/50 flex flex-col">
+                <div class="flex items-center justify-between mb-space-sm">
+                  <div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary group-hover:bg-tertiary/20 transition-colors">
+                    <span class="material-symbols-outlined text-[24px]">code_blocks</span>
+                  </div>
+                  <span class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-primary/15 text-primary font-semibold">Estudando</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-tertiary transition-colors">C# (.NET)</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 mb-space-sm flex-grow">
+                  Paradigma orientado a objetos, tipagem estática, coleções e fundamentos do ecossistema .NET corporativo.
+                </p>
+                <div class="flex flex-wrap gap-1 mt-auto">
+                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">POO</span>
+                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">.NET Core</span>
+                </div>
+              </div>
+
+              <!-- Oracle Database -->
+              <div class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-primary-fixed-dim/50 flex flex-col">
+                <div class="flex items-center justify-between mb-space-sm">
+                  <div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-fixed-dim group-hover:bg-primary-fixed-dim/20 transition-colors">
+                    <span class="material-symbols-outlined text-[24px]">cloud_sync</span>
+                  </div>
+                  <span class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-primary/15 text-primary font-semibold">Estudando</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary-fixed-dim transition-colors">Oracle Database</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 mb-space-sm flex-grow">
+                  Exploração de arquitetura de dados corporativa, PL/SQL, procedências de segurança e administração de volumes.
+                </p>
+                <div class="flex flex-wrap gap-1 mt-auto">
+                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">PL/SQL</span>
+                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Enterprise DB</span>
+                </div>
+              </div>
+
+              <!-- Estrutura de Dados -->
+              <div class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-primary/50 flex flex-col">
+                <div class="flex items-center justify-between mb-space-sm">
+                  <div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
+                    <span class="material-symbols-outlined text-[24px]">account_tree</span>
+                  </div>
+                  <span class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-primary/15 text-primary font-semibold">Estudando</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">Estrutura de Dados</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 mb-space-sm flex-grow">
+                  Pilhas, filas, listas encadeadas, árvores de busca, complexidade de tempo/espaço (Big O) e algoritmos de ordenação.
+                </p>
+                <div class="flex flex-wrap gap-1 mt-auto">
+                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Big-O</span>
+                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Algoritmos</span>
+                </div>
+              </div>
+
+              <!-- Engenharia de Software -->
+              <div class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-secondary/50 flex flex-col">
+                <div class="flex items-center justify-between mb-space-sm">
+                  <div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary group-hover:bg-secondary/20 transition-colors">
+                    <span class="material-symbols-outlined text-[24px]">architecture</span>
+                  </div>
+                  <span class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-primary/15 text-primary font-semibold">Estudando</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-secondary transition-colors">Engenharia de Software</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 mb-space-sm flex-grow">
+                  Ciclo de vida de software, metodologias ágeis (Scrum/Kanban), boas práticas de clean code e documentação técnica.
+                </p>
+                <div class="flex flex-wrap gap-1 mt-auto">
+                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Scrum</span>
+                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Clean Code</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 5. PROJETOS EM DESTAQUE -->
+        <section class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin py-space-xl" id="projetos">
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg">
+            <div>
+              <span class="font-label-md text-label-md text-primary tracking-widest uppercase">04 // Aplicação Prática</span>
+              <h2 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-1">Projetos em Destaque</h2>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-1">Projetos que transformam teoria e aprendizado em código executável e resolução real.</p>
+            </div>
+            <a class="mt-4 md:mt-0 inline-flex items-center gap-1 font-label-md text-label-md text-primary hover:text-primary-container transition-colors" href="https://github.com" rel="noopener noreferrer" target="_blank">
+              <span>Explorar todos os repositórios</span>
+              <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+            </a>
+          </div>
+
+          <!-- Projects Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+            
+            <!-- Project 1 -->
+            <div class="rounded-xl bg-surface-container/60 backdrop-blur-md overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all flex flex-col justify-between border border-surface-container-high/60">
+              <div class="p-space-lg">
+                <div class="flex items-center justify-between gap-2 mb-space-sm">
+                  <span class="font-code-sm text-code-sm text-primary font-bold">01 / AUTOMAÇÃO &amp; DADOS</span>
+                  <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-container/20 text-primary-container font-label-sm text-[11px]">
+                    <span class="material-symbols-outlined text-[14px]">auto_fix_high</span> Concluído
+                  </span>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-on-surface font-bold mb-space-xs">
+                  Sistema de Automação e Processamento em Python
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+                  <strong class="text-on-surface">Resolução prática:</strong> Automatização completa de rotinas operacionais repetitivas e higienização de grandes volumes de planilhas e arquivos tabulares. Reduziu o tempo manual de processamento e mitigou inconsistências manuais através de pipelines Pandas.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mb-space-md">
+                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-primary">Python 3</span>
+                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Pandas</span>
+                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">Automação de Tarefas</span>
+                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">ETL</span>
+                </div>
+              </div>
+              <div class="px-space-lg py-space-sm bg-surface-container-high/40 flex items-center justify-between border-t border-surface-container-high/40">
+                <a class="inline-flex items-center gap-1.5 font-label-md text-label-md text-on-surface hover:text-primary transition-colors" href="https://github.com" rel="noopener noreferrer" target="_blank">
+                  <span class="material-symbols-outlined text-[18px]">code</span>
+                  <span>Código-fonte no GitHub</span>
+                </a>
+                <span class="font-code-sm text-[11px] text-outline">Open Source</span>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="rounded-xl bg-surface-container/60 backdrop-blur-md overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all flex flex-col justify-between border border-surface-container-high/60">
+              <div class="p-space-lg">
+                <div class="flex items-center justify-between gap-2 mb-space-sm">
+                  <span class="font-code-sm text-code-sm text-secondary font-bold">02 / BANCO DE DADOS</span>
+                  <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary/20 text-secondary font-label-sm text-[11px]">
+                    <span class="material-symbols-outlined text-[14px]">storage</span> Concluído
+                  </span>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-on-surface font-bold mb-space-xs">
+                  Modelagem e Gestão de Banco de Dados Relacional
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+                  <strong class="text-on-surface">Resolução prática:</strong> Estruturação ponta a ponta de um modelo relacional (DER / Conceitual / Físico) em MySQL. Otimização de consultas complexas com multi-joins, implementação de triggers para auditoria e garantia da 3ª Forma Normal (3FN).
+                </p>
+                <div class="flex flex-wrap gap-1.5 mb-space-md">
+                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-secondary">SQL</span>
+                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface">MySQL</span>
+                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">Modelagem de Dados</span>
+                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">Triggers &amp; Views</span>
+                </div>
+              </div>
+              <div class="px-space-lg py-space-sm bg-surface-container-high/40 flex items-center justify-between border-t border-surface-container-high/40">
+                <a class="inline-flex items-center gap-1.5 font-label-md text-label-md text-on-surface hover:text-secondary transition-colors" href="https://github.com" rel="noopener noreferrer" target="_blank">
+                  <span class="material-symbols-outlined text-[18px]">code</span>
+                  <span>Repositório no GitHub</span>
+                </a>
+                <span class="font-code-sm text-[11px] text-outline">Esquema Físico</span>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="rounded-xl bg-surface-container/60 backdrop-blur-md overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all flex flex-col justify-between border border-surface-container-high/60">
+              <div class="p-space-lg">
+                <div class="flex items-center justify-between gap-2 mb-space-sm">
+                  <span class="font-code-sm text-code-sm text-primary-container font-bold">03 / CIÊNCIA DE DADOS</span>
+                  <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-container/20 text-primary-container font-label-sm text-[11px]">
+                    <span class="material-symbols-outlined text-[14px]">query_stats</span> Em Produção
+                  </span>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-on-surface font-bold mb-space-xs">
+                  Análise Exploratória de Dados &amp; Pipeline IA
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+                  <strong class="text-on-surface">Resolução prática:</strong> Pipeline de análise estatística descritiva e visualização gráfica a partir de datasets brutos. Tratamento de valores nulos, geração de correlações e desenvolvimento de modelos preliminares de classificação para subsidiar tomadas de decisão.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mb-space-md">
+                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-primary">Python</span>
+                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Jupyter</span>
+                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">NumPy / Matplotlib</span>
+                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">Scikit-Learn</span>
+                </div>
+              </div>
+              <div class="px-space-lg py-space-sm bg-surface-container-high/40 flex items-center justify-between border-t border-surface-container-high/40">
+                <a class="inline-flex items-center gap-1.5 font-label-md text-label-md text-on-surface hover:text-primary transition-colors" href="https://github.com" rel="noopener noreferrer" target="_blank">
+                  <span class="material-symbols-outlined text-[18px]">code</span>
+                  <span>Visualizar Notebooks</span>
+                </a>
+                <span class="font-code-sm text-[11px] text-outline">Análise &amp; Insights</span>
+              </div>
+            </div>
+
+            <!-- Project 4: Continuous Evolution Card -->
+            <div class="rounded-xl bg-gradient-to-br from-surface-container/40 to-surface-container-high/30 backdrop-blur-md overflow-hidden shadow-sm flex flex-col justify-center p-space-lg border border-surface-container-high/50">
+              <div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary mb-space-sm">
+                <span class="material-symbols-outlined text-[28px] animate-pulse">add_circle</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-on-surface font-bold mb-space-xs">
+                Mais projetos em desenvolvimento
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+                Novos repositórios estão sendo estruturados com foco em APIs RESTful, testes unitários, microsserviços e algoritmos otimizados de ordenação e grafos.
+              </p>
+              <div class="inline-flex items-center gap-2 text-primary font-code-sm text-code-sm">
+                <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+                <span>Estudos contínuos documentados semanalmente</span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 6. O QUE ESTOU BUSCANDO (MEU PRÓXIMO DESAFIO) -->
+        <section class="w-full bg-surface-container-lowest py-space-xl border-y border-surface-container-high/40">
+          <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin">
+            
+            <div class="max-w-3xl mb-space-lg">
+              <span class="font-label-md text-label-md text-primary tracking-widest uppercase">05 // Objetivo de Carreira</span>
+              <h2 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-1">Meu Próximo Desafio</h2>
+              <p class="font-body-lg text-body-lg text-primary font-medium mt-space-xs leading-relaxed">
+                “Estou buscando uma oportunidade de estágio em tecnologia onde possa aplicar meus conhecimentos, aprender com profissionais experientes e participar ativamente da construção de soluções reais.”
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+              
+              <!-- Card 1 -->
+              <div class="p-space-lg rounded-xl bg-surface-container/70 shadow-md border border-surface-container-high/50 hover:border-primary/40 transition-colors">
+                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-space-md">
+                  <span class="material-symbols-outlined text-[26px]">psychology</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-space-xs">Aprender</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Evoluir tecnicamente através de desafios reais de engenharia, absorvendo feedbacks, code reviews rigorosos e boas práticas de desenvolvimento de software.
+                </p>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="p-space-lg rounded-xl bg-surface-container/70 shadow-md border border-surface-container-high/50 hover:border-primary-container/40 transition-colors">
+                <div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container mb-space-md">
+                  <span class="material-symbols-outlined text-[26px]">handshake</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-space-xs">Contribuir</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Usar minhas habilidades técnicas, maturidade de processos e empenho para apoiar o time na resolução rápida e consistente de problemas.
+                </p>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="p-space-lg rounded-xl bg-surface-container/70 shadow-md border border-surface-container-high/50 hover:border-secondary/40 transition-colors">
+                <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary mb-space-md">
+                  <span class="material-symbols-outlined text-[26px]">trending_up</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-space-xs">Evoluir</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Construir uma carreira sólida, ética e de alto impacto, colaborando com times ágeis e expandindo as fronteiras de software e dados da organização.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 7. FORMAÇÃO & CERTIFICAÇÕES -->
+        <section class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin py-space-xl">
+          <div class="flex flex-col mb-space-lg">
+            <span class="font-label-md text-label-md text-primary tracking-widest uppercase">06 // Educação &amp; Preparação</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-1">Formação &amp; Certificações</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-1">A base acadêmica formal combinada a cursos direcionados e autoestudo rigoroso.</p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+            
+            <!-- Academic Block (Hero Card) -->
+            <div class="lg:col-span-5 p-space-lg rounded-xl bg-surface-container/70 backdrop-blur-md shadow-md border border-surface-container-high/60 flex flex-col justify-between">
+              <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary font-label-sm text-label-sm mb-space-md border border-primary/30">
+                  <span class="material-symbols-outlined text-[16px]">school</span> Graduação em Andamento
+                </div>
+                <h3 class="font-headline-md text-headline-md text-on-surface font-bold mb-1">
+                  Bacharelado em Ciência da Computação
+                </h3>
+                <p class="font-body-lg text-body-lg text-primary font-semibold mb-space-sm">
+                  FAM — Faculdade das Américas
+                </p>
+                <div class="p-space-sm rounded-lg bg-surface-container-high/60 mb-space-md border border-surface-container-high">
+                  <div class="flex items-center justify-between text-on-surface font-code-sm text-code-sm">
+                    <span>Previsão de conclusão:</span>
+                    <span class="text-primary-container font-bold">2º semestre / 2028</span>
+                  </div>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-sm">
+                  Foco prioritário em algoritmos e complexidade, arquitetura de sistemas operacionais, banco de dados relacionais e modelagem de software corporativo.
+                </p>
+              </div>
+
+              <div class="pt-space-md bg-surface-container-high/30 rounded-lg p-space-sm border border-surface-container-high/40">
+                <span class="font-label-sm text-label-sm text-outline block mb-1">DISCIPLINAS-CHAVE:</span>
+                <div class="flex flex-wrap gap-1.5 font-code-sm text-[11px]">
+                  <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface">Estruturas de Dados</span>
+                  <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface">Lógica Matemática</span>
+                  <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface">Bancos de Dados</span>
+                  <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface">Sistemas Operacionais</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Courses & Languages Grid -->
+            <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+              
+              <!-- Course 1 -->
+              <div class="p-space-md rounded-xl bg-surface-container-high/50 hover:bg-surface-container-high transition-colors shadow-sm border border-surface-container-high">
+                <div class="flex items-center gap-space-xs text-primary mb-1">
+                  <span class="material-symbols-outlined text-[18px]">terminal</span>
+                  <span class="font-label-sm text-label-sm uppercase">Capacitação</span>
+                </div>
+                <h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Python para Desenvolvimento</h4>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Sintaxe moderna, manipulação de coleções, tratamento de exceções e automação de scripts.
+                </p>
+              </div>
+
+              <!-- Course 2 -->
+              <div class="p-space-md rounded-xl bg-surface-container-high/50 hover:bg-surface-container-high transition-colors shadow-sm border border-surface-container-high">
+                <div class="flex items-center gap-space-xs text-primary-container mb-1">
+                  <span class="material-symbols-outlined text-[18px]">database</span>
+                  <span class="font-label-sm text-label-sm uppercase">Capacitação</span>
+                </div>
+                <h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Modelagem de Banco de Dados &amp; SQL</h4>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Normalização, constraints, joins relacionais, agregação analítica e índices no MySQL.
+                </p>
+              </div>
+
+              <!-- Course 3 -->
+              <div class="p-space-md rounded-xl bg-surface-container-high/50 hover:bg-surface-container-high transition-colors shadow-sm border border-surface-container-high">
+                <div class="flex items-center gap-space-xs text-secondary mb-1">
+                  <span class="material-symbols-outlined text-[18px]">functions</span>
+                  <span class="font-label-sm text-label-sm uppercase">Fundamentos</span>
+                </div>
+                <h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Lógica de Programação &amp; Algoritmos</h4>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Resolução sequencial, laços de repetição, matrizes, modularização e testes de mesa lógicos.
+                </p>
+              </div>
+
+              <!-- Language Course -->
+              <div class="p-space-md rounded-xl bg-surface-container-high/50 hover:bg-surface-container-high transition-colors shadow-sm border border-surface-container-high">
+                <div class="flex items-center gap-space-xs text-tertiary mb-1">
+                  <span class="material-symbols-outlined text-[18px]">language</span>
+                  <span class="font-label-sm text-label-sm uppercase">Idiomas</span>
+                </div>
+                <h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Inglês Técnico</h4>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Fluência em leitura de documentações técnicas oficiais, fóruns de engenharia, RFCs e Stack Overflow.
+                </p>
+              </div>
+
+              <!-- Continuous Learning (Full Width within subgrid) -->
+              <div class="sm:col-span-2 p-space-md rounded-xl bg-surface-container-highest/40 flex items-center justify-between border border-surface-container-high">
+                <div class="flex items-center gap-space-sm">
+                  <span class="w-3 h-3 rounded-full bg-primary-container animate-ping"></span>
+                  <div>
+                    <h5 class="font-headline-sm text-[15px] text-on-surface font-semibold">Aprendizado Contínuo em Andamento</h5>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">C# &amp; .NET Core para arquitetura backend e Oracle Cloud Foundations.</p>
+                  </div>
+                </div>
+                <span class="font-code-sm text-code-sm text-primary font-bold">Em curso</span>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 8. SEÇÃO DE CONTATO -->
+        <section class="w-full bg-surface-container-low/70 py-space-xl border-t border-surface-container-high/40" id="contato">
+          <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+              
+              <!-- Text & Status -->
+              <div class="lg:col-span-6">
+                <span class="font-label-md text-label-md text-primary tracking-widest uppercase">07 // Conecte-se comigo</span>
+                <h2 class="font-headline-hero-mobile md:font-headline-hero text-headline-hero-mobile md:text-headline-hero text-on-surface font-bold mt-1 mb-space-xs">
+                  Vamos conversar?
+                </h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant mb-space-md leading-relaxed">
+                  Estou aberto a oportunidades de estágio, projetos colaborativos e boas conversas sobre tecnologia e engenharia.
+                </p>
+
+                <!-- Availability Card -->
+                <div class="p-space-md rounded-xl bg-surface-container-high/80 mb-space-md flex items-center gap-space-sm shadow-sm border border-surface-container-high">
+                  <div class="w-3 h-3 rounded-full bg-primary-container animate-pulse"></div>
+                  <div>
+                    <span class="font-label-sm text-label-sm text-primary-container font-bold uppercase tracking-wider block">Disponibilidade</span>
+                    <span class="font-body-sm text-body-sm text-on-surface font-medium">Pronto para entrevistas imediatas e início de estágio.</span>
+                  </div>
+                </div>
+
+                <!-- Resume Download & Direct Contact Buttons -->
+                <div class="flex flex-wrap gap-space-sm">
+                  <a class="inline-flex items-center justify-center font-label-md text-label-md px-6 py-3 rounded-lg bg-primary-container text-on-primary font-bold shadow-lg hover:bg-primary transition-all cursor-pointer" onclick="window.print()">
+                    <span class="material-symbols-outlined text-[20px] mr-2">download</span>
+                    Baixar Currículo / Imprimir
+                  </a>
+                  <a class="inline-flex items-center justify-center font-label-md text-label-md px-6 py-3 rounded-lg bg-surface-container-highest text-on-surface hover:text-primary transition-all border border-surface-container-high" href="mailto:paulo.cid@example.com">
+                    <span class="material-symbols-outlined text-[20px] mr-2">mail</span>
+                    Enviar Mensagem Direta
+                  </a>
+                </div>
+              </div>
+
+              <!-- Direct Cards Channels -->
+              <div class="lg:col-span-6 flex flex-col gap-space-sm">
+                
+                <!-- LinkedIn Card -->
+                <a class="group p-space-md rounded-xl bg-surface-container/80 hover:bg-surface-container-high transition-all flex items-center justify-between shadow-sm border border-surface-container-high/60" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+                  <div class="flex items-center gap-space-sm">
+                    <div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+                      <span class="material-symbols-outlined text-[24px]">badge</span>
+                    </div>
+                    <div>
+                      <h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">LinkedIn</h4>
+                      <p class="font-body-sm text-body-sm text-on-surface-variant">Conecte-se para histórico completo e recomendações</p>
+                    </div>
+                  </div>
+                  <span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_forward</span>
+                </a>
+
+                <!-- GitHub Card -->
+                <a class="group p-space-md rounded-xl bg-surface-container/80 hover:bg-surface-container-high transition-all flex items-center justify-between shadow-sm border border-surface-container-high/60" href="https://github.com" rel="noopener noreferrer" target="_blank">
+                  <div class="flex items-center gap-space-sm">
+                    <div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant group-hover:bg-on-surface group-hover:text-surface transition-colors">
+                      <span class="material-symbols-outlined text-[24px]">code</span>
+                    </div>
+                    <div>
+                      <h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">GitHub</h4>
+                      <p class="font-body-sm text-body-sm text-on-surface-variant">Confira meus commits, scripts e repositórios</p>
+                    </div>
+                  </div>
+                  <span class="material-symbols-outlined text-outline group-hover:text-on-surface transition-colors">arrow_forward</span>
+                </a>
+
+                <!-- Direct Email Card -->
+                <a class="group p-space-md rounded-xl bg-surface-container/80 hover:bg-surface-container-high transition-all flex items-center justify-between shadow-sm border border-surface-container-high/60" href="mailto:paulo.cid@example.com">
+                  <div class="flex items-center gap-space-sm">
+                    <div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+                      <span class="material-symbols-outlined text-[24px]">alternate_email</span>
+                    </div>
+                    <div>
+                      <h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">E-mail Profissional</h4>
+                      <p class="font-body-sm text-body-sm text-on-surface-variant">paulo.cid@example.com</p>
+                    </div>
+                  </div>
+                  <span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">arrow_forward</span>
+                </a>
+
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="w-full bg-surface-container-lowest py-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.04)] border-t border-surface-container-high/30">
+    <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin flex flex-col md:flex-row items-center justify-between gap-space-lg">
+      <div class="flex flex-col items-center md:items-start gap-space-xs">
+        <div class="flex items-center gap-space-sm">
+          <span class="font-code-sm text-code-sm text-primary font-bold">PC /&gt;</span>
+          <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Paulo Cid</span>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant text-center md:text-left">Estudante de Ciência da Computação • Desenvolvedor em formação</p>
+        <p class="font-label-sm text-label-sm text-outline">© 2024 Paulo Cid. Todos os direitos reservados.</p>
+      </div>
+
+      <div class="flex items-center gap-space-sm">
+        <a aria-label="GitHub" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all" href="https://github.com" target="_blank" rel="noopener noreferrer">
+          <span class="material-symbols-outlined text-[20px]">code</span>
+        </a>
+        <a aria-label="LinkedIn" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+          <span class="material-symbols-outlined text-[20px]">badge</span>
+        </a>
+        <a aria-label="E-mail" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all" href="mailto:paulo.cid@example.com">
+          <span class="material-symbols-outlined text-[20px]">mail</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT DE INTERATIVIDADE -->
+  <script>
+    // Menu Mobile Toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+
+    // Active state highlighting on scroll
+    const sections = document.querySelectorAll('section[id], main[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('text-primary', 'font-bold');
+        link.classList.add('text-on-surface-variant');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('text-primary', 'font-bold');
+          link.classList.remove('text-on-surface-variant');
+        }
+      });
+    });
+
+    // React Bits ProfileCard 3D Tilt Engine
+    (function initTilt() {
+      const clamp = (v, min = 0, max = 100) => Math.min(Math.max(v, min), max);
+      const round = (v, precision = 3) => parseFloat(v.toFixed(precision));
+      const adjust = (v, fMin, fMax, tMin, tMax) => round(tMin + ((tMax - tMin) * (v - fMin)) / (fMax - fMin));
+
+      const wrap = document.getElementById('pc-wrap');
+      const shell = document.getElementById('pc-shell');
+      if (!wrap || !shell) return;
+
+      let rafId = null;
+      let running = false;
+      let lastTs = 0;
+
+      let currentX = 0;
+      let currentY = 0;
+      let targetX = 0;
+      let targetY = 0;
+
+      const DEFAULT_TAU = 0.14;
+      const INITIAL_TAU = 0.6;
+      let initialUntil = 0;
+
+      const setVarsFromXY = (x, y) => {
+        const width = shell.clientWidth || 1;
+        const height = shell.clientHeight || 1;
+
+        const percentX = clamp((100 / width) * x);
+        const percentY = clamp((100 / height) * y);
+
+        const centerX = percentX - 50;
+        const centerY = percentY - 50;
+
+        const properties = {
+          '--pointer-x': `${percentX}%`,
+          '--pointer-y': `${percentY}%`,
+          '--background-x': `${adjust(percentX, 0, 100, 35, 65)}%`,
+          '--background-y': `${adjust(percentY, 0, 100, 35, 65)}%`,
+          '--pointer-from-center': `${clamp(Math.hypot(percentY - 50, percentX - 50) / 50, 0, 1)}`,
+          '--pointer-from-top': `${percentY / 100}`,
+          '--pointer-from-left': `${percentX / 100}`,
+          '--rotate-x': `${round(-(centerX / 5))}deg`,
+          '--rotate-y': `${round(centerY / 4)}deg`
+        };
+
+        for (const [k, v] of Object.entries(properties)) {
+          wrap.style.setProperty(k, v);
+        }
+      };
+
+      const step = ts => {
+        if (!running) return;
+        if (lastTs === 0) lastTs = ts;
+        const dt = (ts - lastTs) / 1000;
+        lastTs = ts;
+
+        const tau = ts < initialUntil ? INITIAL_TAU : DEFAULT_TAU;
+        const k = 1 - Math.exp(-dt / tau);
+
+        currentX += (targetX - currentX) * k;
+        currentY += (targetY - currentY) * k;
+
+        setVarsFromXY(currentX, currentY);
+
+        const stillFar = Math.abs(targetX - currentX) > 0.05 || Math.abs(targetY - currentY) > 0.05;
+
+        if (stillFar || document.hasFocus()) {
+          rafId = requestAnimationFrame(step);
+        } else {
+          running = false;
+          lastTs = 0;
+          if (rafId) {
+            cancelAnimationFrame(rafId);
+            rafId = null;
+          }
+        }
+      };
+
+      const start = () => {
+        if (running) return;
+        running = true;
+        lastTs = 0;
+        rafId = requestAnimationFrame(step);
+      };
+
+      const getOffsets = (evt, el) => {
+        const rect = el.getBoundingClientRect();
+        return { x: evt.clientX - rect.left, y: evt.clientY - rect.top };
+      };
+
+      let enterTimer = null;
+      let leaveRaf = null;
+
+      shell.addEventListener('pointerenter', event => {
+        shell.classList.add('active');
+        wrap.classList.add('active');
+        shell.classList.add('entering');
+        if (enterTimer) clearTimeout(enterTimer);
+        enterTimer = setTimeout(() => {
+          shell.classList.remove('entering');
+        }, 180);
+
+        const { x, y } = getOffsets(event, shell);
+        targetX = x;
+        targetY = y;
+        start();
+      });
+
+      shell.addEventListener('pointermove', event => {
+        const { x, y } = getOffsets(event, shell);
+        targetX = x;
+        targetY = y;
+        start();
+      });
+
+      shell.addEventListener('pointerleave', () => {
+        targetX = (shell.clientWidth || 0) / 2;
+        targetY = (shell.clientHeight || 0) / 2;
+        start();
+
+        const checkSettle = () => {
+          const settled = Math.hypot(targetX - currentX, targetY - currentY) < 0.6;
+          if (settled) {
+            shell.classList.remove('active');
+            wrap.classList.remove('active');
+            leaveRaf = null;
+          } else {
+            leaveRaf = requestAnimationFrame(checkSettle);
+          }
+        };
+        if (leaveRaf) cancelAnimationFrame(leaveRaf);
+        leaveRaf = requestAnimationFrame(checkSettle);
+      });
+
+      // Initial entry animation
+      const initW = shell.clientWidth || 360;
+      currentX = initW - 70;
+      currentY = 60;
+      setVarsFromXY(currentX, currentY);
+      targetX = initW / 2;
+      targetY = (shell.clientHeight || 500) / 2;
+      initialUntil = performance.now() + 1200;
+      start();
+    })();
+
+    // Tab Switcher between ProfileCard and Terminal
+    const viewProfileBtn = document.getElementById('view-profile-btn');
+    const viewTerminalBtn = document.getElementById('view-terminal-btn');
+    const heroProfileView = document.getElementById('hero-profile-card-view');
+    const heroTerminalView = document.getElementById('hero-terminal-view');
+
+    if (viewProfileBtn && viewTerminalBtn && heroProfileView && heroTerminalView) {
+      viewProfileBtn.addEventListener('click', () => {
+        heroProfileView.classList.remove('hidden');
+        heroTerminalView.classList.add('hidden');
+
+        viewProfileBtn.className = 'px-3.5 py-1.5 rounded-lg text-code-sm font-semibold transition-all bg-primary-container text-on-primary shadow-sm flex items-center gap-1.5 cursor-pointer';
+        viewTerminalBtn.className = 'px-3.5 py-1.5 rounded-lg text-code-sm font-semibold transition-all text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 cursor-pointer';
+      });
+
+      viewTerminalBtn.addEventListener('click', () => {
+        heroProfileView.classList.add('hidden');
+        heroTerminalView.classList.remove('hidden');
+
+        viewTerminalBtn.className = 'px-3.5 py-1.5 rounded-lg text-code-sm font-semibold transition-all bg-primary-container text-on-primary shadow-sm flex items-center gap-1.5 cursor-pointer';
+        viewProfileBtn.className = 'px-3.5 py-1.5 rounded-lg text-code-sm font-semibold transition-all text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 cursor-pointer';
+      });
+    }
+  </script>
+
+  <!-- React Bits GlowCursor WebGL Engine -->
+  <script src="GlowCursor.js"></script>
+  <script>
+    (function () {
+      function startGlowCursor() {
+        const cursorContainer = document.getElementById('glow-cursor-container');
+        if (cursorContainer && window.GlowCursor) {
+          window.GlowCursor.init(cursorContainer, {
+            color: '#38bdf8',
+            secondaryColor: '#A78BFA',
+            trailLength: 32,
+            trailWidth: 5,
+            trailTaper: 0.85,
+            followSpeed: 0.16,
+            glowIntensity: 0.75,
+            glowSpread: 0.55,
+            hotspot: 0.2,
+            brightness: 0.8,
+            opacity: 0.65,
+            pulseSpeed: 0.6,
+            noiseStrength: 0.02,
+            idleFade: true,
+            idleTimeout: 500,
+            fadeDuration: 600,
+            blendMode: 'screen',
+            maxDevicePixelRatio: 1.5,
+            enabled: true
+          });
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', startGlowCursor);
+      } else {
+        startGlowCursor();
+      }
+    })();
+  </script>
+
+  <!-- React Bits GhostFibers WebGL2 Engine -->
+  <script src="GhostFibers.js"></script>
+  <script>
+    (function () {
+      function startGhostFibers() {
+        const bgContainer = document.getElementById('ghost-fibers-container');
+        if (bgContainer && window.GhostFibers) {
+          window.GhostFibers.init(bgContainer, {
+            lineColor: '#140E35',
+            glowColor: '#3437A0',
+            speed: 0.2,
+            scale: 2,
+            rotation: 0,
+            rotationSpeed: 0.25,
+            layers: 4,
+            waveAmplitude: 0.015,
+            waveFrequency: 3,
+            waveSpeed: 0.15,
+            layerSpeed: 0.08,
+            twist: 0.1,
+            twistFrequency: 5,
+            twistSpeed: 1.2,
+            lineFrequency: 5,
+            lineSpacing: 2,
+            lineSharpness: 16,
+            glowFalloff: 10,
+            glowIntensity: 1.6,
+            brightness: 2,
+            blueBoost: 1.25,
+            vignette: 0.8,
+            grain: 0.05,
+            dpr: 1
+          });
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', startGhostFibers);
+      } else {
+        startGhostFibers();
+      }
+    })();
+  </script>
+</body>
+</html>
