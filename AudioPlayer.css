@@ -294,25 +294,6 @@
   font-weight: 500;
 }
 
-/* File Upload Button (optional / extra convenience) */
-.audio-upload-btn {
-  background: transparent;
-  border: none;
-  color: #87929a;
-  cursor: pointer;
-  padding: 4px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-}
-
-.audio-upload-btn:hover {
-  color: #38bdf8;
-  background: rgba(56, 189, 248, 0.1);
-}
-
 /* Minimized Floating Circle State */
 .audio-player-widget.is-minimized .audio-player-card {
   display: none;

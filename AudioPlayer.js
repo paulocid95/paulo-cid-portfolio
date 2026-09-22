@@ -6,13 +6,10 @@
 (function () {
   'use strict';
 
-  // Configuração padrão
+  // Configuração da música padrão
   const DEFAULT_SOURCES = [
-    'assets/audio/musica.mp3',
-    'assets/musica.mp3',
-    'assets/audio/musica.wav',
-    'assets/musica.wav',
     'assets/audio/background.mp3',
+    'assets/audio/background.mp3.mp3',
     'assets/background.mp3'
   ];
 
@@ -41,8 +38,6 @@
     const trackTitle = document.getElementById('audio-track-title');
     const toggleMinimizeBtn = document.getElementById('audio-minimize-btn');
     const minimizedBubble = document.getElementById('audio-minimized-bubble');
-    const fileInput = document.getElementById('audio-file-input');
-    const uploadBtn = document.getElementById('audio-upload-btn');
 
     if (!audioElement || !widget) return;
 
@@ -50,12 +45,15 @@
     audioElement.loop = true;
     audioElement.volume = currentVolume;
 
-    // Garantir loop contínuo caso o atributo 'loop' tenha atraso em algum navegador
+    // Garantir loop contínuo e automático: sempre que acabar, começa de novo sozinha
     audioElement.addEventListener('ended', function () {
       audioElement.currentTime = 0;
-      audioElement.play().catch(function (e) {
-        console.warn('Erro ao reiniciar loop:', e);
-      });
+      const replayPromise = audioElement.play();
+      if (replayPromise !== undefined) {
+        replayPromise.catch(function (e) {
+          console.warn('Erro ao reiniciar loop:', e);
+        });
+      }
     });
 
     // Atualizar visual do slider de volume
@@ -128,16 +126,17 @@
       updatePlayStateUI(false);
     });
 
-    // Tratamento de erro caso o primeiro arquivo não seja encontrado
+    // Tratamento caso a fonte precise de fallback
     audioElement.addEventListener('error', function () {
       if (currentSourceIndex < DEFAULT_SOURCES.length - 1) {
         currentSourceIndex++;
         console.info(`Tentando fonte de áudio alternativa: ${DEFAULT_SOURCES[currentSourceIndex]}`);
         audioElement.src = DEFAULT_SOURCES[currentSourceIndex];
         audioElement.load();
+        playAudio();
       } else {
         if (statusText) statusText.textContent = 'Arquivo não encontrado';
-        if (trackTitle) trackTitle.textContent = 'Adicione musica.mp3';
+        if (trackTitle) trackTitle.textContent = 'background.mp3';
       }
     });
 
@@ -206,27 +205,6 @@
       minimizedBubble.addEventListener('click', function (e) {
         e.stopPropagation();
         widget.classList.remove('is-minimized');
-      });
-    }
-
-    // Upload / Seleção de arquivo local direto do computador
-    if (uploadBtn && fileInput) {
-      uploadBtn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        fileInput.click();
-      });
-
-      fileInput.addEventListener('change', function () {
-        if (fileInput.files && fileInput.files[0]) {
-          const file = fileInput.files[0];
-          const fileURL = URL.createObjectURL(file);
-          audioElement.src = fileURL;
-          audioElement.load();
-          if (trackTitle) {
-            trackTitle.textContent = file.name.replace(/\.[^/.]+$/, '');
-          }
-          playAudio();
-        }
       });
     }
 
