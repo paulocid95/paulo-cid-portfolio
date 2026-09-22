@@ -112,6 +112,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  direction: ltr !important;
+  transform: none !important;
+  unicode-bidi: normal !important;
 }
 
 @media (max-width: 640px) {
