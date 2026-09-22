@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="AudioPlayer.css"/>
   <link rel="stylesheet" href="WarpText.css"/>
   <link rel="stylesheet" href="SplashScreen.css"/>
+  <link rel="stylesheet" href="StarBorder.css"/>
 
   <style>
     @layer base {
@@ -1241,30 +1242,51 @@
 
   <!-- RODAPÉ -->
   <footer class="w-full bg-surface-container-lowest py-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.04)] border-t border-surface-container-high/30">
-    <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin flex flex-col md:flex-row items-center justify-between gap-space-lg">
-      <div class="flex flex-col items-center md:items-start gap-space-xs">
-        <div class="flex items-center gap-space-sm">
-          <span class="font-code-sm text-code-sm text-primary font-bold">PC /&gt;</span>
-          <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Paulo Cid</span>
+    <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-space-lg">
+        <div class="flex flex-col items-center md:items-start gap-space-xs">
+          <div class="flex items-center gap-space-sm">
+            <span class="font-code-sm text-code-sm text-primary font-bold">PC /&gt;</span>
+            <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Paulo Cid</span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant text-center md:text-left">Estudante de Ciência da Computação • Desenvolvedor em formação</p>
+          <p class="font-label-sm text-label-sm text-outline">© 2024 Paulo Cid. Todos os direitos reservados.</p>
         </div>
-        <p class="font-body-sm text-body-sm text-on-surface-variant text-center md:text-left">Estudante de Ciência da Computação • Desenvolvedor em formação</p>
-        <p class="font-label-sm text-label-sm text-outline">© 2024 Paulo Cid. Todos os direitos reservados.</p>
+
+        <div class="flex items-center gap-space-sm">
+          <a aria-label="GitHub" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all" href="https://github.com/paulocid95" target="_blank" rel="noopener noreferrer" title="GitHub de Paulo Cid">
+            <span class="material-symbols-outlined text-[20px]">code</span>
+          </a>
+          <a aria-label="LinkedIn" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all" href="https://www.linkedin.com/in/paulo-victor-cid-55564123b" target="_blank" rel="noopener noreferrer" title="LinkedIn de Paulo Cid">
+            <span class="material-symbols-outlined text-[20px]">badge</span>
+          </a>
+          <a aria-label="WhatsApp" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-[#25D366] hover:bg-surface-container-high transition-all" href="https://wa.me/5511974309264" target="_blank" rel="noopener noreferrer" title="Conversar no WhatsApp">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.584 1.961.949 2.796.949 3.182 0 5.768-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm3.36 8.163c-.144.405-.837.774-1.17.823-.312.045-.694.062-2.12-.528-1.571-.65-2.585-2.257-2.664-2.361-.079-.105-.638-.85-.638-1.621 0-.771.405-1.15.549-1.307.144-.157.315-.196.42-.196.105 0 .21.001.301.006.097.005.227-.037.355.27.131.315.459 1.12.499 1.202.04.082.066.178.013.283-.053.105-.079.171-.157.263-.079.092-.165.205-.236.275-.079.079-.161.164-.069.322.092.158.409.675.877 1.092.602.536 1.109.702 1.267.781.158.079.25.069.342-.037.092-.105.394-.459.499-.617.105-.158.21-.131.354-.079.144.053.918.433 1.076.512.158.079.263.118.302.184.04.066.04.38-.104.785zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.666 0-3.21-.497-4.506-1.352l-.323-.213-2.966.778.792-2.893-.234-.372A8.175 8.175 0 013.8 12c0-4.521 3.679-8.2 8.2-8.2 4.521 0 8.2 3.679 8.2 8.2 0 4.521-3.679 8.2-8.2 8.2z"/>
+            </svg>
+          </a>
+          <a aria-label="E-mail" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all" href="mailto:paulocid95@gmail.com" title="Enviar e-mail para Paulo Cid">
+            <span class="material-symbols-outlined text-[20px]">mail</span>
+          </a>
+        </div>
       </div>
 
-      <div class="flex items-center gap-space-sm">
-        <a aria-label="GitHub" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all" href="https://github.com/paulocid95" target="_blank" rel="noopener noreferrer" title="GitHub de Paulo Cid">
-          <span class="material-symbols-outlined text-[20px]">code</span>
-        </a>
-        <a aria-label="LinkedIn" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all" href="https://www.linkedin.com/in/paulo-victor-cid-55564123b" target="_blank" rel="noopener noreferrer" title="LinkedIn de Paulo Cid">
-          <span class="material-symbols-outlined text-[20px]">badge</span>
-        </a>
-        <a aria-label="WhatsApp" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-[#25D366] hover:bg-surface-container-high transition-all" href="https://wa.me/5511974309264" target="_blank" rel="noopener noreferrer" title="Conversar no WhatsApp">
-          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.584 1.961.949 2.796.949 3.182 0 5.768-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm3.36 8.163c-.144.405-.837.774-1.17.823-.312.045-.694.062-2.12-.528-1.571-.65-2.585-2.257-2.664-2.361-.079-.105-.638-.85-.638-1.621 0-.771.405-1.15.549-1.307.144-.157.315-.196.42-.196.105 0 .21.001.301.006.097.005.227-.037.355.27.131.315.459 1.12.499 1.202.04.082.066.178.013.283-.053.105-.079.171-.157.263-.079.092-.165.205-.236.275-.079.079-.161.164-.069.322.092.158.409.675.877 1.092.602.536 1.109.702 1.267.781.158.079.25.069.342-.037.092-.105.394-.459.499-.617.105-.158.21-.131.354-.079.144.053.918.433 1.076.512.158.079.263.118.302.184.04.066.04.38-.104.785zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.666 0-3.21-.497-4.506-1.352l-.323-.213-2.966.778.792-2.893-.234-.372A8.175 8.175 0 013.8 12c0-4.521 3.679-8.2 8.2-8.2 4.521 0 8.2 3.679 8.2 8.2 0 4.521-3.679 8.2-8.2 8.2z"/>
-          </svg>
-        </a>
-        <a aria-label="E-mail" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all" href="mailto:paulocid95@gmail.com" title="Enviar e-mail para Paulo Cid">
-          <span class="material-symbols-outlined text-[20px]">mail</span>
+      <!-- Easter Egg Secreto: NÃO CLIQUE AQUI (Componente StarBorder - React Bits) -->
+      <div class="w-full flex justify-center pt-5 mt-5 border-t border-surface-container-high/15">
+        <a
+          href="https://youtu.be/ez8m4PXksQs"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="star-border-container star-border-easter-egg group"
+          style="padding: 1px 0;"
+          title="[CONFIDENCIAL // NÃO CLIQUE]"
+        >
+          <div class="border-gradient-bottom" style="background: radial-gradient(circle, #ef4444, transparent 10%); animation-duration: 5s;"></div>
+          <div class="border-gradient-top" style="background: radial-gradient(circle, #f43f5e, transparent 10%); animation-duration: 5s;"></div>
+          <div class="inner-content">
+            <span class="material-symbols-outlined text-[13px] opacity-70 group-hover:opacity-100 transition-opacity">lock</span>
+            <span>NÃO CLIQUE AQUI</span>
+          </div>
         </a>
       </div>
     </div>

@@ -1,0 +1,104 @@
+/* StarBorder Component Styles - React Bits */
+
+.star-border-container {
+  display: inline-block;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.border-gradient-bottom {
+  position: absolute;
+  width: 300%;
+  height: 50%;
+  opacity: 0.7;
+  bottom: -12px;
+  right: -250%;
+  border-radius: 50%;
+  animation: star-movement-bottom linear infinite alternate;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.border-gradient-top {
+  position: absolute;
+  opacity: 0.7;
+  width: 300%;
+  height: 50%;
+  top: -12px;
+  left: -250%;
+  border-radius: 50%;
+  animation: star-movement-top linear infinite alternate;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.inner-content {
+  position: relative;
+  border: 1px solid #222;
+  background: #000;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  padding: 16px 26px;
+  border-radius: 20px;
+  z-index: 1;
+  transition: all 0.25s ease;
+}
+
+@keyframes star-movement-bottom {
+  0% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-100%, 0%);
+    opacity: 0;
+  }
+}
+
+@keyframes star-movement-top {
+  0% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100%, 0%);
+    opacity: 0;
+  }
+}
+
+/* Modificador sutil e discreto para o Easter Egg */
+.star-border-easter-egg {
+  opacity: 0.38;
+  transition: opacity 0.3s ease, transform 0.2s ease, filter 0.3s ease;
+  filter: grayscale(30%);
+  cursor: pointer;
+}
+
+.star-border-easter-egg:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.03);
+}
+
+.star-border-easter-egg .inner-content {
+  padding: 6px 16px !important;
+  font-size: 11px !important;
+  letter-spacing: 0.08em;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 9999px !important;
+  background: rgba(9, 13, 22, 0.95);
+  border-color: rgba(255, 68, 68, 0.25);
+  color: #ff6b6b;
+}
+
+.star-border-easter-egg:hover .inner-content {
+  border-color: rgba(255, 68, 68, 0.6);
+  color: #ff8585;
+  box-shadow: 0 0 12px rgba(255, 68, 68, 0.25);
+}
