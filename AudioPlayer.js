@@ -202,7 +202,66 @@
       });
     }
 
-    // Autoplay na primeira interação do usuário em qualquer lugar da tela
+    // Integração com a Splash Screen
+    const splashScreen = document.getElementById('splash-screen');
+    const splashEnterBtn = document.getElementById('splash-enter-btn');
+
+    if (splashEnterBtn && splashScreen) {
+      splashEnterBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+
+        // 1. Iniciar áudio com volume suave e fade-in progressivo
+        audioElement.muted = false;
+        const targetVol = currentVolume;
+        const initialFadeVol = Math.min(0.05, targetVol);
+        audioElement.volume = initialFadeVol;
+        updateVolumeUI(initialFadeVol);
+
+        const playPromise = audioElement.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(function () {
+              // Fade-in suave de volume até o volume configurado
+              const steps = 12;
+              const stepDuration = 60; // 60ms * 12 = 720ms
+              const volIncrement = (targetVol - initialFadeVol) / steps;
+              let currentStep = 0;
+
+              const fadeInterval = setInterval(function () {
+                currentStep++;
+                const nextVol = Math.min(targetVol, initialFadeVol + volIncrement * currentStep);
+                audioElement.volume = nextVol;
+                updateVolumeUI(nextVol);
+
+                if (currentStep >= steps) {
+                  clearInterval(fadeInterval);
+                  audioElement.volume = targetVol;
+                  updateVolumeUI(targetVol);
+                }
+              }, stepDuration);
+
+              syncPlaybackUI();
+            })
+            .catch(function (error) {
+              console.warn('Erro ao reproduzir áudio:', error);
+              syncPlaybackUI();
+            });
+        }
+
+        // 2. Transição suave de fade-out da Splash Screen
+        splashScreen.classList.add('splash-screen--fade-out');
+
+        // 3. Remover/Ocultar do DOM e liberar recursos do WebGL WarpText
+        setTimeout(function () {
+          splashScreen.style.display = 'none';
+          if (window.splashWarpInstance && typeof window.splashWarpInstance.destroy === 'function') {
+            window.splashWarpInstance.destroy();
+          }
+        }, 800);
+      });
+    }
+
+    // Fallback: Autoplay na primeira interação caso a splash não esteja presente
     const interactionEvents = ['click', 'keydown', 'touchstart', 'pointerdown'];
 
     function removeInteractionListeners() {
@@ -214,17 +273,14 @@
     function handleFirstInteraction() {
       if (firstInteractionTriggered) return;
       firstInteractionTriggered = true;
-
-      // Remove imediatamente os ouvintes para não disparar de novo
       removeInteractionListeners();
 
-      if (audioElement.paused) {
+      if (audioElement.paused && (!splashScreen || splashScreen.style.display === 'none')) {
         audioElement.muted = false;
         audioElement.volume = currentVolume;
         const playPromise = audioElement.play();
         if (playPromise !== undefined) {
           playPromise.catch(function () {
-            // Silencia qualquer bloqueio sem poluir o console
             syncPlaybackUI();
           });
         }
@@ -234,21 +290,6 @@
     interactionEvents.forEach(function (evt) {
       document.addEventListener(evt, handleFirstInteraction, { capture: true, once: true });
     });
-
-    // Tentar tocar no carregamento (caso o navegador já permita autoplay direto)
-    const initialPlayPromise = audioElement.play();
-    if (initialPlayPromise !== undefined) {
-      initialPlayPromise
-        .then(function () {
-          // Se permitiu autoplay direto, remove os ouvintes de primeira interação
-          firstInteractionTriggered = true;
-          removeInteractionListeners();
-        })
-        .catch(function () {
-          // Bloqueado pelo navegador: silencia o erro e aguarda o primeiro clique/interação
-          syncPlaybackUI();
-        });
-    }
   }
 
   // Inicializar quando o DOM estiver pronto

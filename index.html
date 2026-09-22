@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="GlowCursor.css"/>
   <link rel="stylesheet" href="GhostFibers.css"/>
   <link rel="stylesheet" href="AudioPlayer.css"/>
+  <link rel="stylesheet" href="WarpText.css"/>
+  <link rel="stylesheet" href="SplashScreen.css"/>
 
   <style>
     @layer base {
@@ -160,6 +162,48 @@
 </head>
 
 <body class="bg-background font-body-md text-body-md text-on-surface antialiased selection:bg-primary selection:text-on-primary">
+
+  <!-- SPLASH SCREEN DE ENTRADA (INTERAÇÃO & ÁUDIO) -->
+  <aside id="splash-screen" class="splash-screen" aria-label="Tela de Entrada do Portfólio">
+    <div class="splash-ambient-glow" aria-hidden="true"></div>
+    
+    <div class="splash-content">
+      <!-- Status Badge -->
+      <div class="splash-badge">
+        <span class="splash-badge-dot"></span>
+        <span>Terminal // System Ready</span>
+      </div>
+
+      <!-- React Bits WarpText Component: Paulo Cid -->
+      <div class="splash-warp-container" id="splash-warp-container" title="Paulo Cid">
+        <!-- Canvas renderizado via WarpText WebGL -->
+      </div>
+
+      <!-- Subtítulo Tech -->
+      <div class="splash-subtitle">
+        <span>Ciência da Computação</span>
+        <span class="splash-subtitle-sep">//</span>
+        <span>Engenharia de Software</span>
+      </div>
+
+      <!-- Botão Tech de Entrada com Cantos Angulados -->
+      <button id="splash-enter-btn" class="splash-enter-btn" type="button" aria-label="Entrar no Portfólio">
+        <span class="splash-corner splash-corner-tl"></span>
+        <span class="splash-corner splash-corner-tr"></span>
+        <span class="splash-corner splash-corner-bl"></span>
+        <span class="splash-corner splash-corner-br"></span>
+        <span class="material-symbols-outlined text-[18px]">terminal</span>
+        <span>[ Entrar no Portfólio ]</span>
+        <span class="splash-btn-cursor">_</span>
+      </button>
+
+      <!-- Dica de Som -->
+      <div class="splash-audio-hint">
+        <span class="material-symbols-outlined text-[16px]">volume_up</span>
+        <span>Áudio ambiente sincronizado ao ingressar</span>
+      </div>
+    </div>
+  </aside>
 
   <!-- React Bits GhostFibers Background (Full Page) -->
   <div class="ghost-fibers-bg" id="ghost-fibers-container" aria-hidden="true"></div>
@@ -1551,6 +1595,36 @@
     </div>
   </div>
 
+  <script src="WarpText.js"></script>
   <script src="AudioPlayer.js"></script>
+  <script>
+    // Inicialização do WarpText na Splash Screen
+    (function () {
+      function startSplashWarp() {
+        const container = document.getElementById('splash-warp-container');
+        if (container && window.WarpText) {
+          window.splashWarpInstance = window.WarpText.init(container, {
+            text: 'Paulo Cid',
+            color: '#f8f5ff',
+            warpStrength: 0.08,
+            warpScale: 1.7,
+            speed: 0.55,
+            pointerInfluence: 0.42,
+            pointerStrength: 0.38,
+            refraction: 0.018,
+            ripple: true,
+            fontSize: 'clamp(2.8rem, 8vw, 6.2rem)',
+            fontWeight: 800,
+            fontFamily: "'Plus Jakarta Sans', Inter, sans-serif"
+          });
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', startSplashWarp);
+      } else {
+        startSplashWarp();
+      }
+    })();
+  </script>
 </body>
 </html>
