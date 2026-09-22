@@ -105,9 +105,9 @@
             updatePlayStateUI(true);
           })
           .catch(function (error) {
-            console.log('Autoplay com áudio prevenido pelo navegador até primeira interação:', error);
             updatePlayStateUI(false);
-            if (statusText) statusText.textContent = 'Clique para ouvir';
+            if (statusText) statusText.textContent = 'Música Ambiente';
+            setupImmediateUnlock();
           });
       }
     }
@@ -208,24 +208,63 @@
       });
     }
 
-    // Iniciar áudio na primeira interação do visitante se autoplay automático for bloqueado
-    function triggerOnFirstInteraction() {
-      if (isAutoplayTriggered) return;
-      isAutoplayTriggered = true;
-      if (audioElement.paused) {
-        playAudio();
+    // Iniciar reprodução com garantia de som
+    function attemptAutoplay() {
+      audioElement.muted = false;
+      audioElement.volume = currentVolume;
+      updateVolumeUI(currentVolume);
+
+      const playPromise = audioElement.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(function () {
+            isAutoplayTriggered = true;
+            updatePlayStateUI(true);
+          })
+          .catch(function () {
+            // O navegador bloqueou áudio não silenciado: inicia de imediato em background
+            // e desbloqueia o som ao menor sinal de interação na tela (scroll, toque, clique ou tecla)
+            audioElement.muted = true;
+            audioElement.play().then(function () {
+              updatePlayStateUI(true);
+            }).catch(function () {});
+
+            setupImmediateUnlock();
+          });
       }
-      document.removeEventListener('click', triggerOnFirstInteraction);
-      document.removeEventListener('keydown', triggerOnFirstInteraction);
-      document.removeEventListener('touchstart', triggerOnFirstInteraction);
     }
 
-    document.addEventListener('click', triggerOnFirstInteraction, { once: true });
-    document.addEventListener('keydown', triggerOnFirstInteraction, { once: true });
-    document.addEventListener('touchstart', triggerOnFirstInteraction, { once: true });
+    // Desbloqueia o som na primeiríssima interação (scroll, toque, clique em qualquer lugar da tela)
+    function setupImmediateUnlock() {
+      const unlockEvents = ['pointerdown', 'mousedown', 'touchstart', 'wheel', 'scroll', 'keydown', 'click'];
 
-    // Tentar tocar no carregamento (em navegadores configurados para permitir som)
-    playAudio();
+      function unlockAudio() {
+        if (isAutoplayTriggered) return;
+        isAutoplayTriggered = true;
+
+        audioElement.muted = false;
+        audioElement.volume = currentVolume;
+        updateVolumeUI(currentVolume);
+
+        if (audioElement.paused) {
+          audioElement.play().catch(function () {});
+        }
+        updatePlayStateUI(true);
+
+        unlockEvents.forEach(function (evt) {
+          window.removeEventListener(evt, unlockAudio, true);
+          document.removeEventListener(evt, unlockAudio, true);
+        });
+      }
+
+      unlockEvents.forEach(function (evt) {
+        window.addEventListener(evt, unlockAudio, { capture: true, passive: true, once: true });
+        document.addEventListener(evt, unlockAudio, { capture: true, passive: true, once: true });
+      });
+    }
+
+    // Executar imediatamente ao abrir a página
+    attemptAutoplay();
   }
 
   // Inicializar quando o DOM estiver pronto
