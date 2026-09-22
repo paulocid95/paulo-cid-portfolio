@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="ProfileCard.css"/>
   <link rel="stylesheet" href="GlowCursor.css"/>
   <link rel="stylesheet" href="GhostFibers.css"/>
+  <link rel="stylesheet" href="AudioPlayer.css"/>
 
   <style>
     @layer base {
@@ -1474,5 +1475,89 @@
       }
     })();
   </script>
+
+  <!-- Reprodutor de Áudio Ambiente em Loop -->
+  <audio id="bg-audio" loop preload="auto">
+    <source src="assets/audio/musica.mp3" type="audio/mpeg"/>
+    <source src="assets/musica.mp3" type="audio/mpeg"/>
+    <source src="assets/audio/musica.wav" type="audio/wav"/>
+    <source src="assets/musica.wav" type="audio/wav"/>
+  </audio>
+
+  <!-- Widget Visual de Áudio no Canto Direito -->
+  <div id="audio-player-widget" class="audio-player-widget" aria-label="Controle de Áudio Ambiente">
+    <!-- Card Principal -->
+    <div class="audio-player-card">
+      <div class="audio-header">
+        <div class="audio-info">
+          <div class="audio-disk-icon" title="Música em reprodução">
+            <span class="material-symbols-outlined text-[18px]">music_note</span>
+          </div>
+          <div class="audio-details">
+            <span id="audio-track-title" class="audio-title">Música Ambiente</span>
+            <div class="audio-status-wrap">
+              <span class="audio-status-badge">LOOP</span>
+              <span id="audio-status-text" class="audio-status-text">Pronto</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Equalizer Bars -->
+        <div class="sound-wave" title="Visualizador de som">
+          <div class="sound-bar"></div>
+          <div class="sound-bar"></div>
+          <div class="sound-bar"></div>
+          <div class="sound-bar"></div>
+        </div>
+
+        <!-- Botão Selecionar Arquivo do Computador -->
+        <input type="file" id="audio-file-input" accept="audio/*" style="display:none;"/>
+        <button id="audio-upload-btn" class="audio-upload-btn" title="Carregar arquivo de música do computador">
+          <span class="material-symbols-outlined text-[18px]">folder_open</span>
+        </button>
+
+        <!-- Minimizar -->
+        <button id="audio-minimize-btn" class="audio-toggle-btn" title="Minimizar tocador">
+          <span class="material-symbols-outlined text-[18px]">expand_more</span>
+        </button>
+      </div>
+
+      <!-- Linha de Controles: Play/Pause, Mute, Slider de Volume -->
+      <div class="audio-controls">
+        <!-- Play / Pause -->
+        <button id="audio-play-btn" class="audio-play-btn" title="Tocar / Pausar">
+          <span id="audio-play-icon" class="material-symbols-outlined text-[20px]">play_arrow</span>
+        </button>
+
+        <!-- Mute / Unmute -->
+        <button id="audio-mute-btn" class="audio-mute-btn" title="Mutar / Ativar som">
+          <span id="audio-mute-icon" class="material-symbols-outlined text-[18px]">volume_up</span>
+        </button>
+
+        <!-- Slider de Volume -->
+        <div class="audio-volume-wrap">
+          <input 
+            type="range" 
+            id="audio-volume-slider" 
+            class="audio-volume-slider" 
+            min="0" 
+            max="1" 
+            step="0.01" 
+            value="0.6" 
+            title="Regular volume"
+          />
+          <span id="audio-volume-val" class="audio-volume-val">60%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bolha Flutuante Compacta (quando minimizado) -->
+    <div id="audio-minimized-bubble" class="audio-minimized-bubble" title="Expandir reprodutor de música">
+      <span class="material-symbols-outlined bubble-icon text-[22px]">music_note</span>
+      <span class="audio-minimized-indicator"></span>
+    </div>
+  </div>
+
+  <script src="AudioPlayer.js"></script>
 </body>
 </html>
