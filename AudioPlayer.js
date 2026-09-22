@@ -14,9 +14,8 @@
   ];
 
   let currentSourceIndex = 0;
-  let isMuted = false;
-  let previousVolume = 0.6; // Volume inicial padrão (60%)
-  let isAutoplayTriggered = false;
+  let previousVolume = 0.6; // Volume padrão inicial (60%)
+  let firstInteractionTriggered = false;
 
   // Carregar volume salvo se existir
   const savedVolume = localStorage.getItem('pc_portfolio_volume');
@@ -41,22 +40,31 @@
 
     if (!audioElement || !widget) return;
 
-    // Configurar áudio
+    // Configurações iniciais do áudio
     audioElement.loop = true;
     audioElement.volume = currentVolume;
+    audioElement.muted = false;
 
-    // Garantir loop contínuo e automático: sempre que acabar, começa de novo sozinha
-    audioElement.addEventListener('ended', function () {
-      audioElement.currentTime = 0;
-      const replayPromise = audioElement.play();
-      if (replayPromise !== undefined) {
-        replayPromise.catch(function (e) {
-          console.warn('Erro ao reiniciar loop:', e);
-        });
+    // Sincronização estrita da interface com o estado real do elemento de áudio
+    function syncPlaybackUI() {
+      const isPaused = audioElement.paused;
+
+      if (!isPaused) {
+        // Está tocando: exibe ícone de Pause e ativa animações
+        widget.classList.add('is-playing');
+        if (playIcon) playIcon.textContent = 'pause';
+        if (playBtn) playBtn.title = 'Pausar música';
+        if (statusText) statusText.textContent = 'Em reprodução';
+      } else {
+        // Está pausado: exibe ícone de Play e desativa animações
+        widget.classList.remove('is-playing');
+        if (playIcon) playIcon.textContent = 'play_arrow';
+        if (playBtn) playBtn.title = 'Tocar música';
+        if (statusText) statusText.textContent = 'Pausado';
       }
-    });
+    }
 
-    // Atualizar visual do slider de volume
+    // Atualização visual do controle de volume e do botão de mute
     function updateVolumeUI(vol) {
       if (volumeSlider) {
         volumeSlider.value = vol;
@@ -68,97 +76,83 @@
       }
 
       if (muteIcon && muteBtn) {
-        if (vol === 0 || isMuted) {
+        if (vol === 0 || audioElement.muted) {
           muteIcon.textContent = 'volume_off';
           muteBtn.classList.add('is-muted');
+          muteBtn.title = 'Ativar som';
         } else if (vol < 0.5) {
           muteIcon.textContent = 'volume_down';
           muteBtn.classList.remove('is-muted');
+          muteBtn.title = 'Mutar som';
         } else {
           muteIcon.textContent = 'volume_up';
           muteBtn.classList.remove('is-muted');
+          muteBtn.title = 'Mutar som';
         }
       }
     }
 
+    // Inicializa a UI com os valores reais
     updateVolumeUI(currentVolume);
+    syncPlaybackUI();
 
-    // Atualizar UI de Play / Pause
-    function updatePlayStateUI(isPlaying) {
-      if (isPlaying) {
-        widget.classList.add('is-playing');
-        if (playIcon) playIcon.textContent = 'pause';
-        if (statusText) statusText.textContent = 'Em reprodução';
-      } else {
-        widget.classList.remove('is-playing');
-        if (playIcon) playIcon.textContent = 'play_arrow';
-        if (statusText) statusText.textContent = 'Pausado';
+    // Eventos nativos do elemento de áudio como fonte da verdade
+    audioElement.addEventListener('play', syncPlaybackUI);
+    audioElement.addEventListener('playing', syncPlaybackUI);
+    audioElement.addEventListener('pause', syncPlaybackUI);
+
+    // Loop contínuo: sempre que acabar começa de novo sozinha
+    audioElement.addEventListener('ended', function () {
+      audioElement.currentTime = 0;
+      const replayPromise = audioElement.play();
+      if (replayPromise !== undefined) {
+        replayPromise.catch(function () {
+          // Ignora rejeição silenciosamente
+        });
       }
-    }
-
-    // Play com tratamento de Autoplay
-    function playAudio() {
-      const playPromise = audioElement.play();
-      if (playPromise !== undefined) {
-        playPromise
-          .then(function () {
-            updatePlayStateUI(true);
-          })
-          .catch(function (error) {
-            updatePlayStateUI(false);
-            if (statusText) statusText.textContent = 'Música Ambiente';
-            setupImmediateUnlock();
-          });
-      }
-    }
-
-    function pauseAudio() {
-      audioElement.pause();
-      updatePlayStateUI(false);
-    }
-
-    // Eventos do elemento de áudio
-    audioElement.addEventListener('play', function () {
-      updatePlayStateUI(true);
     });
 
-    audioElement.addEventListener('pause', function () {
-      updatePlayStateUI(false);
-    });
-
-    // Tratamento caso a fonte precise de fallback
+    // Fallback de fontes caso necessário
     audioElement.addEventListener('error', function () {
       if (currentSourceIndex < DEFAULT_SOURCES.length - 1) {
         currentSourceIndex++;
-        console.info(`Tentando fonte de áudio alternativa: ${DEFAULT_SOURCES[currentSourceIndex]}`);
         audioElement.src = DEFAULT_SOURCES[currentSourceIndex];
         audioElement.load();
-        playAudio();
+        audioElement.play().catch(function () {});
       } else {
         if (statusText) statusText.textContent = 'Arquivo não encontrado';
         if (trackTitle) trackTitle.textContent = 'background.mp3';
       }
     });
 
-    // Botão Play / Pause
+    // Botão de Play / Pause
     if (playBtn) {
       playBtn.addEventListener('click', function (e) {
         e.stopPropagation();
+
         if (audioElement.paused) {
-          playAudio();
+          // Se estava pausado, inicia a reprodução
+          const playPromise = audioElement.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(function () {
+              // Silencia erros no console caso o navegador bloqueie
+              syncPlaybackUI();
+            });
+          }
         } else {
-          pauseAudio();
+          // Se estava tocando, pausa
+          audioElement.pause();
         }
       });
     }
 
-    // Botão Mute
+    // Botão de Mute / Unmute
     if (muteBtn) {
       muteBtn.addEventListener('click', function (e) {
         e.stopPropagation();
+
         if (audioElement.muted || audioElement.volume === 0) {
           audioElement.muted = false;
-          isMuted = false;
           const restoredVol = previousVolume > 0 ? previousVolume : 0.6;
           audioElement.volume = restoredVol;
           currentVolume = restoredVol;
@@ -166,7 +160,6 @@
         } else {
           previousVolume = audioElement.volume;
           audioElement.muted = true;
-          isMuted = true;
           updateVolumeUI(0);
         }
       });
@@ -178,13 +171,14 @@
         const val = parseFloat(volumeSlider.value);
         currentVolume = val;
         audioElement.volume = val;
+
         if (val > 0) {
           audioElement.muted = false;
-          isMuted = false;
           previousVolume = val;
         } else {
-          isMuted = true;
+          audioElement.muted = true;
         }
+
         updateVolumeUI(val);
         localStorage.setItem('pc_portfolio_volume', val.toString());
       };
@@ -208,63 +202,53 @@
       });
     }
 
-    // Iniciar reprodução com garantia de som
-    function attemptAutoplay() {
-      audioElement.muted = false;
-      audioElement.volume = currentVolume;
-      updateVolumeUI(currentVolume);
+    // Autoplay na primeira interação do usuário em qualquer lugar da tela
+    const interactionEvents = ['click', 'keydown', 'touchstart', 'pointerdown'];
 
-      const playPromise = audioElement.play();
-      if (playPromise !== undefined) {
-        playPromise
-          .then(function () {
-            isAutoplayTriggered = true;
-            updatePlayStateUI(true);
-          })
-          .catch(function () {
-            // O navegador bloqueou áudio não silenciado: inicia de imediato em background
-            // e desbloqueia o som ao menor sinal de interação na tela (scroll, toque, clique ou tecla)
-            audioElement.muted = true;
-            audioElement.play().then(function () {
-              updatePlayStateUI(true);
-            }).catch(function () {});
-
-            setupImmediateUnlock();
-          });
-      }
-    }
-
-    // Desbloqueia o som na primeiríssima interação (scroll, toque, clique em qualquer lugar da tela)
-    function setupImmediateUnlock() {
-      const unlockEvents = ['pointerdown', 'mousedown', 'touchstart', 'wheel', 'scroll', 'keydown', 'click'];
-
-      function unlockAudio() {
-        if (isAutoplayTriggered) return;
-        isAutoplayTriggered = true;
-
-        audioElement.muted = false;
-        audioElement.volume = currentVolume;
-        updateVolumeUI(currentVolume);
-
-        if (audioElement.paused) {
-          audioElement.play().catch(function () {});
-        }
-        updatePlayStateUI(true);
-
-        unlockEvents.forEach(function (evt) {
-          window.removeEventListener(evt, unlockAudio, true);
-          document.removeEventListener(evt, unlockAudio, true);
-        });
-      }
-
-      unlockEvents.forEach(function (evt) {
-        window.addEventListener(evt, unlockAudio, { capture: true, passive: true, once: true });
-        document.addEventListener(evt, unlockAudio, { capture: true, passive: true, once: true });
+    function removeInteractionListeners() {
+      interactionEvents.forEach(function (evt) {
+        document.removeEventListener(evt, handleFirstInteraction, true);
       });
     }
 
-    // Executar imediatamente ao abrir a página
-    attemptAutoplay();
+    function handleFirstInteraction() {
+      if (firstInteractionTriggered) return;
+      firstInteractionTriggered = true;
+
+      // Remove imediatamente os ouvintes para não disparar de novo
+      removeInteractionListeners();
+
+      if (audioElement.paused) {
+        audioElement.muted = false;
+        audioElement.volume = currentVolume;
+        const playPromise = audioElement.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(function () {
+            // Silencia qualquer bloqueio sem poluir o console
+            syncPlaybackUI();
+          });
+        }
+      }
+    }
+
+    interactionEvents.forEach(function (evt) {
+      document.addEventListener(evt, handleFirstInteraction, { capture: true, once: true });
+    });
+
+    // Tentar tocar no carregamento (caso o navegador já permita autoplay direto)
+    const initialPlayPromise = audioElement.play();
+    if (initialPlayPromise !== undefined) {
+      initialPlayPromise
+        .then(function () {
+          // Se permitiu autoplay direto, remove os ouvintes de primeira interação
+          firstInteractionTriggered = true;
+          removeInteractionListeners();
+        })
+        .catch(function () {
+          // Bloqueado pelo navegador: silencia o erro e aguarda o primeiro clique/interação
+          syncPlaybackUI();
+        });
+    }
   }
 
   // Inicializar quando o DOM estiver pronto
