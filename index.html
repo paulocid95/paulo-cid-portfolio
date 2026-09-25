@@ -1,52 +1,66 @@
 <!DOCTYPE html>
 <html class="dark" lang="pt-BR">
+
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <meta content="web_standard" name="shell-type"/>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="web_standard" name="shell-type" />
   <title>Paulo Cid | Portfólio - Estudante de Ciência da Computação</title>
-  <meta name="description" content="Portfólio de Paulo Cid - Estudante de Ciência da Computação focado em Python, SQL, Engenharia de Software e Análise de Dados."/>
-  
+  <meta name="description"
+    content="Portfólio de Paulo Cid - Estudante de Ciência da Computação focado em Python, SQL, Engenharia de Software e Análise de Dados." />
+
   <!-- Google Fonts & Material Symbols -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
-  <link rel="stylesheet" href="ProfileCard.css"/>
-  <link rel="stylesheet" href="GlowCursor.css"/>
-  <link rel="stylesheet" href="GhostFibers.css"/>
-  <link rel="stylesheet" href="AudioPlayer.css"/>
-  <link rel="stylesheet" href="WarpText.css"/>
-  <link rel="stylesheet" href="SplashScreen.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="ProfileCard.css" />
+  <link rel="stylesheet" href="GlowCursor.css" />
+  <link rel="stylesheet" href="GhostFibers.css" />
+  <link rel="stylesheet" href="AudioPlayer.css" />
+  <link rel="stylesheet" href="WarpText.css" />
+  <link rel="stylesheet" href="SplashScreen.css" />
 
   <style>
     @layer base {
-      html, body {
+
+      html,
+      body {
         margin: 0;
         padding: 0;
         scroll-behavior: smooth;
       }
+
       body {
         overscroll-behavior: none;
       }
-      main > :first-child {
+
+      main> :first-child {
         margin-top: 0 !important;
       }
-      main > :last-child {
+
+      main> :last-child {
         margin-bottom: 0 !important;
       }
     }
+
     /* Estilização suave da barra de rolagem */
     ::-webkit-scrollbar {
       width: 8px;
     }
+
     ::-webkit-scrollbar-track {
       background: #0f131c;
     }
+
     ::-webkit-scrollbar-thumb {
       background: #262a34;
       border-radius: 4px;
     }
+
     ::-webkit-scrollbar-thumb:hover {
       background: #38bdf8;
     }
@@ -161,12 +175,13 @@
   </script>
 </head>
 
-<body class="bg-background font-body-md text-body-md text-on-surface antialiased selection:bg-primary selection:text-on-primary">
+<body
+  class="bg-background font-body-md text-body-md text-on-surface antialiased selection:bg-primary selection:text-on-primary">
 
   <!-- SPLASH SCREEN DE ENTRADA (INTERAÇÃO & ÁUDIO) -->
   <aside id="splash-screen" class="splash-screen" aria-label="Tela de Entrada do Portfólio">
     <div class="splash-ambient-glow" aria-hidden="true"></div>
-    
+
     <div class="splash-content">
       <!-- Status Badge -->
       <div class="splash-badge">
@@ -214,42 +229,61 @@
   </div>
 
   <!-- CABEÇALHO / NAVBAR -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-b border-surface-container-high/40">
-    <div class="h-16 max-w-[1200px] mx-auto px-margin-mobile lg:px-margin flex items-center justify-between gap-space-md">
-      
+  <header
+    class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-b border-surface-container-high/40">
+    <div
+      class="h-16 max-w-[1200px] mx-auto px-margin-mobile lg:px-margin flex items-center justify-between gap-space-md">
+
       <!-- Logo -->
       <a class="flex items-center gap-space-sm group text-decoration-none" data-path="inicio" href="#inicio">
-        <span class="font-code-md text-code-md text-primary font-bold tracking-tight px-space-sm py-space-xs rounded bg-surface-container border border-outline-variant/30 group-hover:border-primary/50 transition-colors">PC /&gt;</span>
-        <span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold hidden sm:inline-block">Paulo Cid</span>
+        <span
+          class="font-code-md text-code-md text-primary font-bold tracking-tight px-space-sm py-space-xs rounded bg-surface-container border border-outline-variant/30 group-hover:border-primary/50 transition-colors">PC
+          /&gt;</span>
+        <span
+          class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold hidden sm:inline-block">Paulo
+          Cid</span>
       </a>
 
       <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-space-lg" id="nav-links">
-        <a class="nav-link font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#sobre">Sobre</a>
-        <a class="nav-link font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#trajetoria">Trajetória</a>
-        <a class="nav-link font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#tecnologias">Tecnologias</a>
-        <a class="nav-link font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#projetos">Projetos</a>
-        <a class="nav-link font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#contato">Contato</a>
+        <a class="nav-link font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors"
+          href="#sobre">Sobre</a>
+        <a class="nav-link font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors"
+          href="#trajetoria">Trajetória</a>
+        <a class="nav-link font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors"
+          href="#tecnologias">Tecnologias</a>
+        <a class="nav-link font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors"
+          href="#projetos">Projetos</a>
+        <a class="nav-link font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors"
+          href="#contato">Contato</a>
       </nav>
 
       <!-- Botões de Ação & Mobile Menu Trigger -->
       <div class="flex items-center gap-space-sm">
         <!-- WhatsApp Top Button -->
-        <a aria-label="WhatsApp de Paulo Cid" class="inline-flex items-center justify-center font-label-md text-label-md px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-[#25D366]/20 hover:text-[#25D366] hover:border-[#25D366]/40 border border-transparent transition-all" href="https://wa.me/5511974309264" target="_blank" rel="noopener noreferrer" title="Conversar no WhatsApp">
+        <a aria-label="WhatsApp de Paulo Cid"
+          class="inline-flex items-center justify-center font-label-md text-label-md px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-[#25D366]/20 hover:text-[#25D366] hover:border-[#25D366]/40 border border-transparent transition-all"
+          href="https://wa.me/5511974309264" target="_blank" rel="noopener noreferrer" title="Conversar no WhatsApp">
           <svg class="w-4 h-4 sm:mr-1.5 fill-current text-[#25D366]" viewBox="0 0 24 24">
-            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.584 1.961.949 2.796.949 3.182 0 5.768-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm3.36 8.163c-.144.405-.837.774-1.17.823-.312.045-.694.062-2.12-.528-1.571-.65-2.585-2.257-2.664-2.361-.079-.105-.638-.85-.638-1.621 0-.771.405-1.15.549-1.307.144-.157.315-.196.42-.196.105 0 .21.001.301.006.097.005.227-.037.355.27.131.315.459 1.12.499 1.202.04.082.066.178.013.283-.053.105-.079.171-.157.263-.079.092-.165.205-.236.275-.079.079-.161.164-.069.322.092.158.409.675.877 1.092.602.536 1.109.702 1.267.781.158.079.25.069.342-.037.092-.105.394-.459.499-.617.105-.158.21-.131.354-.079.144.053.918.433 1.076.512.158.079.263.118.302.184.04.066.04.38-.104.785zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.666 0-3.21-.497-4.506-1.352l-.323-.213-2.966.778.792-2.893-.234-.372A8.175 8.175 0 013.8 12c0-4.521 3.679-8.2 8.2-8.2 4.521 0 8.2 3.679 8.2 8.2 0 4.521-3.679 8.2-8.2 8.2z"/>
+            <path
+              d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.584 1.961.949 2.796.949 3.182 0 5.768-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm3.36 8.163c-.144.405-.837.774-1.17.823-.312.045-.694.062-2.12-.528-1.571-.65-2.585-2.257-2.664-2.361-.079-.105-.638-.85-.638-1.621 0-.771.405-1.15.549-1.307.144-.157.315-.196.42-.196.105 0 .21.001.301.006.097.005.227-.037.355.27.131.315.459 1.12.499 1.202.04.082.066.178.013.283-.053.105-.079.171-.157.263-.079.092-.165.205-.236.275-.079.079-.161.164-.069.322.092.158.409.675.877 1.092.602.536 1.109.702 1.267.781.158.079.25.069.342-.037.092-.105.394-.459.499-.617.105-.158.21-.131.354-.079.144.053.918.433 1.076.512.158.079.263.118.302.184.04.066.04.38-.104.785zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.666 0-3.21-.497-4.506-1.352l-.323-.213-2.966.778.792-2.893-.234-.372A8.175 8.175 0 013.8 12c0-4.521 3.679-8.2 8.2-8.2 4.521 0 8.2 3.679 8.2 8.2 0 4.521-3.679 8.2-8.2 8.2z" />
           </svg>
           <span class="hidden sm:inline">WhatsApp</span>
         </a>
-        <a class="inline-flex items-center justify-center font-label-md text-label-md px-space-md py-space-sm rounded-lg bg-surface-container-high text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-all" href="#contato">
+        <a class="inline-flex items-center justify-center font-label-md text-label-md px-space-md py-space-sm rounded-lg bg-surface-container-high text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-all"
+          href="#contato">
           <span class="material-symbols-outlined text-[16px] mr-space-xs">description</span>Currículo
         </a>
-        <a href="#contato" class="w-8 h-8 rounded-full overflow-hidden border border-primary/50 flex items-center justify-center hover:opacity-90 transition-opacity" title="Perfil de Paulo Cid">
-          <img src="./assets/paulo_cid.jpg" alt="Paulo Cid" class="w-full h-full object-cover"/>
+        <a href="#contato"
+          class="w-8 h-8 rounded-full overflow-hidden border border-primary/50 flex items-center justify-center hover:opacity-90 transition-opacity"
+          title="Perfil de Paulo Cid">
+          <img src="./assets/paulo_cid.jpg" alt="Paulo Cid" class="w-full h-full object-cover" />
         </a>
 
         <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-9 h-9 rounded-lg bg-surface-container text-on-surface hover:text-primary transition-colors" aria-label="Abrir Menu">
+        <button id="mobile-menu-btn"
+          class="md:hidden flex items-center justify-center w-9 h-9 rounded-lg bg-surface-container text-on-surface hover:text-primary transition-colors"
+          aria-label="Abrir Menu">
           <span class="material-symbols-outlined text-[22px]">menu</span>
         </button>
       </div>
@@ -257,16 +291,23 @@
     </div>
 
     <!-- Mobile Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden px-margin-mobile py-4 bg-surface-container-lowest/95 border-b border-surface-container-high/60 backdrop-blur-2xl">
+    <div id="mobile-menu"
+      class="hidden md:hidden px-margin-mobile py-4 bg-surface-container-lowest/95 border-b border-surface-container-high/60 backdrop-blur-2xl">
       <div class="flex flex-col gap-3">
         <a class="mobile-nav-link text-body-md text-on-surface-variant hover:text-primary py-1" href="#sobre">Sobre</a>
-        <a class="mobile-nav-link text-body-md text-on-surface-variant hover:text-primary py-1" href="#trajetoria">Trajetória</a>
-        <a class="mobile-nav-link text-body-md text-on-surface-variant hover:text-primary py-1" href="#tecnologias">Tecnologias</a>
-        <a class="mobile-nav-link text-body-md text-on-surface-variant hover:text-primary py-1" href="#projetos">Projetos</a>
-        <a class="mobile-nav-link text-body-md text-on-surface-variant hover:text-primary py-1" href="#contato">Contato</a>
-        <a class="mobile-nav-link text-body-md text-[#25D366] hover:text-[#25D366]/80 py-1 flex items-center gap-2" href="https://wa.me/5511974309264" target="_blank" rel="noopener noreferrer">
+        <a class="mobile-nav-link text-body-md text-on-surface-variant hover:text-primary py-1"
+          href="#trajetoria">Trajetória</a>
+        <a class="mobile-nav-link text-body-md text-on-surface-variant hover:text-primary py-1"
+          href="#tecnologias">Tecnologias</a>
+        <a class="mobile-nav-link text-body-md text-on-surface-variant hover:text-primary py-1"
+          href="#projetos">Projetos</a>
+        <a class="mobile-nav-link text-body-md text-on-surface-variant hover:text-primary py-1"
+          href="#contato">Contato</a>
+        <a class="mobile-nav-link text-body-md text-[#25D366] hover:text-[#25D366]/80 py-1 flex items-center gap-2"
+          href="https://wa.me/5511974309264" target="_blank" rel="noopener noreferrer">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.584 1.961.949 2.796.949 3.182 0 5.768-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm3.36 8.163c-.144.405-.837.774-1.17.823-.312.045-.694.062-2.12-.528-1.571-.65-2.585-2.257-2.664-2.361-.079-.105-.638-.85-.638-1.621 0-.771.405-1.15.549-1.307.144-.157.315-.196.42-.196.105 0 .21.001.301.006.097.005.227-.037.355.27.131.315.459 1.12.499 1.202.04.082.066.178.013.283-.053.105-.079.171-.157.263-.079.092-.165.205-.236.275-.079.079-.161.164-.069.322.092.158.409.675.877 1.092.602.536 1.109.702 1.267.781.158.079.25.069.342-.037.092-.105.394-.459.499-.617.105-.158.21-.131.354-.079.144.053.918.433 1.076.512.158.079.263.118.302.184.04.066.04.38-.104.785zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.666 0-3.21-.497-4.506-1.352l-.323-.213-2.966.778.792-2.893-.234-.372A8.175 8.175 0 013.8 12c0-4.521 3.679-8.2 8.2-8.2 4.521 0 8.2 3.679 8.2 8.2 0 4.521-3.679 8.2-8.2 8.2z"/>
+            <path
+              d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.584 1.961.949 2.796.949 3.182 0 5.768-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm3.36 8.163c-.144.405-.837.774-1.17.823-.312.045-.694.062-2.12-.528-1.571-.65-2.585-2.257-2.664-2.361-.079-.105-.638-.85-.638-1.621 0-.771.405-1.15.549-1.307.144-.157.315-.196.42-.196.105 0 .21.001.301.006.097.005.227-.037.355.27.131.315.459 1.12.499 1.202.04.082.066.178.013.283-.053.105-.079.171-.157.263-.079.092-.165.205-.236.275-.079.079-.161.164-.069.322.092.158.409.675.877 1.092.602.536 1.109.702 1.267.781.158.079.25.069.342-.037.092-.105.394-.459.499-.617.105-.158.21-.131.354-.079.144.053.918.433 1.076.512.158.079.263.118.302.184.04.066.04.38-.104.785zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.666 0-3.21-.497-4.506-1.352l-.323-.213-2.966.778.792-2.893-.234-.372A8.175 8.175 0 013.8 12c0-4.521 3.679-8.2 8.2-8.2 4.521 0 8.2 3.679 8.2 8.2 0 4.521-3.679 8.2-8.2 8.2z" />
           </svg>
           WhatsApp Direto
         </a>
@@ -280,33 +321,42 @@
 
       <!-- AMBIENT ILLUMINATION & GLOWS (CONTAINED) -->
       <div class="relative w-full overflow-hidden">
-        <div class="absolute top-10 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
-        <div class="absolute top-72 right-10 w-96 h-96 bg-secondary-container/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+        <div class="absolute top-10 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none -z-10">
+        </div>
+        <div
+          class="absolute top-72 right-10 w-96 h-96 bg-secondary-container/20 rounded-full blur-3xl pointer-events-none -z-10">
+        </div>
 
         <!-- 1. HERO SECTION -->
         <section class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin pt-space-xl pb-space-xl md:py-24">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg lg:gap-gutter items-center">
-            
+
             <!-- Text Content -->
             <div class="lg:col-span-7 flex flex-col items-start">
-              
+
               <!-- Status Pill -->
-              <div class="inline-flex items-center gap-space-xs px-3.5 py-1.5 rounded-full bg-surface-container-high/70 backdrop-blur-md shadow-sm mb-space-md border border-outline-variant/30">
+              <div
+                class="inline-flex items-center gap-space-xs px-3.5 py-1.5 rounded-full bg-surface-container-high/70 backdrop-blur-md shadow-sm mb-space-md border border-outline-variant/30">
                 <span class="relative flex h-2 w-2">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+                  <span
+                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
                   <span class="relative inline-flex rounded-full h-2 w-2 bg-primary-container"></span>
                 </span>
-                <span class="font-label-sm text-label-sm text-primary tracking-wide">Aberto a oportunidades de estágio em Tecnologia</span>
+                <span class="font-label-sm text-label-sm text-primary tracking-wide">Aberto a oportunidades de estágio
+                  em Tecnologia</span>
               </div>
 
               <!-- Hero Typography -->
               <div class="flex items-baseline gap-space-sm mb-space-xs">
-                <span class="font-code-sm text-code-sm text-outline uppercase tracking-wider">Software Dev Journey</span>
+                <span class="font-code-sm text-code-sm text-outline uppercase tracking-wider">Software Dev
+                  Journey</span>
                 <span class="h-px w-8 bg-surface-variant"></span>
               </div>
 
-              <h1 class="font-headline-hero text-headline-hero-mobile md:text-headline-hero text-on-surface font-bold tracking-tight mb-space-xs">
-                Paulo <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-container to-secondary">Cid</span>
+              <h1
+                class="font-headline-hero text-headline-hero-mobile md:text-headline-hero text-on-surface font-bold tracking-tight mb-space-xs">
+                Paulo <span
+                  class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-container to-secondary">Cid</span>
               </h1>
 
               <h2 class="font-headline-md text-headline-md text-primary font-semibold mb-space-md">
@@ -314,16 +364,19 @@
               </h2>
 
               <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-space-lg leading-relaxed">
-                Construindo minha transição para a tecnologia através de programação sólida, engenharia de dados e projetos práticos aplicados.
+                Construindo minha transição para a tecnologia através de programação sólida, engenharia de dados e
+                projetos práticos aplicados.
               </p>
 
               <!-- CTAs -->
               <div class="flex flex-wrap items-center gap-space-sm w-full sm:w-auto mb-space-lg">
-                <a class="w-full sm:w-auto inline-flex items-center justify-center font-label-md text-label-md px-6 py-3 rounded-lg bg-gradient-to-r from-primary-container to-secondary text-on-primary font-semibold shadow-lg hover:shadow-primary-container/25 hover:-translate-y-0.5 transition-all" href="#projetos">
+                <a class="w-full sm:w-auto inline-flex items-center justify-center font-label-md text-label-md px-6 py-3 rounded-lg bg-gradient-to-r from-primary-container to-secondary text-on-primary font-semibold shadow-lg hover:shadow-primary-container/25 hover:-translate-y-0.5 transition-all"
+                  href="#projetos">
                   <span class="material-symbols-outlined text-[18px] mr-space-xs">terminal</span>
                   Ver meus projetos
                 </a>
-                <a class="w-full sm:w-auto inline-flex items-center justify-center font-label-md text-label-md px-6 py-3 rounded-lg bg-surface-container-high/80 backdrop-blur-md text-on-surface hover:bg-surface-variant hover:text-primary transition-all shadow-sm" href="#contato">
+                <a class="w-full sm:w-auto inline-flex items-center justify-center font-label-md text-label-md px-6 py-3 rounded-lg bg-surface-container-high/80 backdrop-blur-md text-on-surface hover:bg-surface-variant hover:text-primary transition-all shadow-sm"
+                  href="#contato">
                   <span class="material-symbols-outlined text-[18px] mr-space-xs">mail</span>
                   Entrar em contato
                 </a>
@@ -332,25 +385,38 @@
               <!-- Direct Social Connections -->
               <div class="flex items-center gap-space-sm flex-wrap">
                 <span class="font-label-sm text-label-sm text-outline mr-space-xs">LINKS //</span>
-                <a aria-label="GitHub de Paulo Cid" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container/60 hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all" href="https://github.com/paulocid95" rel="noopener noreferrer" target="_blank">
+                <a aria-label="GitHub de Paulo Cid"
+                  class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container/60 hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all"
+                  href="https://github.com/paulocid95" rel="noopener noreferrer" target="_blank">
                   <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
                   </svg>
                   <span class="font-code-sm text-code-sm">GitHub</span>
                 </a>
-                <a aria-label="LinkedIn de Paulo Cid" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container/60 hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all" href="https://www.linkedin.com/in/paulo-victor-cid-55564123b" rel="noopener noreferrer" target="_blank">
+                <a aria-label="LinkedIn de Paulo Cid"
+                  class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container/60 hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all"
+                  href="https://www.linkedin.com/in/paulo-victor-cid-55564123b" rel="noopener noreferrer"
+                  target="_blank">
                   <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" fill-rule="evenodd"/>
+                    <path
+                      d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
+                      fill-rule="evenodd" />
                   </svg>
                   <span class="font-code-sm text-code-sm">LinkedIn</span>
                 </a>
-                <a aria-label="WhatsApp de Paulo Cid" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container/60 hover:bg-surface-container-high text-on-surface-variant hover:text-[#25D366] transition-all" href="https://wa.me/5511974309264" rel="noopener noreferrer" target="_blank">
+                <a aria-label="WhatsApp de Paulo Cid"
+                  class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container/60 hover:bg-surface-container-high text-on-surface-variant hover:text-[#25D366] transition-all"
+                  href="https://wa.me/5511974309264" rel="noopener noreferrer" target="_blank">
                   <svg class="w-4 h-4 fill-current text-[#25D366]" viewBox="0 0 24 24">
-                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.584 1.961.949 2.796.949 3.182 0 5.768-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm3.36 8.163c-.144.405-.837.774-1.17.823-.312.045-.694.062-2.12-.528-1.571-.65-2.585-2.257-2.664-2.361-.079-.105-.638-.85-.638-1.621 0-.771.405-1.15.549-1.307.144-.157.315-.196.42-.196.105 0 .21.001.301.006.097.005.227-.037.355.27.131.315.459 1.12.499 1.202.04.082.066.178.013.283-.053.105-.079.171-.157.263-.079.092-.165.205-.236.275-.079.079-.161.164-.069.322.092.158.409.675.877 1.092.602.536 1.109.702 1.267.781.158.079.25.069.342-.037.092-.105.394-.459.499-.617.105-.158.21-.131.354-.079.144.053.918.433 1.076.512.158.079.263.118.302.184.04.066.04.38-.104.785zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.666 0-3.21-.497-4.506-1.352l-.323-.213-2.966.778.792-2.893-.234-.372A8.175 8.175 0 013.8 12c0-4.521 3.679-8.2 8.2-8.2 4.521 0 8.2 3.679 8.2 8.2 0 4.521-3.679 8.2-8.2 8.2z"/>
+                    <path
+                      d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.584 1.961.949 2.796.949 3.182 0 5.768-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm3.36 8.163c-.144.405-.837.774-1.17.823-.312.045-.694.062-2.12-.528-1.571-.65-2.585-2.257-2.664-2.361-.079-.105-.638-.85-.638-1.621 0-.771.405-1.15.549-1.307.144-.157.315-.196.42-.196.105 0 .21.001.301.006.097.005.227-.037.355.27.131.315.459 1.12.499 1.202.04.082.066.178.013.283-.053.105-.079.171-.157.263-.079.092-.165.205-.236.275-.079.079-.161.164-.069.322.092.158.409.675.877 1.092.602.536 1.109.702 1.267.781.158.079.25.069.342-.037.092-.105.394-.459.499-.617.105-.158.21-.131.354-.079.144.053.918.433 1.076.512.158.079.263.118.302.184.04.066.04.38-.104.785zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.666 0-3.21-.497-4.506-1.352l-.323-.213-2.966.778.792-2.893-.234-.372A8.175 8.175 0 013.8 12c0-4.521 3.679-8.2 8.2-8.2 4.521 0 8.2 3.679 8.2 8.2 0 4.521-3.679 8.2-8.2 8.2z" />
                   </svg>
                   <span class="font-code-sm text-code-sm">WhatsApp</span>
                 </a>
-                <a aria-label="E-mail de Paulo Cid" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container/60 hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all" href="mailto:paulocid95@gmail.com">
+                <a aria-label="E-mail de Paulo Cid"
+                  class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container/60 hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all"
+                  href="mailto:paulocid95@gmail.com">
                   <span class="material-symbols-outlined text-[18px]">alternate_email</span>
                   <span class="font-code-sm text-code-sm">E-mail</span>
                 </a>
@@ -360,20 +426,24 @@
 
             <!-- Right Side: ProfileCard (React Bits) & Terminal Showcase -->
             <div class="lg:col-span-5 relative mt-space-lg lg:mt-0 flex flex-col items-center">
-              
+
               <!-- Tab Switcher -->
               <div class="flex items-center justify-between w-full max-w-[380px] mb-3 px-1">
-                <div class="inline-flex p-1 rounded-xl bg-surface-container-high/80 border border-surface-container-high backdrop-blur-md shadow-sm">
-                  <button id="view-profile-btn" type="button" class="px-3.5 py-1.5 rounded-lg text-code-sm font-semibold transition-all bg-primary-container text-on-primary shadow-sm flex items-center gap-1.5 cursor-pointer">
+                <div
+                  class="inline-flex p-1 rounded-xl bg-surface-container-high/80 border border-surface-container-high backdrop-blur-md shadow-sm">
+                  <button id="view-profile-btn" type="button"
+                    class="px-3.5 py-1.5 rounded-lg text-code-sm font-semibold transition-all bg-primary-container text-on-primary shadow-sm flex items-center gap-1.5 cursor-pointer">
                     <span class="material-symbols-outlined text-[16px]">badge</span> Profile Card
                   </button>
-                  <button id="view-terminal-btn" type="button" class="px-3.5 py-1.5 rounded-lg text-code-sm font-semibold transition-all text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 cursor-pointer">
+                  <button id="view-terminal-btn" type="button"
+                    class="px-3.5 py-1.5 rounded-lg text-code-sm font-semibold transition-all text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 cursor-pointer">
                     <span class="material-symbols-outlined text-[16px]">terminal</span> Terminal
                   </button>
                 </div>
                 <div class="flex items-center gap-1.5 font-code-sm text-[11px] text-primary">
                   <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+                    <span
+                      class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-primary-container"></span>
                   </span>
                   <span>3D Tilt</span>
@@ -382,7 +452,8 @@
 
               <!-- 1. ProfileCard 3D (React Bits Integration) -->
               <div id="hero-profile-card-view" class="w-full flex justify-center">
-                <div id="pc-wrap" class="pc-card-wrapper w-full max-w-[380px]" style="--behind-glow-color: rgba(56, 189, 248, 0.35); --behind-glow-size: 38%; --inner-gradient: linear-gradient(145deg, #1e1b4b66 0%, #0284c722 100%);">
+                <div id="pc-wrap" class="pc-card-wrapper w-full max-w-[380px]"
+                  style="--behind-glow-color: rgba(56, 189, 248, 0.35); --behind-glow-size: 38%; --inner-gradient: linear-gradient(145deg, #1e1b4b66 0%, #0284c722 100%);">
                   <div class="pc-behind"></div>
                   <div id="pc-shell" class="pc-card-shell w-full">
                     <section class="pc-card">
@@ -390,31 +461,18 @@
                         <div class="pc-shine"></div>
                         <div class="pc-glare"></div>
                         <div class="pc-content pc-avatar-content">
-                          <img
-                            class="avatar"
-                            src="./assets/paulo_cid.jpg"
-                            alt="Paulo Cid avatar"
-                            loading="eager"
-                          />
+                          <img class="avatar" src="./assets/paulo_cid.jpg" alt="Paulo Cid avatar" loading="eager" />
                           <div class="pc-user-info">
                             <div class="pc-user-details">
                               <div class="pc-mini-avatar">
-                                <img
-                                  src="./assets/paulo_cid.jpg"
-                                  alt="Paulo Cid mini avatar"
-                                  loading="lazy"
-                                />
+                                <img src="./assets/paulo_cid.jpg" alt="Paulo Cid mini avatar" loading="lazy" />
                               </div>
                               <div class="pc-user-text">
                                 <div class="pc-handle">@paulocid</div>
                                 <div class="pc-status">Online</div>
                               </div>
                             </div>
-                            <a
-                              class="pc-contact-btn"
-                              href="#contato"
-                              aria-label="Contact Paulo Cid"
-                            >
+                            <a class="pc-contact-btn" href="#contato" aria-label="Contact Paulo Cid">
                               Contact Me
                             </a>
                           </div>
@@ -433,10 +491,12 @@
 
               <!-- 2. Terminal Mockup (Can be toggled) -->
               <div id="hero-terminal-view" class="w-full hidden">
-                <div class="w-full rounded-xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-2xl border border-surface-container-high/50 overflow-hidden">
-                  
+                <div
+                  class="w-full rounded-xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-2xl border border-surface-container-high/50 overflow-hidden">
+
                   <!-- Terminal Header -->
-                  <div class="px-4 py-3 bg-surface-container-high/70 flex items-center justify-between border-b border-surface-container-high">
+                  <div
+                    class="px-4 py-3 bg-surface-container-high/70 flex items-center justify-between border-b border-surface-container-high">
                     <div class="flex items-center gap-2">
                       <span class="w-3 h-3 rounded-full bg-error/70 inline-block"></span>
                       <span class="w-3 h-3 rounded-full bg-tertiary-container/70 inline-block"></span>
@@ -450,11 +510,13 @@
 
                   <!-- Terminal Tabs -->
                   <div class="flex bg-surface-container-low px-2 pt-1 gap-1 border-b border-surface-container-high/40">
-                    <div class="px-3 py-1.5 rounded-t font-code-sm text-code-sm text-primary bg-surface-container-lowest flex items-center gap-1.5 border-t-2 border-primary">
+                    <div
+                      class="px-3 py-1.5 rounded-t font-code-sm text-code-sm text-primary bg-surface-container-lowest flex items-center gap-1.5 border-t-2 border-primary">
                       <span class="material-symbols-outlined text-[14px] text-primary-container">data_object</span>
                       pipeline.py
                     </div>
-                    <div class="px-3 py-1.5 font-code-sm text-code-sm text-outline hover:text-on-surface transition-colors flex items-center gap-1.5">
+                    <div
+                      class="px-3 py-1.5 font-code-sm text-code-sm text-outline hover:text-on-surface transition-colors flex items-center gap-1.5">
                       <span class="material-symbols-outlined text-[14px]">database</span>
                       schema.sql
                     </div>
@@ -462,20 +524,34 @@
 
                   <!-- Terminal Code Body -->
                   <div class="p-4 font-code-sm text-code-sm leading-relaxed overflow-x-auto">
-                    <div class="text-outline-variant font-label-sm mb-2">// Definindo trajetória com precisão algorítmica</div>
-                    <p><span class="text-tertiary font-bold">class</span> <span class="text-primary-container font-semibold">CarreiraTransicao</span>:</p>
-                    <p class="pl-4"><span class="text-tertiary font-bold">def</span> <span class="text-primary font-semibold">__init__</span>(self):</p>
-                    <p class="pl-8 text-on-surface-variant">self.bagagem = <span class="text-secondary">"Organização &amp; Processos"</span></p>
-                    <p class="pl-8 text-on-surface-variant">self.curso = <span class="text-secondary">"Ciência da Computação — FAM"</span></p>
-                    <p class="pl-8 text-on-surface-variant">self.foco = [<span class="text-primary-fixed-dim">"Python"</span>, <span class="text-primary-fixed-dim">"SQL"</span>, <span class="text-primary-fixed-dim">"Eng. Software"</span>]</p>
-                    <p class="pl-4 mt-2"><span class="text-tertiary font-bold">def</span> <span class="text-primary font-semibold">executar_meta</span>(self):</p>
+                    <div class="text-outline-variant font-label-sm mb-2">// Definindo trajetória com precisão
+                      algorítmica</div>
+                    <p><span class="text-tertiary font-bold">class</span> <span
+                        class="text-primary-container font-semibold">CarreiraTransicao</span>:</p>
+                    <p class="pl-4"><span class="text-tertiary font-bold">def</span> <span
+                        class="text-primary font-semibold">__init__</span>(self):</p>
+                    <p class="pl-8 text-on-surface-variant">self.bagagem = <span class="text-secondary">"Organização
+                        &amp; Processos"</span></p>
+                    <p class="pl-8 text-on-surface-variant">self.curso = <span class="text-secondary">"Ciência da
+                        Computação — FAM"</span></p>
+                    <p class="pl-8 text-on-surface-variant">self.foco = [<span
+                        class="text-primary-fixed-dim">"Python"</span>, <span
+                        class="text-primary-fixed-dim">"SQL"</span>, <span class="text-primary-fixed-dim">"Eng.
+                        Software"</span>]</p>
+                    <p class="pl-4 mt-2"><span class="text-tertiary font-bold">def</span> <span
+                        class="text-primary font-semibold">executar_meta</span>(self):</p>
                     <p class="pl-8 text-on-surface-variant"><span class="text-tertiary font-bold">return</span> {</p>
-                    <p class="pl-12 text-on-surface-variant"><span class="text-primary-fixed-dim">"objetivo"</span>: <span class="text-secondary">"Primeiro Estágio Tech"</span>,</p>
-                    <p class="pl-12 text-on-surface-variant"><span class="text-primary-fixed-dim">"mindset"</span>: <span class="text-secondary">"Aprender rápido + Gerar valor"</span>,</p>
-                    <p class="pl-12 text-on-surface-variant"><span class="text-primary-fixed-dim">"disponibilidade"</span>: <span class="text-primary-container">True</span></p>
+                    <p class="pl-12 text-on-surface-variant"><span class="text-primary-fixed-dim">"objetivo"</span>:
+                      <span class="text-secondary">"Primeiro Estágio Tech"</span>,</p>
+                    <p class="pl-12 text-on-surface-variant"><span class="text-primary-fixed-dim">"mindset"</span>:
+                      <span class="text-secondary">"Aprender rápido + Gerar valor"</span>,</p>
+                    <p class="pl-12 text-on-surface-variant"><span
+                        class="text-primary-fixed-dim">"disponibilidade"</span>: <span
+                        class="text-primary-container">True</span></p>
                     <p class="pl-8 text-on-surface-variant">}</p>
-                    
-                    <div class="mt-4 pt-3 bg-surface-container-high/40 rounded px-3 py-2 text-on-surface flex items-center justify-between border border-surface-container-high/60">
+
+                    <div
+                      class="mt-4 pt-3 bg-surface-container-high/40 rounded px-3 py-2 text-on-surface flex items-center justify-between border border-surface-container-high/60">
                       <span class="text-primary font-bold flex items-center gap-1">
                         <span class="material-symbols-outlined text-[16px] text-primary-container">check_circle</span>
                         Pronto para novos desafios
@@ -485,7 +561,8 @@
                   </div>
 
                   <!-- Terminal Mini Stats Strip -->
-                  <div class="grid grid-cols-3 bg-surface-container py-2.5 px-4 text-center border-t border-surface-container-high">
+                  <div
+                    class="grid grid-cols-3 bg-surface-container py-2.5 px-4 text-center border-t border-surface-container-high">
                     <div>
                       <span class="block font-headline-sm text-headline-sm font-bold text-primary">100%</span>
                       <span class="font-label-sm text-label-sm text-on-surface-variant">Comprometimento</span>
@@ -509,88 +586,114 @@
         </section>
 
         <!-- 2. SEÇÃO SOBRE MIM -->
-        <section class="w-full bg-surface-container-low/50 py-space-xl border-y border-surface-container-high/40" id="sobre">
+        <section class="w-full bg-surface-container-low/50 py-space-xl border-y border-surface-container-high/40"
+          id="sobre">
           <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin">
-            
+
             <!-- Section Header -->
             <div class="flex flex-col mb-space-lg max-w-2xl">
               <span class="font-label-md text-label-md text-primary tracking-widest uppercase">01 // Quem sou eu</span>
               <h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">Sobre mim</h2>
-              <p class="font-body-md text-body-md text-on-surface-variant mt-1">Conectando maturidade corporativa e determinação analítica à ciência da computação.</p>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-1">Conectando maturidade corporativa e
+                determinação analítica à ciência da computação.</p>
             </div>
 
             <!-- Career Narrative Grid -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
-              
+
               <!-- Text Box -->
-              <div class="lg:col-span-7 bg-surface-container/70 backdrop-blur-md p-space-lg rounded-xl shadow-md border border-surface-container-high/50 flex flex-col justify-between">
+              <div
+                class="lg:col-span-7 bg-surface-container/70 backdrop-blur-md p-space-lg rounded-xl shadow-md border border-surface-container-high/50 flex flex-col justify-between">
                 <div>
                   <div class="flex items-center gap-2 text-primary font-code-sm text-code-sm mb-space-sm">
                     <span class="material-symbols-outlined text-[18px]">format_quote</span>
                     <span>TRAJETÓRIA &amp; PROPÓSITO</span>
                   </div>
                   <p class="font-body-lg text-body-lg text-on-surface leading-relaxed mb-space-md">
-                    Sou estudante de Ciência da Computação e estou construindo minha carreira na área de tecnologia. Antes de iniciar essa transição, desenvolvi experiência profissional na área administrativa, onde aprendi sobre organização, responsabilidade, processos e relacionamento profissional.
+                    Sou estudante de Ciência da Computação e estou construindo minha carreira na área de tecnologia.
+                    Antes de iniciar essa transição, desenvolvi experiência profissional na área administrativa, onde
+                    aprendi sobre organização, responsabilidade, processos e relacionamento profissional.
                   </p>
                   <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                    Hoje estou direcionando essa experiência para tecnologia, aprofundando meus conhecimentos em programação, bancos de dados e desenvolvimento de soluções. Busco atuar com transparência e empenho absoluto na criação de código legível e soluções eficientes.
+                    Hoje estou direcionando essa experiência para tecnologia, aprofundando meus conhecimentos em
+                    programação, bancos de dados e desenvolvimento de soluções. Busco atuar com transparência e empenho
+                    absoluto na criação de código legível e soluções eficientes.
                   </p>
                 </div>
 
                 <!-- Visual Flow Bar -->
-                <div class="mt-space-lg pt-space-md bg-surface-container-high/40 rounded-lg p-space-sm border border-surface-container-high">
+                <div
+                  class="mt-space-lg pt-space-md bg-surface-container-high/40 rounded-lg p-space-sm border border-surface-container-high">
                   <div class="font-label-sm text-label-sm text-outline mb-space-xs uppercase">Evolução de Perfil</div>
-                  <div class="flex flex-col sm:flex-row items-center justify-between gap-2 font-code-sm text-code-sm text-on-surface">
-                    <span class="px-2.5 py-1 rounded bg-surface-container-highest text-on-surface-variant">Área Administrativa</span>
-                    <span class="material-symbols-outlined text-primary text-[16px] hidden sm:inline">arrow_forward</span>
+                  <div
+                    class="flex flex-col sm:flex-row items-center justify-between gap-2 font-code-sm text-code-sm text-on-surface">
+                    <span class="px-2.5 py-1 rounded bg-surface-container-highest text-on-surface-variant">Área
+                      Administrativa</span>
+                    <span
+                      class="material-symbols-outlined text-primary text-[16px] hidden sm:inline">arrow_forward</span>
                     <span class="material-symbols-outlined text-primary text-[16px] sm:hidden">arrow_downward</span>
-                    <span class="px-2.5 py-1 rounded bg-primary/20 text-primary font-semibold">Ciência da Computação</span>
-                    <span class="material-symbols-outlined text-primary-container text-[16px] hidden sm:inline">arrow_forward</span>
-                    <span class="material-symbols-outlined text-primary-container text-[16px] sm:hidden">arrow_downward</span>
-                    <span class="px-2.5 py-1 rounded bg-primary-container text-on-primary font-bold">Tecnologia &amp; Software</span>
+                    <span class="px-2.5 py-1 rounded bg-primary/20 text-primary font-semibold">Ciência da
+                      Computação</span>
+                    <span
+                      class="material-symbols-outlined text-primary-container text-[16px] hidden sm:inline">arrow_forward</span>
+                    <span
+                      class="material-symbols-outlined text-primary-container text-[16px] sm:hidden">arrow_downward</span>
+                    <span class="px-2.5 py-1 rounded bg-primary-container text-on-primary font-bold">Tecnologia &amp;
+                      Software</span>
                   </div>
                 </div>
               </div>
 
               <!-- 3 Pillars Grid -->
               <div class="lg:col-span-5 flex flex-col gap-space-sm justify-between">
-                
+
                 <!-- Pillar 1 -->
-                <div class="p-space-md rounded-xl bg-surface-container-high/50 hover:bg-surface-container-high transition-all shadow-sm border border-surface-container-high/70">
+                <div
+                  class="p-space-md rounded-xl bg-surface-container-high/50 hover:bg-surface-container-high transition-all shadow-sm border border-surface-container-high/70">
                   <div class="flex items-center gap-space-sm mb-1.5">
-                    <div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+                    <div
+                      class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
                       <span class="material-symbols-outlined text-[20px]">tune</span>
                     </div>
-                    <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Organização &amp; Processos</h3>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Organização &amp;
+                      Processos</h3>
                   </div>
                   <p class="font-body-sm text-body-sm text-on-surface-variant">
-                    Bagagem administrativa prévia: gestão de prazos, clareza em documentação técnica e responsabilidade operacional consolidada.
+                    Bagagem administrativa prévia: gestão de prazos, clareza em documentação técnica e responsabilidade
+                    operacional consolidada.
                   </p>
                 </div>
 
                 <!-- Pillar 2 -->
-                <div class="p-space-md rounded-xl bg-surface-container-high/50 hover:bg-surface-container-high transition-all shadow-sm border border-surface-container-high/70">
+                <div
+                  class="p-space-md rounded-xl bg-surface-container-high/50 hover:bg-surface-container-high transition-all shadow-sm border border-surface-container-high/70">
                   <div class="flex items-center gap-space-sm mb-1.5">
-                    <div class="w-9 h-9 rounded-lg bg-secondary-container/40 flex items-center justify-center text-secondary">
+                    <div
+                      class="w-9 h-9 rounded-lg bg-secondary-container/40 flex items-center justify-center text-secondary">
                       <span class="material-symbols-outlined text-[20px]">school</span>
                     </div>
                     <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Fundamentos Sólidos</h3>
                   </div>
                   <p class="font-body-sm text-body-sm text-on-surface-variant">
-                    Base acadêmica rigorosa na FAM em Ciência da Computação: estrutura de dados, teoria da computação e arquitetura de sistemas.
+                    Base acadêmica rigorosa na FAM em Ciência da Computação: estrutura de dados, teoria da computação e
+                    arquitetura de sistemas.
                   </p>
                 </div>
 
                 <!-- Pillar 3 -->
-                <div class="p-space-md rounded-xl bg-surface-container-high/50 hover:bg-surface-container-high transition-all shadow-sm border border-surface-container-high/70">
+                <div
+                  class="p-space-md rounded-xl bg-surface-container-high/50 hover:bg-surface-container-high transition-all shadow-sm border border-surface-container-high/70">
                   <div class="flex items-center gap-space-sm mb-1.5">
-                    <div class="w-9 h-9 rounded-lg bg-primary/20 flex items-center justify-center text-primary-container">
+                    <div
+                      class="w-9 h-9 rounded-lg bg-primary/20 flex items-center justify-center text-primary-container">
                       <span class="material-symbols-outlined text-[20px]">data_table</span>
                     </div>
-                    <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Soluções Tecnológicas</h3>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Soluções Tecnológicas
+                    </h3>
                   </div>
                   <p class="font-body-sm text-body-sm text-on-surface-variant">
-                    Foco técnico centrado em Python, ecossistemas de bancos de dados relacionais (SQL/MySQL) e automações orientadas à eficiência.
+                    Foco técnico centrado em Python, ecossistemas de bancos de dados relacionais (SQL/MySQL) e
+                    automações orientadas à eficiência.
                   </p>
                 </div>
 
@@ -604,63 +707,78 @@
         <!-- 3. MINHA TRAJETÓRIA (TIMELINE) -->
         <section class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin py-space-xl" id="trajetoria">
           <div class="flex flex-col items-center text-center mb-space-xl max-w-2xl mx-auto">
-            <span class="font-label-md text-label-md text-primary tracking-widest uppercase">02 // Evolução Contínua</span>
+            <span class="font-label-md text-label-md text-primary tracking-widest uppercase">02 // Evolução
+              Contínua</span>
             <h2 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-1">Minha Trajetória</h2>
-            <p class="font-body-md text-body-md text-on-surface-variant mt-2">A evolução consistente e estruturada de cada etapa da minha jornada profissional e acadêmica.</p>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-2">A evolução consistente e estruturada de
+              cada etapa da minha jornada profissional e acadêmica.</p>
           </div>
 
           <!-- Interactive Stepped Timeline -->
           <div class="relative grid grid-cols-1 md:grid-cols-4 gap-space-md">
-            
+
             <!-- Connecting Line for Desktop -->
             <div class="hidden md:block absolute top-7 left-12 right-12 h-0.5 bg-surface-container-highest -z-0"></div>
 
             <!-- Node 1 -->
-            <div class="relative flex flex-col items-start md:items-center text-left md:text-center p-space-md rounded-xl bg-surface-container/40 backdrop-blur hover:bg-surface-container transition-all border border-surface-container-high/40">
-              <div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant mb-space-sm shadow z-10 border-2 border-surface-container">
+            <div
+              class="relative flex flex-col items-start md:items-center text-left md:text-center p-space-md rounded-xl bg-surface-container/40 backdrop-blur hover:bg-surface-container transition-all border border-surface-container-high/40">
+              <div
+                class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant mb-space-sm shadow z-10 border-2 border-surface-container">
                 <span class="material-symbols-outlined text-[24px]">assignment</span>
               </div>
               <span class="font-code-sm text-code-sm text-outline mb-1">01 / BAGAGEM</span>
               <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">Experiência Profissional</h3>
               <p class="font-body-sm text-body-sm text-on-surface-variant">
-                Experiência sólida na área administrativa com vivência prática em processos, fluxo de documentos, atendimento e organização metódica de rotinas.
+                Experiência sólida na área administrativa com vivência prática em processos, fluxo de documentos,
+                atendimento e organização metódica de rotinas.
               </p>
             </div>
 
             <!-- Node 2 -->
-            <div class="relative flex flex-col items-start md:items-center text-left md:text-center p-space-md rounded-xl bg-surface-container/40 backdrop-blur hover:bg-surface-container transition-all border border-surface-container-high/40">
-              <div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-primary mb-space-sm shadow z-10 border-2 border-primary/40">
+            <div
+              class="relative flex flex-col items-start md:items-center text-left md:text-center p-space-md rounded-xl bg-surface-container/40 backdrop-blur hover:bg-surface-container transition-all border border-surface-container-high/40">
+              <div
+                class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-primary mb-space-sm shadow z-10 border-2 border-primary/40">
                 <span class="material-symbols-outlined text-[24px]">school</span>
               </div>
               <span class="font-code-sm text-code-sm text-primary mb-1">02 / ACADÊMICO</span>
               <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">Ciência da Computação</h3>
               <p class="font-body-sm text-body-sm text-on-surface-variant">
-                Graduação na <strong class="text-on-surface">FAM (Faculdade das Américas)</strong>. Formação estrutural com previsão de conclusão para o 2º semestre de 2028.
+                Graduação na <strong class="text-on-surface">FAM (Faculdade das Américas)</strong>. Formação estrutural
+                com previsão de conclusão para o 2º semestre de 2028.
               </p>
             </div>
 
             <!-- Node 3 -->
-            <div class="relative flex flex-col items-start md:items-center text-left md:text-center p-space-md rounded-xl bg-surface-container/40 backdrop-blur hover:bg-surface-container transition-all border border-surface-container-high/40">
-              <div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-secondary mb-space-sm shadow z-10 border-2 border-secondary/40">
+            <div
+              class="relative flex flex-col items-start md:items-center text-left md:text-center p-space-md rounded-xl bg-surface-container/40 backdrop-blur hover:bg-surface-container transition-all border border-surface-container-high/40">
+              <div
+                class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-secondary mb-space-sm shadow z-10 border-2 border-secondary/40">
                 <span class="material-symbols-outlined text-[24px]">code</span>
               </div>
               <span class="font-code-sm text-code-sm text-secondary mb-1">03 / PRÁTICA</span>
               <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">Tecnologia &amp; Código</h3>
               <p class="font-body-sm text-body-sm text-on-surface-variant">
-                Estudos aplicados e prática contínua em programação orientada a dados, manipulação de bancos relacionais e desenvolvimento de utilitários práticos.
+                Estudos aplicados e prática contínua em programação orientada a dados, manipulação de bancos relacionais
+                e desenvolvimento de utilitários práticos.
               </p>
             </div>
 
             <!-- Node 4: Pulsing Current Focus -->
-            <div class="relative flex flex-col items-start md:items-center text-left md:text-center p-space-md rounded-xl bg-gradient-to-b from-surface-container-high/80 to-surface-container/60 shadow-lg border border-primary-container/40">
-              <div class="relative w-14 h-14 rounded-full bg-primary-container flex items-center justify-center text-on-primary mb-space-sm shadow z-10">
+            <div
+              class="relative flex flex-col items-start md:items-center text-left md:text-center p-space-md rounded-xl bg-gradient-to-b from-surface-container-high/80 to-surface-container/60 shadow-lg border border-primary-container/40">
+              <div
+                class="relative w-14 h-14 rounded-full bg-primary-container flex items-center justify-center text-on-primary mb-space-sm shadow z-10">
                 <span class="material-symbols-outlined text-[26px]">rocket_launch</span>
                 <span class="animate-ping absolute inset-0 rounded-full bg-primary-container/40 -z-10"></span>
               </div>
               <span class="font-code-sm text-code-sm text-primary-container font-semibold mb-1">04 / ALVO ATUAL</span>
-              <h3 class="font-headline-sm text-headline-sm text-primary-container font-bold mb-2">Primeiro Estágio Tech</h3>
+              <h3 class="font-headline-sm text-headline-sm text-primary-container font-bold mb-2">Primeiro Estágio Tech
+              </h3>
               <p class="font-body-sm text-body-sm text-on-surface">
-                Pronto para contribuir com proatividade, aprender com equipes de engenharia ágeis e acelerar resultados com disciplina diária.
+                Pronto para contribuir com proatividade, aprender com equipes de engenharia ágeis e acelerar resultados
+                com disciplina diária.
               </p>
             </div>
 
@@ -668,173 +786,251 @@
         </section>
 
         <!-- 4. TECNOLOGIAS & CONHECIMENTOS -->
-        <section class="w-full bg-surface-container-low/40 py-space-xl border-y border-surface-container-high/40" id="tecnologias">
+        <section class="w-full bg-surface-container-low/40 py-space-xl border-y border-surface-container-high/40"
+          id="tecnologias">
           <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin">
-            
+
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg">
               <div>
-                <span class="font-label-md text-label-md text-primary tracking-widest uppercase">03 // Stack &amp; Habilidades</span>
-                <h2 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-1">Tecnologias &amp; Conhecimentos</h2>
-                <p class="font-body-md text-body-md text-on-surface-variant mt-1">Representação transparente e honesta das ferramentas com as quais construo projetos.</p>
+                <span class="font-label-md text-label-md text-primary tracking-widest uppercase">03 // Stack &amp;
+                  Habilidades</span>
+                <h2 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-1">Tecnologias &amp;
+                  Conhecimentos</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-1">Representação transparente e honesta
+                  das ferramentas com as quais construo projetos.</p>
               </div>
               <div class="mt-4 md:mt-0 flex items-center gap-3 font-label-sm text-label-sm">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-secondary/15 text-secondary border border-secondary/30">
+                <span
+                  class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-secondary/15 text-secondary border border-secondary/30">
                   <span class="w-2 h-2 rounded-full bg-secondary"></span> Praticando (Ação frequente)
                 </span>
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-primary/15 text-primary border border-primary/30">
+                <span
+                  class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-primary/15 text-primary border border-primary/30">
                   <span class="w-2 h-2 rounded-full bg-primary"></span> Estudando (Base ativa)
                 </span>
               </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
-              
+
               <!-- Python -->
-              <div class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-primary/50 flex flex-col">
+              <div
+                class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-primary/50 flex flex-col">
                 <div class="flex items-center justify-between mb-space-sm">
-                  <div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
                     <span class="material-symbols-outlined text-[24px]">terminal</span>
                   </div>
-                  <span class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-secondary/15 text-secondary font-semibold">Praticando</span>
+                  <span
+                    class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-secondary/15 text-secondary font-semibold">Praticando</span>
                 </div>
-                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">Python</h3>
+                <h3
+                  class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                  Python</h3>
                 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 mb-space-sm flex-grow">
-                  Manipulação de dados, automação de tarefas operacionais, leitura/escrita de arquivos estruturados e lógica funcional.
+                  Manipulação de dados, automação de tarefas operacionais, leitura/escrita de arquivos estruturados e
+                  lógica funcional.
                 </p>
                 <div class="flex flex-wrap gap-1 mt-auto">
-                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Pandas</span>
-                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Scripts</span>
-                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">ETL</span>
+                  <span
+                    class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Pandas</span>
+                  <span
+                    class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Scripts</span>
+                  <span
+                    class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">ETL</span>
                 </div>
               </div>
 
               <!-- SQL & MySQL -->
-              <div class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-primary-container/50 flex flex-col">
+              <div
+                class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-primary-container/50 flex flex-col">
                 <div class="flex items-center justify-between mb-space-sm">
-                  <div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container group-hover:bg-primary-container/20 transition-colors">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container group-hover:bg-primary-container/20 transition-colors">
                     <span class="material-symbols-outlined text-[24px]">database</span>
                   </div>
-                  <span class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-secondary/15 text-secondary font-semibold">Praticando</span>
+                  <span
+                    class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-secondary/15 text-secondary font-semibold">Praticando</span>
                 </div>
-                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary-container transition-colors">SQL &amp; MySQL</h3>
+                <h3
+                  class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary-container transition-colors">
+                  SQL &amp; MySQL</h3>
                 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 mb-space-sm flex-grow">
-                  Criação de esquemas relacionais, consultas avançadas (JOINs, agregações), triggers, índices e integridade referencial.
+                  Criação de esquemas relacionais, consultas avançadas (JOINs, agregações), triggers, índices e
+                  integridade referencial.
                 </p>
                 <div class="flex flex-wrap gap-1 mt-auto">
-                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">DML/DDL</span>
-                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Queries</span>
-                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">RDBMS</span>
+                  <span
+                    class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">DML/DDL</span>
+                  <span
+                    class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Queries</span>
+                  <span
+                    class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">RDBMS</span>
                 </div>
               </div>
 
               <!-- Git & GitHub -->
-              <div class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-secondary/50 flex flex-col">
+              <div
+                class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-secondary/50 flex flex-col">
                 <div class="flex items-center justify-between mb-space-sm">
-                  <div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary group-hover:bg-secondary/20 transition-colors">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary group-hover:bg-secondary/20 transition-colors">
                     <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
                     </svg>
                   </div>
-                  <span class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-secondary/15 text-secondary font-semibold">Praticando</span>
+                  <span
+                    class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-secondary/15 text-secondary font-semibold">Praticando</span>
                 </div>
-                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-secondary transition-colors">Git &amp; GitHub</h3>
+                <h3
+                  class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-secondary transition-colors">
+                  Git &amp; GitHub</h3>
                 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 mb-space-sm flex-grow">
-                  Controle de versão semântico, fluxo de branching, commits padronizados e documentação técnica de repositórios.
+                  Controle de versão semântico, fluxo de branching, commits padronizados e documentação técnica de
+                  repositórios.
                 </p>
                 <div class="flex flex-wrap gap-1 mt-auto">
-                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Git Flow</span>
-                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Commits</span>
-                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">README</span>
+                  <span
+                    class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Git
+                    Flow</span>
+                  <span
+                    class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Commits</span>
+                  <span
+                    class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">README</span>
                 </div>
               </div>
 
               <!-- Lógica de Programação -->
-              <div class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-primary/50 flex flex-col">
+              <div
+                class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-primary/50 flex flex-col">
                 <div class="flex items-center justify-between mb-space-sm">
-                  <div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
                     <span class="material-symbols-outlined text-[24px]">memory</span>
                   </div>
-                  <span class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-secondary/15 text-secondary font-semibold">Praticando</span>
+                  <span
+                    class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-secondary/15 text-secondary font-semibold">Praticando</span>
                 </div>
-                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">Lógica &amp; Algoritmos</h3>
+                <h3
+                  class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                  Lógica &amp; Algoritmos</h3>
                 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 mb-space-sm flex-grow">
-                  Resolução metódica de problemas computacionais, controle de fluxo, estruturas condicionais e modularização limpa.
+                  Resolução metódica de problemas computacionais, controle de fluxo, estruturas condicionais e
+                  modularização limpa.
                 </p>
                 <div class="flex flex-wrap gap-1 mt-auto">
-                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Eficiência</span>
-                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Refatoração</span>
+                  <span
+                    class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Eficiência</span>
+                  <span
+                    class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Refatoração</span>
                 </div>
               </div>
 
               <!-- C# -->
-              <div class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-tertiary/50 flex flex-col">
+              <div
+                class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-tertiary/50 flex flex-col">
                 <div class="flex items-center justify-between mb-space-sm">
-                  <div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary group-hover:bg-tertiary/20 transition-colors">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary group-hover:bg-tertiary/20 transition-colors">
                     <span class="material-symbols-outlined text-[24px]">code_blocks</span>
                   </div>
-                  <span class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-primary/15 text-primary font-semibold">Estudando</span>
+                  <span
+                    class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-primary/15 text-primary font-semibold">Estudando</span>
                 </div>
-                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-tertiary transition-colors">C# (.NET)</h3>
+                <h3
+                  class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-tertiary transition-colors">
+                  C# (.NET)</h3>
                 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 mb-space-sm flex-grow">
-                  Paradigma orientado a objetos, tipagem estática, coleções e fundamentos do ecossistema .NET corporativo.
+                  Paradigma orientado a objetos, tipagem estática, coleções e fundamentos do ecossistema .NET
+                  corporativo.
                 </p>
                 <div class="flex flex-wrap gap-1 mt-auto">
-                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">POO</span>
-                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">.NET Core</span>
+                  <span
+                    class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">POO</span>
+                  <span
+                    class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">.NET
+                    Core</span>
                 </div>
               </div>
 
               <!-- Oracle Database -->
-              <div class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-primary-fixed-dim/50 flex flex-col">
+              <div
+                class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-primary-fixed-dim/50 flex flex-col">
                 <div class="flex items-center justify-between mb-space-sm">
-                  <div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-fixed-dim group-hover:bg-primary-fixed-dim/20 transition-colors">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-fixed-dim group-hover:bg-primary-fixed-dim/20 transition-colors">
                     <span class="material-symbols-outlined text-[24px]">cloud_sync</span>
                   </div>
-                  <span class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-primary/15 text-primary font-semibold">Estudando</span>
+                  <span
+                    class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-primary/15 text-primary font-semibold">Estudando</span>
                 </div>
-                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary-fixed-dim transition-colors">Oracle Database</h3>
+                <h3
+                  class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary-fixed-dim transition-colors">
+                  Oracle Database</h3>
                 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 mb-space-sm flex-grow">
-                  Exploração de arquitetura de dados corporativa, PL/SQL, procedências de segurança e administração de volumes.
+                  Exploração de arquitetura de dados corporativa, PL/SQL, procedências de segurança e administração de
+                  volumes.
                 </p>
                 <div class="flex flex-wrap gap-1 mt-auto">
-                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">PL/SQL</span>
-                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Enterprise DB</span>
+                  <span
+                    class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">PL/SQL</span>
+                  <span
+                    class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Enterprise
+                    DB</span>
                 </div>
               </div>
 
               <!-- Estrutura de Dados -->
-              <div class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-primary/50 flex flex-col">
+              <div
+                class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-primary/50 flex flex-col">
                 <div class="flex items-center justify-between mb-space-sm">
-                  <div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
                     <span class="material-symbols-outlined text-[24px]">account_tree</span>
                   </div>
-                  <span class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-primary/15 text-primary font-semibold">Estudando</span>
+                  <span
+                    class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-primary/15 text-primary font-semibold">Estudando</span>
                 </div>
-                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">Estrutura de Dados</h3>
+                <h3
+                  class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                  Estrutura de Dados</h3>
                 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 mb-space-sm flex-grow">
-                  Pilhas, filas, listas encadeadas, árvores de busca, complexidade de tempo/espaço (Big O) e algoritmos de ordenação.
+                  Pilhas, filas, listas encadeadas, árvores de busca, complexidade de tempo/espaço (Big O) e algoritmos
+                  de ordenação.
                 </p>
                 <div class="flex flex-wrap gap-1 mt-auto">
-                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Big-O</span>
-                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Algoritmos</span>
+                  <span
+                    class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Big-O</span>
+                  <span
+                    class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Algoritmos</span>
                 </div>
               </div>
 
               <!-- Engenharia de Software -->
-              <div class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-secondary/50 flex flex-col">
+              <div
+                class="group p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-sm hover:shadow-md transition-all border border-surface-container-high hover:border-secondary/50 flex flex-col">
                 <div class="flex items-center justify-between mb-space-sm">
-                  <div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary group-hover:bg-secondary/20 transition-colors">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary group-hover:bg-secondary/20 transition-colors">
                     <span class="material-symbols-outlined text-[24px]">architecture</span>
                   </div>
-                  <span class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-primary/15 text-primary font-semibold">Estudando</span>
+                  <span
+                    class="font-label-sm text-[11px] px-2.5 py-0.5 rounded-full bg-primary/15 text-primary font-semibold">Estudando</span>
                 </div>
-                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-secondary transition-colors">Engenharia de Software</h3>
+                <h3
+                  class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-secondary transition-colors">
+                  Engenharia de Software</h3>
                 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 mb-space-sm flex-grow">
-                  Ciclo de vida de software, metodologias ágeis (Scrum/Kanban), boas práticas de clean code e documentação técnica.
+                  Ciclo de vida de software, metodologias ágeis (Scrum/Kanban), boas práticas de clean code e
+                  documentação técnica.
                 </p>
                 <div class="flex flex-wrap gap-1 mt-auto">
-                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Scrum</span>
-                  <span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Clean Code</span>
+                  <span
+                    class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Scrum</span>
+                  <span
+                    class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Clean
+                    Code</span>
                 </div>
               </div>
 
@@ -847,13 +1043,18 @@
         <section class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin py-space-xl" id="projetos">
           <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg">
             <div>
-              <span class="font-label-md text-label-md text-primary tracking-widest uppercase">04 // Aplicação Prática</span>
+              <span class="font-label-md text-label-md text-primary tracking-widest uppercase">04 // Aplicação
+                Prática</span>
               <h2 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-1">Projetos em Destaque</h2>
-              <p class="font-body-md text-body-md text-on-surface-variant mt-1">Projetos que transformam teoria e aprendizado em código executável e resolução real.</p>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-1">Projetos que transformam teoria e
+                aprendizado em código executável e resolução real.</p>
             </div>
-            <a aria-label="Explorar todos os repositórios no GitHub de Paulo Cid" class="mt-4 md:mt-0 inline-flex items-center gap-1.5 font-label-md text-label-md text-primary hover:text-primary-container transition-colors" href="https://github.com/paulocid95" rel="noopener noreferrer" target="_blank">
+            <a aria-label="Explorar todos os repositórios no GitHub de Paulo Cid"
+              class="mt-4 md:mt-0 inline-flex items-center gap-1.5 font-label-md text-label-md text-primary hover:text-primary-container transition-colors"
+              href="https://github.com/paulocid95" rel="noopener noreferrer" target="_blank">
               <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
               </svg>
               <span>Explorar todos os repositórios</span>
               <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
@@ -862,13 +1063,15 @@
 
           <!-- Projects Grid -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
-            
+
             <!-- Project 1 -->
-            <div class="rounded-xl bg-surface-container/60 backdrop-blur-md overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all flex flex-col justify-between border border-surface-container-high/60">
+            <div
+              class="rounded-xl bg-surface-container/60 backdrop-blur-md overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all flex flex-col justify-between border border-surface-container-high/60">
               <div class="p-space-lg">
                 <div class="flex items-center justify-between gap-2 mb-space-sm">
                   <span class="font-code-sm text-code-sm text-primary font-bold">01 / AUTOMAÇÃO &amp; DADOS</span>
-                  <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-container/20 text-primary-container font-label-sm text-[11px]">
+                  <span
+                    class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-container/20 text-primary-container font-label-sm text-[11px]">
                     <span class="material-symbols-outlined text-[14px]">auto_fix_high</span> Concluído
                   </span>
                 </div>
@@ -876,20 +1079,40 @@
                   Pipeline de Engenharia e Análise de Estoque em Python
                 </h3>
                 <p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
-                  <strong class="text-on-surface">Resolução prática:</strong> Pipeline de dados automatizado de ponta a ponta construído em Python e Pandas para tratar bases corrompidas de múltiplos fornecedores. Realiza diagnóstico de falhas, higienização de tipos e schemas canónicos, cálculo de KPIs financeiros de estoque e geração automática de relatórios executivos com Matplotlib e Seaborn.
+                  <strong class="text-on-surface">Resolução prática:</strong> Pipeline de dados de ponta a ponta
+                  construído em Python e Pandas para tratar bases corrompidas de múltiplos fornecedores. Realiza data
+                  profiling, higienização de schemas canônicos, modelagem dimensional (Star Schema) com persistência em
+                  PostgreSQL na nuvem (Neon) via SQLAlchemy, orquestração centralizada de esteira e disponibilização de
+                  Dashboard Analítico Interativo em tempo real com Streamlit.
                 </p>
                 <div class="flex flex-wrap gap-1.5 mb-space-md">
-                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-primary">Python 3</span>
-                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Pandas</span>
-                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">ETL</span>
-                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">Matplotlib</span>
-                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">Data Analytics</span>
+                  <span
+                    class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-primary">Python
+                    3</span>
+                  <span
+                    class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Pandas</span>
+                  <span
+                    class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface">PostgreSQL</span>
+                  <span
+                    class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface">SQLAlchemy</span>
+                  <span
+                    class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Streamlit</span>
+                  <span
+                    class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">ETL</span>
+                  <span
+                    class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">Data
+                    Analytics</span>
                 </div>
               </div>
-              <div class="px-space-lg py-space-sm bg-surface-container-high/40 flex items-center justify-between border-t border-surface-container-high/40">
-                <a aria-label="Código-fonte no GitHub do projeto Pipeline de Engenharia e Análise de Estoque em Python" class="inline-flex items-center gap-1.5 font-label-md text-label-md text-on-surface hover:text-primary transition-colors" href="https://github.com/paulocid95/pipeline-analise-estoque-python" rel="noopener noreferrer" target="_blank">
+              <div
+                class="px-space-lg py-space-sm bg-surface-container-high/40 flex items-center justify-between border-t border-surface-container-high/40">
+                <a aria-label="Código-fonte no GitHub do projeto Pipeline de Engenharia e Análise de Estoque em Python"
+                  class="inline-flex items-center gap-1.5 font-label-md text-label-md text-on-surface hover:text-primary transition-colors"
+                  href="https://github.com/paulocid95/pipeline-analise-estoque-python" rel="noopener noreferrer"
+                  target="_blank">
                   <svg class="w-[18px] h-[18px] fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
                   </svg>
                   <span>Código-fonte no GitHub</span>
                 </a>
@@ -898,11 +1121,13 @@
             </div>
 
             <!-- Project 2 -->
-            <div class="rounded-xl bg-surface-container/60 backdrop-blur-md overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all flex flex-col justify-between border border-surface-container-high/60">
+            <div
+              class="rounded-xl bg-surface-container/60 backdrop-blur-md overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all flex flex-col justify-between border border-surface-container-high/60">
               <div class="p-space-lg">
                 <div class="flex items-center justify-between gap-2 mb-space-sm">
                   <span class="font-code-sm text-code-sm text-secondary font-bold">02 / BANCO DE DADOS</span>
-                  <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary/20 text-secondary font-label-sm text-[11px]">
+                  <span
+                    class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary/20 text-secondary font-label-sm text-[11px]">
                     <span class="material-symbols-outlined text-[14px]">storage</span> Concluído
                   </span>
                 </div>
@@ -910,19 +1135,31 @@
                   Modelagem e Gestão de Banco de Dados Relacional
                 </h3>
                 <p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
-                  <strong class="text-on-surface">Resolução prática:</strong> Estruturação ponta a ponta de um modelo relacional (DER / Conceitual / Físico) em MySQL. Otimização de consultas complexas com multi-joins, implementação de triggers para auditoria e garantia da 3ª Forma Normal (3FN).
+                  <strong class="text-on-surface">Resolução prática:</strong> Estruturação ponta a ponta de um modelo
+                  relacional (DER / Conceitual / Físico) em MySQL. Otimização de consultas complexas com multi-joins,
+                  implementação de triggers para auditoria e garantia da 3ª Forma Normal (3FN).
                 </p>
                 <div class="flex flex-wrap gap-1.5 mb-space-md">
-                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-secondary">SQL</span>
-                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface">MySQL</span>
-                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">Modelagem de Dados</span>
-                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">Triggers &amp; Views</span>
+                  <span
+                    class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-secondary">SQL</span>
+                  <span
+                    class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface">MySQL</span>
+                  <span
+                    class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">Modelagem
+                    de Dados</span>
+                  <span
+                    class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">Triggers
+                    &amp; Views</span>
                 </div>
               </div>
-              <div class="px-space-lg py-space-sm bg-surface-container-high/40 flex items-center justify-between border-t border-surface-container-high/40">
-                <a aria-label="Repositório no GitHub do projeto Modelagem e Gestão de Banco de Dados Relacional" class="inline-flex items-center gap-1.5 font-label-md text-label-md text-on-surface hover:text-secondary transition-colors" href="https://github.com/paulocid95" rel="noopener noreferrer" target="_blank">
+              <div
+                class="px-space-lg py-space-sm bg-surface-container-high/40 flex items-center justify-between border-t border-surface-container-high/40">
+                <a aria-label="Repositório no GitHub do projeto Modelagem e Gestão de Banco de Dados Relacional"
+                  class="inline-flex items-center gap-1.5 font-label-md text-label-md text-on-surface hover:text-secondary transition-colors"
+                  href="https://github.com/paulocid95" rel="noopener noreferrer" target="_blank">
                   <svg class="w-[18px] h-[18px] fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
                   </svg>
                   <span>Repositório no GitHub</span>
                 </a>
@@ -931,11 +1168,13 @@
             </div>
 
             <!-- Project 3 -->
-            <div class="rounded-xl bg-surface-container/60 backdrop-blur-md overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all flex flex-col justify-between border border-surface-container-high/60">
+            <div
+              class="rounded-xl bg-surface-container/60 backdrop-blur-md overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all flex flex-col justify-between border border-surface-container-high/60">
               <div class="p-space-lg">
                 <div class="flex items-center justify-between gap-2 mb-space-sm">
                   <span class="font-code-sm text-code-sm text-primary-container font-bold">03 / CIÊNCIA DE DADOS</span>
-                  <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-container/20 text-primary-container font-label-sm text-[11px]">
+                  <span
+                    class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-container/20 text-primary-container font-label-sm text-[11px]">
                     <span class="material-symbols-outlined text-[14px]">query_stats</span> Em Produção
                   </span>
                 </div>
@@ -943,19 +1182,31 @@
                   Análise Exploratória de Dados &amp; Pipeline IA
                 </h3>
                 <p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
-                  <strong class="text-on-surface">Resolução prática:</strong> Pipeline de análise estatística descritiva e visualização gráfica a partir de datasets brutos. Tratamento de valores nulos, geração de correlações e desenvolvimento de modelos preliminares de classificação para subsidiar tomadas de decisão.
+                  <strong class="text-on-surface">Resolução prática:</strong> Pipeline de análise estatística descritiva
+                  e visualização gráfica a partir de datasets brutos. Tratamento de valores nulos, geração de
+                  correlações e desenvolvimento de modelos preliminares de classificação para subsidiar tomadas de
+                  decisão.
                 </p>
                 <div class="flex flex-wrap gap-1.5 mb-space-md">
-                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-primary">Python</span>
-                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Jupyter</span>
-                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">NumPy / Matplotlib</span>
-                  <span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">Scikit-Learn</span>
+                  <span
+                    class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-primary">Python</span>
+                  <span
+                    class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Jupyter</span>
+                  <span
+                    class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">NumPy
+                    / Matplotlib</span>
+                  <span
+                    class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">Scikit-Learn</span>
                 </div>
               </div>
-              <div class="px-space-lg py-space-sm bg-surface-container-high/40 flex items-center justify-between border-t border-surface-container-high/40">
-                <a aria-label="Visualizar Notebooks no GitHub" class="inline-flex items-center gap-1.5 font-label-md text-label-md text-on-surface hover:text-primary transition-colors" href="https://github.com/paulocid95" rel="noopener noreferrer" target="_blank">
+              <div
+                class="px-space-lg py-space-sm bg-surface-container-high/40 flex items-center justify-between border-t border-surface-container-high/40">
+                <a aria-label="Visualizar Notebooks no GitHub"
+                  class="inline-flex items-center gap-1.5 font-label-md text-label-md text-on-surface hover:text-primary transition-colors"
+                  href="https://github.com/paulocid95" rel="noopener noreferrer" target="_blank">
                   <svg class="w-[18px] h-[18px] fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
                   </svg>
                   <span>Visualizar Notebooks</span>
                 </a>
@@ -964,15 +1215,18 @@
             </div>
 
             <!-- Project 4: Continuous Evolution Card -->
-            <div class="rounded-xl bg-gradient-to-br from-surface-container/40 to-surface-container-high/30 backdrop-blur-md overflow-hidden shadow-sm flex flex-col justify-center p-space-lg border border-surface-container-high/50">
-              <div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary mb-space-sm">
+            <div
+              class="rounded-xl bg-gradient-to-br from-surface-container/40 to-surface-container-high/30 backdrop-blur-md overflow-hidden shadow-sm flex flex-col justify-center p-space-lg border border-surface-container-high/50">
+              <div
+                class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary mb-space-sm">
                 <span class="material-symbols-outlined text-[28px] animate-pulse">add_circle</span>
               </div>
               <h3 class="font-headline-md text-headline-md text-on-surface font-bold mb-space-xs">
                 Mais projetos em desenvolvimento
               </h3>
               <p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
-                Novos repositórios estão sendo estruturados com foco em APIs RESTful, testes unitários, microsserviços e algoritmos otimizados de ordenação e grafos.
+                Novos repositórios estão sendo estruturados com foco em APIs RESTful, testes unitários, microsserviços e
+                algoritmos otimizados de ordenação e grafos.
               </p>
               <div class="inline-flex items-center gap-2 text-primary font-code-sm text-code-sm">
                 <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
@@ -986,47 +1240,58 @@
         <!-- 6. O QUE ESTOU BUSCANDO (MEU PRÓXIMO DESAFIO) -->
         <section class="w-full bg-surface-container-lowest py-space-xl border-y border-surface-container-high/40">
           <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin">
-            
+
             <div class="max-w-3xl mb-space-lg">
-              <span class="font-label-md text-label-md text-primary tracking-widest uppercase">05 // Objetivo de Carreira</span>
+              <span class="font-label-md text-label-md text-primary tracking-widest uppercase">05 // Objetivo de
+                Carreira</span>
               <h2 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-1">Meu Próximo Desafio</h2>
               <p class="font-body-lg text-body-lg text-primary font-medium mt-space-xs leading-relaxed">
-                “Estou buscando uma oportunidade de estágio em tecnologia onde possa aplicar meus conhecimentos, aprender com profissionais experientes e participar ativamente da construção de soluções reais.”
+                “Estou buscando uma oportunidade de estágio em tecnologia onde possa aplicar meus conhecimentos,
+                aprender com profissionais experientes e participar ativamente da construção de soluções reais.”
               </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
-              
+
               <!-- Card 1 -->
-              <div class="p-space-lg rounded-xl bg-surface-container/70 shadow-md border border-surface-container-high/50 hover:border-primary/40 transition-colors">
-                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-space-md">
+              <div
+                class="p-space-lg rounded-xl bg-surface-container/70 shadow-md border border-surface-container-high/50 hover:border-primary/40 transition-colors">
+                <div
+                  class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-space-md">
                   <span class="material-symbols-outlined text-[26px]">psychology</span>
                 </div>
                 <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-space-xs">Aprender</h3>
                 <p class="font-body-sm text-body-sm text-on-surface-variant">
-                  Evoluir tecnicamente através de desafios reais de engenharia, absorvendo feedbacks, code reviews rigorosos e boas práticas de desenvolvimento de software.
+                  Evoluir tecnicamente através de desafios reais de engenharia, absorvendo feedbacks, code reviews
+                  rigorosos e boas práticas de desenvolvimento de software.
                 </p>
               </div>
 
               <!-- Card 2 -->
-              <div class="p-space-lg rounded-xl bg-surface-container/70 shadow-md border border-surface-container-high/50 hover:border-primary-container/40 transition-colors">
-                <div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container mb-space-md">
+              <div
+                class="p-space-lg rounded-xl bg-surface-container/70 shadow-md border border-surface-container-high/50 hover:border-primary-container/40 transition-colors">
+                <div
+                  class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container mb-space-md">
                   <span class="material-symbols-outlined text-[26px]">handshake</span>
                 </div>
                 <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-space-xs">Contribuir</h3>
                 <p class="font-body-sm text-body-sm text-on-surface-variant">
-                  Usar minhas habilidades técnicas, maturidade de processos e empenho para apoiar o time na resolução rápida e consistente de problemas.
+                  Usar minhas habilidades técnicas, maturidade de processos e empenho para apoiar o time na resolução
+                  rápida e consistente de problemas.
                 </p>
               </div>
 
               <!-- Card 3 -->
-              <div class="p-space-lg rounded-xl bg-surface-container/70 shadow-md border border-surface-container-high/50 hover:border-secondary/40 transition-colors">
-                <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary mb-space-md">
+              <div
+                class="p-space-lg rounded-xl bg-surface-container/70 shadow-md border border-surface-container-high/50 hover:border-secondary/40 transition-colors">
+                <div
+                  class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary mb-space-md">
                   <span class="material-symbols-outlined text-[26px]">trending_up</span>
                 </div>
                 <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-space-xs">Evoluir</h3>
                 <p class="font-body-sm text-body-sm text-on-surface-variant">
-                  Construir uma carreira sólida, ética e de alto impacto, colaborando com times ágeis e expandindo as fronteiras de software e dados da organização.
+                  Construir uma carreira sólida, ética e de alto impacto, colaborando com times ágeis e expandindo as
+                  fronteiras de software e dados da organização.
                 </p>
               </div>
 
@@ -1038,17 +1303,22 @@
         <!-- 7. FORMAÇÃO & CERTIFICAÇÕES -->
         <section class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin py-space-xl">
           <div class="flex flex-col mb-space-lg">
-            <span class="font-label-md text-label-md text-primary tracking-widest uppercase">06 // Educação &amp; Preparação</span>
-            <h2 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-1">Formação &amp; Certificações</h2>
-            <p class="font-body-md text-body-md text-on-surface-variant mt-1">A base acadêmica formal combinada a cursos direcionados e autoestudo rigoroso.</p>
+            <span class="font-label-md text-label-md text-primary tracking-widest uppercase">06 // Educação &amp;
+              Preparação</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-1">Formação &amp; Certificações
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-1">A base acadêmica formal combinada a cursos
+              direcionados e autoestudo rigoroso.</p>
           </div>
 
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
-            
+
             <!-- Academic Block (Hero Card) -->
-            <div class="lg:col-span-5 p-space-lg rounded-xl bg-surface-container/70 backdrop-blur-md shadow-md border border-surface-container-high/60 flex flex-col justify-between">
+            <div
+              class="lg:col-span-5 p-space-lg rounded-xl bg-surface-container/70 backdrop-blur-md shadow-md border border-surface-container-high/60 flex flex-col justify-between">
               <div>
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary font-label-sm text-label-sm mb-space-md border border-primary/30">
+                <div
+                  class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary font-label-sm text-label-sm mb-space-md border border-primary/30">
                   <span class="material-symbols-outlined text-[16px]">school</span> Graduação em Andamento
                 </div>
                 <h3 class="font-headline-md text-headline-md text-on-surface font-bold mb-1">
@@ -1057,33 +1327,40 @@
                 <p class="font-body-lg text-body-lg text-primary font-semibold mb-space-sm">
                   FAM — Faculdade das Américas
                 </p>
-                <div class="p-space-sm rounded-lg bg-surface-container-high/60 mb-space-md border border-surface-container-high">
+                <div
+                  class="p-space-sm rounded-lg bg-surface-container-high/60 mb-space-md border border-surface-container-high">
                   <div class="flex items-center justify-between text-on-surface font-code-sm text-code-sm">
                     <span>Previsão de conclusão:</span>
                     <span class="text-primary-container font-bold">2º semestre / 2028</span>
                   </div>
                 </div>
                 <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-sm">
-                  Foco prioritário em algoritmos e complexidade, arquitetura de sistemas operacionais, banco de dados relacionais e modelagem de software corporativo.
+                  Foco prioritário em algoritmos e complexidade, arquitetura de sistemas operacionais, banco de dados
+                  relacionais e modelagem de software corporativo.
                 </p>
               </div>
 
-              <div class="pt-space-md bg-surface-container-high/30 rounded-lg p-space-sm border border-surface-container-high/40">
+              <div
+                class="pt-space-md bg-surface-container-high/30 rounded-lg p-space-sm border border-surface-container-high/40">
                 <span class="font-label-sm text-label-sm text-outline block mb-1">DISCIPLINAS-CHAVE:</span>
                 <div class="flex flex-wrap gap-1.5 font-code-sm text-[11px]">
-                  <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface">Estruturas de Dados</span>
-                  <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface">Lógica Matemática</span>
+                  <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface">Estruturas de
+                    Dados</span>
+                  <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface">Lógica
+                    Matemática</span>
                   <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface">Bancos de Dados</span>
-                  <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface">Sistemas Operacionais</span>
+                  <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface">Sistemas
+                    Operacionais</span>
                 </div>
               </div>
             </div>
 
             <!-- Courses & Languages Grid -->
             <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
-              
+
               <!-- Course 1 -->
-              <div class="p-space-md rounded-xl bg-surface-container-high/50 hover:bg-surface-container-high transition-colors shadow-sm border border-surface-container-high">
+              <div
+                class="p-space-md rounded-xl bg-surface-container-high/50 hover:bg-surface-container-high transition-colors shadow-sm border border-surface-container-high">
                 <div class="flex items-center gap-space-xs text-primary mb-1">
                   <span class="material-symbols-outlined text-[18px]">terminal</span>
                   <span class="font-label-sm text-label-sm uppercase">Capacitação</span>
@@ -1095,31 +1372,36 @@
               </div>
 
               <!-- Course 2 -->
-              <div class="p-space-md rounded-xl bg-surface-container-high/50 hover:bg-surface-container-high transition-colors shadow-sm border border-surface-container-high">
+              <div
+                class="p-space-md rounded-xl bg-surface-container-high/50 hover:bg-surface-container-high transition-colors shadow-sm border border-surface-container-high">
                 <div class="flex items-center gap-space-xs text-primary-container mb-1">
                   <span class="material-symbols-outlined text-[18px]">database</span>
                   <span class="font-label-sm text-label-sm uppercase">Capacitação</span>
                 </div>
-                <h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Modelagem de Banco de Dados &amp; SQL</h4>
+                <h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Modelagem de Banco de Dados
+                  &amp; SQL</h4>
                 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
                   Normalização, constraints, joins relacionais, agregação analítica e índices no MySQL.
                 </p>
               </div>
 
               <!-- Course 3 -->
-              <div class="p-space-md rounded-xl bg-surface-container-high/50 hover:bg-surface-container-high transition-colors shadow-sm border border-surface-container-high">
+              <div
+                class="p-space-md rounded-xl bg-surface-container-high/50 hover:bg-surface-container-high transition-colors shadow-sm border border-surface-container-high">
                 <div class="flex items-center gap-space-xs text-secondary mb-1">
                   <span class="material-symbols-outlined text-[18px]">functions</span>
                   <span class="font-label-sm text-label-sm uppercase">Fundamentos</span>
                 </div>
-                <h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Lógica de Programação &amp; Algoritmos</h4>
+                <h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Lógica de Programação &amp;
+                  Algoritmos</h4>
                 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
                   Resolução sequencial, laços de repetição, matrizes, modularização e testes de mesa lógicos.
                 </p>
               </div>
 
               <!-- Language Course -->
-              <div class="p-space-md rounded-xl bg-surface-container-high/50 hover:bg-surface-container-high transition-colors shadow-sm border border-surface-container-high">
+              <div
+                class="p-space-md rounded-xl bg-surface-container-high/50 hover:bg-surface-container-high transition-colors shadow-sm border border-surface-container-high">
                 <div class="flex items-center gap-space-xs text-tertiary mb-1">
                   <span class="material-symbols-outlined text-[18px]">language</span>
                   <span class="font-label-sm text-label-sm uppercase">Idiomas</span>
@@ -1131,12 +1413,15 @@
               </div>
 
               <!-- Continuous Learning (Full Width within subgrid) -->
-              <div class="sm:col-span-2 p-space-md rounded-xl bg-surface-container-highest/40 flex items-center justify-between border border-surface-container-high">
+              <div
+                class="sm:col-span-2 p-space-md rounded-xl bg-surface-container-highest/40 flex items-center justify-between border border-surface-container-high">
                 <div class="flex items-center gap-space-sm">
                   <span class="w-3 h-3 rounded-full bg-primary-container animate-ping"></span>
                   <div>
-                    <h5 class="font-headline-sm text-[15px] text-on-surface font-semibold">Aprendizado Contínuo em Andamento</h5>
-                    <p class="font-body-sm text-body-sm text-on-surface-variant">C# &amp; .NET Core para arquitetura backend e Oracle Cloud Foundations.</p>
+                    <h5 class="font-headline-sm text-[15px] text-on-surface font-semibold">Aprendizado Contínuo em
+                      Andamento</h5>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">C# &amp; .NET Core para arquitetura
+                      backend e Oracle Cloud Foundations.</p>
                   </div>
                 </div>
                 <span class="font-code-sm text-code-sm text-primary font-bold">Em curso</span>
@@ -1148,36 +1433,45 @@
         </section>
 
         <!-- 8. SEÇÃO DE CONTATO -->
-        <section class="w-full bg-surface-container-low/70 py-space-xl border-t border-surface-container-high/40" id="contato">
+        <section class="w-full bg-surface-container-low/70 py-space-xl border-t border-surface-container-high/40"
+          id="contato">
           <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
-              
+
               <!-- Text & Status -->
               <div class="lg:col-span-6">
-                <span class="font-label-md text-label-md text-primary tracking-widest uppercase">07 // Conecte-se comigo</span>
-                <h2 class="font-headline-hero-mobile md:font-headline-hero text-headline-hero-mobile md:text-headline-hero text-on-surface font-bold mt-1 mb-space-xs">
+                <span class="font-label-md text-label-md text-primary tracking-widest uppercase">07 // Conecte-se
+                  comigo</span>
+                <h2
+                  class="font-headline-hero-mobile md:font-headline-hero text-headline-hero-mobile md:text-headline-hero text-on-surface font-bold mt-1 mb-space-xs">
                   Vamos conversar?
                 </h2>
                 <p class="font-body-lg text-body-lg text-on-surface-variant mb-space-md leading-relaxed">
-                  Estou aberto a oportunidades de estágio, projetos colaborativos e boas conversas sobre tecnologia e engenharia.
+                  Estou aberto a oportunidades de estágio, projetos colaborativos e boas conversas sobre tecnologia e
+                  engenharia.
                 </p>
 
                 <!-- Availability Card -->
-                <div class="p-space-md rounded-xl bg-surface-container-high/80 mb-space-md flex items-center gap-space-sm shadow-sm border border-surface-container-high">
+                <div
+                  class="p-space-md rounded-xl bg-surface-container-high/80 mb-space-md flex items-center gap-space-sm shadow-sm border border-surface-container-high">
                   <div class="w-3 h-3 rounded-full bg-primary-container animate-pulse"></div>
                   <div>
-                    <span class="font-label-sm text-label-sm text-primary-container font-bold uppercase tracking-wider block">Disponibilidade</span>
-                    <span class="font-body-sm text-body-sm text-on-surface font-medium">Pronto para entrevistas imediatas e início de estágio.</span>
+                    <span
+                      class="font-label-sm text-label-sm text-primary-container font-bold uppercase tracking-wider block">Disponibilidade</span>
+                    <span class="font-body-sm text-body-sm text-on-surface font-medium">Pronto para entrevistas
+                      imediatas e início de estágio.</span>
                   </div>
                 </div>
 
                 <!-- Resume Download & Direct Contact Buttons -->
                 <div class="flex flex-wrap gap-space-sm">
-                  <a class="inline-flex items-center justify-center font-label-md text-label-md px-6 py-3 rounded-lg bg-primary-container text-on-primary font-bold shadow-lg hover:bg-primary transition-all cursor-pointer" onclick="window.print()">
+                  <a class="inline-flex items-center justify-center font-label-md text-label-md px-6 py-3 rounded-lg bg-primary-container text-on-primary font-bold shadow-lg hover:bg-primary transition-all cursor-pointer"
+                    onclick="window.print()">
                     <span class="material-symbols-outlined text-[20px] mr-2">download</span>
                     Baixar Currículo / Imprimir
                   </a>
-                  <a class="inline-flex items-center justify-center font-label-md text-label-md px-6 py-3 rounded-lg bg-surface-container-highest text-on-surface hover:text-primary transition-all border border-surface-container-high" href="mailto:paulocid95@gmail.com">
+                  <a class="inline-flex items-center justify-center font-label-md text-label-md px-6 py-3 rounded-lg bg-surface-container-highest text-on-surface hover:text-primary transition-all border border-surface-container-high"
+                    href="mailto:paulocid95@gmail.com">
                     <span class="material-symbols-outlined text-[20px] mr-2">mail</span>
                     Enviar Mensagem Direta
                   </a>
@@ -1186,59 +1480,80 @@
 
               <!-- Direct Cards Channels -->
               <div class="lg:col-span-6 flex flex-col gap-space-sm">
-                
+
                 <!-- WhatsApp Card -->
-                <a class="group p-space-md rounded-xl bg-surface-container/80 hover:bg-surface-container-high transition-all flex items-center justify-between shadow-sm border border-surface-container-high/60" href="https://wa.me/5511974309264" rel="noopener noreferrer" target="_blank">
+                <a class="group p-space-md rounded-xl bg-surface-container/80 hover:bg-surface-container-high transition-all flex items-center justify-between shadow-sm border border-surface-container-high/60"
+                  href="https://wa.me/5511974309264" rel="noopener noreferrer" target="_blank">
                   <div class="flex items-center gap-space-sm">
-                    <div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-[#25D366] group-hover:bg-[#25D366] group-hover:text-black transition-colors">
+                    <div
+                      class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-[#25D366] group-hover:bg-[#25D366] group-hover:text-black transition-colors">
                       <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.584 1.961.949 2.796.949 3.182 0 5.768-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm3.36 8.163c-.144.405-.837.774-1.17.823-.312.045-.694.062-2.12-.528-1.571-.65-2.585-2.257-2.664-2.361-.079-.105-.638-.85-.638-1.621 0-.771.405-1.15.549-1.307.144-.157.315-.196.42-.196.105 0 .21.001.301.006.097.005.227-.037.355.27.131.315.459 1.12.499 1.202.04.082.066.178.013.283-.053.105-.079.171-.157.263-.079.092-.165.205-.236.275-.079.079-.161.164-.069.322.092.158.409.675.877 1.092.602.536 1.109.702 1.267.781.158.079.25.069.342-.037.092-.105.394-.459.499-.617.105-.158.21-.131.354-.079.144.053.918.433 1.076.512.158.079.263.118.302.184.04.066.04.38-.104.785zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.666 0-3.21-.497-4.506-1.352l-.323-.213-2.966.778.792-2.893-.234-.372A8.175 8.175 0 013.8 12c0-4.521 3.679-8.2 8.2-8.2 4.521 0 8.2 3.679 8.2 8.2 0 4.521-3.679 8.2-8.2 8.2z"/>
+                        <path
+                          d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.584 1.961.949 2.796.949 3.182 0 5.768-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm3.36 8.163c-.144.405-.837.774-1.17.823-.312.045-.694.062-2.12-.528-1.571-.65-2.585-2.257-2.664-2.361-.079-.105-.638-.85-.638-1.621 0-.771.405-1.15.549-1.307.144-.157.315-.196.42-.196.105 0 .21.001.301.006.097.005.227-.037.355.27.131.315.459 1.12.499 1.202.04.082.066.178.013.283-.053.105-.079.171-.157.263-.079.092-.165.205-.236.275-.079.079-.161.164-.069.322.092.158.409.675.877 1.092.602.536 1.109.702 1.267.781.158.079.25.069.342-.037.092-.105.394-.459.499-.617.105-.158.21-.131.354-.079.144.053.918.433 1.076.512.158.079.263.118.302.184.04.066.04.38-.104.785zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.666 0-3.21-.497-4.506-1.352l-.323-.213-2.966.778.792-2.893-.234-.372A8.175 8.175 0 013.8 12c0-4.521 3.679-8.2 8.2-8.2 4.521 0 8.2 3.679 8.2 8.2 0 4.521-3.679 8.2-8.2 8.2z" />
                       </svg>
                     </div>
                     <div>
                       <h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">WhatsApp</h4>
-                      <p class="font-body-sm text-body-sm text-on-surface-variant">+55 (11) 97430-9264 • Conversa direta</p>
+                      <p class="font-body-sm text-body-sm text-on-surface-variant">+55 (11) 97430-9264 • Conversa direta
+                      </p>
                     </div>
                   </div>
-                  <span class="material-symbols-outlined text-outline group-hover:text-[#25D366] transition-colors">arrow_forward</span>
+                  <span
+                    class="material-symbols-outlined text-outline group-hover:text-[#25D366] transition-colors">arrow_forward</span>
                 </a>
 
                 <!-- LinkedIn Card -->
-                <a aria-label="LinkedIn de Paulo Cid" class="group p-space-md rounded-xl bg-surface-container/80 hover:bg-surface-container-high transition-all flex items-center justify-between shadow-sm border border-surface-container-high/60" href="https://www.linkedin.com/in/paulo-victor-cid-55564123b" rel="noopener noreferrer" target="_blank">
+                <a aria-label="LinkedIn de Paulo Cid"
+                  class="group p-space-md rounded-xl bg-surface-container/80 hover:bg-surface-container-high transition-all flex items-center justify-between shadow-sm border border-surface-container-high/60"
+                  href="https://www.linkedin.com/in/paulo-victor-cid-55564123b" rel="noopener noreferrer"
+                  target="_blank">
                   <div class="flex items-center gap-space-sm">
-                    <div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+                    <div
+                      class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
                       <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" fill-rule="evenodd"/>
+                        <path
+                          d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
+                          fill-rule="evenodd" />
                       </svg>
                     </div>
                     <div>
                       <h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">LinkedIn</h4>
-                      <p class="font-body-sm text-body-sm text-on-surface-variant">Conecte-se para histórico completo e recomendações</p>
+                      <p class="font-body-sm text-body-sm text-on-surface-variant">Conecte-se para histórico completo e
+                        recomendações</p>
                     </div>
                   </div>
-                  <span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_forward</span>
+                  <span
+                    class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_forward</span>
                 </a>
 
                 <!-- GitHub Card -->
-                <a aria-label="GitHub de Paulo Cid" class="group p-space-md rounded-xl bg-surface-container/80 hover:bg-surface-container-high transition-all flex items-center justify-between shadow-sm border border-surface-container-high/60" href="https://github.com/paulocid95" rel="noopener noreferrer" target="_blank">
+                <a aria-label="GitHub de Paulo Cid"
+                  class="group p-space-md rounded-xl bg-surface-container/80 hover:bg-surface-container-high transition-all flex items-center justify-between shadow-sm border border-surface-container-high/60"
+                  href="https://github.com/paulocid95" rel="noopener noreferrer" target="_blank">
                   <div class="flex items-center gap-space-sm">
-                    <div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant group-hover:bg-on-surface group-hover:text-surface transition-colors">
+                    <div
+                      class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant group-hover:bg-on-surface group-hover:text-surface transition-colors">
                       <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
                       </svg>
                     </div>
                     <div>
                       <h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">GitHub</h4>
-                      <p class="font-body-sm text-body-sm text-on-surface-variant">Confira meus commits, scripts e repositórios</p>
+                      <p class="font-body-sm text-body-sm text-on-surface-variant">Confira meus commits, scripts e
+                        repositórios</p>
                     </div>
                   </div>
-                  <span class="material-symbols-outlined text-outline group-hover:text-on-surface transition-colors">arrow_forward</span>
+                  <span
+                    class="material-symbols-outlined text-outline group-hover:text-on-surface transition-colors">arrow_forward</span>
                 </a>
 
                 <!-- Direct Email Card -->
-                <a class="group p-space-md rounded-xl bg-surface-container/80 hover:bg-surface-container-high transition-all flex items-center justify-between shadow-sm border border-surface-container-high/60" href="mailto:paulocid95@gmail.com">
+                <a class="group p-space-md rounded-xl bg-surface-container/80 hover:bg-surface-container-high transition-all flex items-center justify-between shadow-sm border border-surface-container-high/60"
+                  href="mailto:paulocid95@gmail.com">
                   <div class="flex items-center gap-space-sm">
-                    <div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+                    <div
+                      class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
                       <span class="material-symbols-outlined text-[24px]">alternate_email</span>
                     </div>
                     <div>
@@ -1246,7 +1561,8 @@
                       <p class="font-body-sm text-body-sm text-on-surface-variant">paulocid95@gmail.com</p>
                     </div>
                   </div>
-                  <span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">arrow_forward</span>
+                  <span
+                    class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">arrow_forward</span>
                 </a>
 
               </div>
@@ -1260,7 +1576,8 @@
   </main>
 
   <!-- RODAPÉ -->
-  <footer class="w-full bg-surface-container-lowest py-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.04)] border-t border-surface-container-high/30">
+  <footer
+    class="w-full bg-surface-container-lowest py-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.04)] border-t border-surface-container-high/30">
     <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin">
       <div class="flex flex-col md:flex-row items-center justify-between gap-space-lg">
         <div class="flex flex-col items-center md:items-start gap-space-xs">
@@ -1268,27 +1585,41 @@
             <span class="font-code-sm text-code-sm text-primary font-bold">PC /&gt;</span>
             <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Paulo Cid</span>
           </div>
-          <p class="font-body-sm text-body-sm text-on-surface-variant text-center md:text-left">Estudante de Ciência da Computação • Desenvolvedor em formação</p>
+          <p class="font-body-sm text-body-sm text-on-surface-variant text-center md:text-left">Estudante de Ciência da
+            Computação • Desenvolvedor em formação</p>
           <p class="font-label-sm text-label-sm text-outline">© 2024 Paulo Cid. Todos os direitos reservados.</p>
         </div>
 
         <div class="flex items-center gap-space-sm">
-          <a aria-label="GitHub" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all" href="https://github.com/paulocid95" target="_blank" rel="noopener noreferrer" title="GitHub de Paulo Cid">
+          <a aria-label="GitHub"
+            class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all"
+            href="https://github.com/paulocid95" target="_blank" rel="noopener noreferrer" title="GitHub de Paulo Cid">
             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
             </svg>
           </a>
-          <a aria-label="LinkedIn" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all" href="https://www.linkedin.com/in/paulo-victor-cid-55564123b" target="_blank" rel="noopener noreferrer" title="LinkedIn de Paulo Cid">
+          <a aria-label="LinkedIn"
+            class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all"
+            href="https://www.linkedin.com/in/paulo-victor-cid-55564123b" target="_blank" rel="noopener noreferrer"
+            title="LinkedIn de Paulo Cid">
             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" fill-rule="evenodd"/>
+              <path
+                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
+                fill-rule="evenodd" />
             </svg>
           </a>
-          <a aria-label="WhatsApp" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-[#25D366] hover:bg-surface-container-high transition-all" href="https://wa.me/5511974309264" target="_blank" rel="noopener noreferrer" title="Conversar no WhatsApp">
+          <a aria-label="WhatsApp"
+            class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-[#25D366] hover:bg-surface-container-high transition-all"
+            href="https://wa.me/5511974309264" target="_blank" rel="noopener noreferrer" title="Conversar no WhatsApp">
             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.584 1.961.949 2.796.949 3.182 0 5.768-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm3.36 8.163c-.144.405-.837.774-1.17.823-.312.045-.694.062-2.12-.528-1.571-.65-2.585-2.257-2.664-2.361-.079-.105-.638-.85-.638-1.621 0-.771.405-1.15.549-1.307.144-.157.315-.196.42-.196.105 0 .21.001.301.006.097.005.227-.037.355.27.131.315.459 1.12.499 1.202.04.082.066.178.013.283-.053.105-.079.171-.157.263-.079.092-.165.205-.236.275-.079.079-.161.164-.069.322.092.158.409.675.877 1.092.602.536 1.109.702 1.267.781.158.079.25.069.342-.037.092-.105.394-.459.499-.617.105-.158.21-.131.354-.079.144.053.918.433 1.076.512.158.079.263.118.302.184.04.066.04.38-.104.785zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.666 0-3.21-.497-4.506-1.352l-.323-.213-2.966.778.792-2.893-.234-.372A8.175 8.175 0 013.8 12c0-4.521 3.679-8.2 8.2-8.2 4.521 0 8.2 3.679 8.2 8.2 0 4.521-3.679 8.2-8.2 8.2z"/>
+              <path
+                d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.584 1.961.949 2.796.949 3.182 0 5.768-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm3.36 8.163c-.144.405-.837.774-1.17.823-.312.045-.694.062-2.12-.528-1.571-.65-2.585-2.257-2.664-2.361-.079-.105-.638-.85-.638-1.621 0-.771.405-1.15.549-1.307.144-.157.315-.196.42-.196.105 0 .21.001.301.006.097.005.227-.037.355.27.131.315.459 1.12.499 1.202.04.082.066.178.013.283-.053.105-.079.171-.157.263-.079.092-.165.205-.236.275-.079.079-.161.164-.069.322.092.158.409.675.877 1.092.602.536 1.109.702 1.267.781.158.079.25.069.342-.037.092-.105.394-.459.499-.617.105-.158.21-.131.354-.079.144.053.918.433 1.076.512.158.079.263.118.302.184.04.066.04.38-.104.785zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.666 0-3.21-.497-4.506-1.352l-.323-.213-2.966.778.792-2.893-.234-.372A8.175 8.175 0 013.8 12c0-4.521 3.679-8.2 8.2-8.2 4.521 0 8.2 3.679 8.2 8.2 0 4.521-3.679 8.2-8.2 8.2z" />
             </svg>
           </a>
-          <a aria-label="E-mail" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all" href="mailto:paulocid95@gmail.com" title="Enviar e-mail para Paulo Cid">
+          <a aria-label="E-mail"
+            class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all"
+            href="mailto:paulocid95@gmail.com" title="Enviar e-mail para Paulo Cid">
             <span class="material-symbols-outlined text-[20px]">mail</span>
           </a>
         </div>
@@ -1588,9 +1919,9 @@
 
   <!-- Reprodutor de Áudio Ambiente em Loop -->
   <audio id="bg-audio" loop preload="auto">
-    <source src="assets/audio/background.mp3" type="audio/mpeg"/>
-    <source src="assets/audio/background.mp3.mp3" type="audio/mpeg"/>
-    <source src="assets/background.mp3" type="audio/mpeg"/>
+    <source src="assets/audio/background.mp3" type="audio/mpeg" />
+    <source src="assets/audio/background.mp3.mp3" type="audio/mpeg" />
+    <source src="assets/background.mp3" type="audio/mpeg" />
   </audio>
 
   <!-- Widget Visual de Áudio no Canto Direito -->
@@ -1639,16 +1970,8 @@
 
         <!-- Slider de Volume -->
         <div class="audio-volume-wrap">
-          <input 
-            type="range" 
-            id="audio-volume-slider" 
-            class="audio-volume-slider" 
-            min="0" 
-            max="1" 
-            step="0.01" 
-            value="0.6" 
-            title="Regular volume"
-          />
+          <input type="range" id="audio-volume-slider" class="audio-volume-slider" min="0" max="1" step="0.01"
+            value="0.6" title="Regular volume" />
           <span id="audio-volume-val" class="audio-volume-val">60%</span>
         </div>
       </div>
@@ -1693,4 +2016,5 @@
     })();
   </script>
 </body>
+
 </html>
