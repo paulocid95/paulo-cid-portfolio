@@ -123,7 +123,10 @@
     }
   `;
 
-  const getFontValue = value => (typeof value === 'number' ? `${value}px` : value);
+  const getFontValue = value => {
+    const evaluated = typeof value === 'function' ? value() : value;
+    return typeof evaluated === 'number' ? `${evaluated}px` : evaluated;
+  };
 
   const measureLine = (ctx, line, letterSpacing) => {
     const chars = Array.from(line);

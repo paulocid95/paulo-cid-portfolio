@@ -2051,7 +2051,11 @@
             pointerStrength: 0.38,
             refraction: 0.018,
             ripple: true,
-            fontSize: 'clamp(2.8rem, 8vw, 6.2rem)',
+            fontSize: function () {
+              return window.matchMedia('(max-width: 768px)').matches
+                ? 'clamp(2.2rem, 7.2vw, 2.45rem)'
+                : 'clamp(2.8rem, 8vw, 6.2rem)';
+            },
             fontWeight: 800,
             fontFamily: "'Plus Jakarta Sans', Inter, sans-serif"
           });

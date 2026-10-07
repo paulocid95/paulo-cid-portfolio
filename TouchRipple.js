@@ -23,8 +23,8 @@
     }
 
     ripple.addEventListener('animationend', cleanup, { once: true });
-    // Fallback de limpeza
-    setTimeout(cleanup, 550);
+    // Fallback de limpeza rápida (350ms de animação + 50ms buffer)
+    setTimeout(cleanup, 400);
   }
 
   // Escutar toques na tela (touchstart)
