@@ -32,7 +32,7 @@ const ProfileCardComponent = ({
   title = 'Computer Science Student',
   handle = 'paulocid',
   status = 'Online',
-  contactText = 'Contact Me',
+  contactText = '',
   showUserInfo = true,
   onContactClick
 }) => {
@@ -343,15 +343,17 @@ const ProfileCardComponent = ({
                       <div className="pc-status">{status}</div>
                     </div>
                   </div>
-                  <button
-                    className="pc-contact-btn"
-                    onClick={handleContactClick}
-                    style={{ pointerEvents: 'auto' }}
-                    type="button"
-                    aria-label={`Contact ${name || 'user'}`}
-                  >
-                    {contactText}
-                  </button>
+                  {contactText && (
+                    <button
+                      className="pc-contact-btn"
+                      onClick={handleContactClick}
+                      style={{ pointerEvents: 'auto' }}
+                      type="button"
+                      aria-label={`Contact ${name || 'user'}`}
+                    >
+                      {contactText}
+                    </button>
+                  )}
                 </div>
               )}
             </div>
