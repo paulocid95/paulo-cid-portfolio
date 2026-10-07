@@ -21,8 +21,8 @@
   <link rel="stylesheet" href="GlowCursor.css" />
   <link rel="stylesheet" href="GhostFibers.css" />
   <link rel="stylesheet" href="AudioPlayer.css" />
-  <link rel="stylesheet" href="WarpText.css" />
   <link rel="stylesheet" href="SplashScreen.css" />
+  <link rel="stylesheet" href="Mobile.css" />
 
   <style>
     @layer base {
@@ -438,15 +438,15 @@
         </div>
 
         <!-- 1. HERO SECTION -->
-        <section class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin pt-space-xl pb-space-xl md:py-24">
+        <section class="hero-section max-w-[1200px] mx-auto px-margin-mobile lg:px-margin pt-space-xl pb-space-xl md:py-24">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg lg:gap-gutter items-center">
 
             <!-- Text Content -->
-            <div class="lg:col-span-7 flex flex-col items-start">
+            <div class="lg:col-span-7 flex flex-col items-start hero-text-col">
 
               <!-- Status Pill -->
               <div
-                class="inline-flex items-center gap-space-xs px-3.5 py-1.5 rounded-full bg-surface-container-high/70 backdrop-blur-md shadow-sm mb-space-md border border-outline-variant/30">
+                class="hero-status-pill inline-flex items-center gap-space-xs px-3.5 py-1.5 rounded-full bg-surface-container-high/70 backdrop-blur-md shadow-sm mb-space-md border border-outline-variant/30">
                 <span class="relative flex h-2 w-2">
                   <span
                     class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
@@ -456,30 +456,40 @@
                   em Tecnologia</span>
               </div>
 
+              <!-- Hero Presentation Header (Mobile: Row com Foto + Apresentação lado a lado) -->
+              <div class="hero-intro-header">
+                <!-- Foto de Perfil Mobile (Oculta em Desktop > 768px via Mobile.css) -->
+                <div class="hero-mobile-photo-wrap" aria-hidden="true">
+                  <img src="./assets/paulo_cid.jpg" alt="Paulo Cid" class="hero-mobile-photo" />
+                  <span class="hero-photo-glow-ring"></span>
+                </div>
 
-              <h1
-                class="font-headline-hero text-headline-hero-mobile md:text-headline-hero text-on-surface font-bold tracking-tight mb-space-xs">
-                Paulo <span
-                  class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-container to-secondary">Cid</span>
-              </h1>
+                <div class="hero-intro-text">
+                  <h1
+                    class="hero-title font-headline-hero text-headline-hero-mobile md:text-headline-hero text-on-surface font-bold tracking-tight mb-space-xs">
+                    Paulo <span
+                      class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-container to-secondary">Cid</span>
+                  </h1>
 
-              <h2 class="font-headline-md text-headline-md text-primary font-semibold mb-space-md">
-                Estudante de Ciência da Computação
-              </h2>
+                  <h2 class="hero-subtitle font-headline-md text-headline-md text-primary font-semibold mb-space-md">
+                    Estudante de Ciência da Computação
+                  </h2>
+                </div>
+              </div>
 
-              <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-space-lg leading-relaxed">
+              <p class="hero-description font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-space-lg leading-relaxed">
                 Construindo minha transição para a tecnologia através de programação sólida, engenharia de dados e
                 projetos práticos aplicados.
               </p>
 
               <!-- CTAs -->
-              <div class="flex flex-wrap items-center gap-space-sm w-full sm:w-auto mb-space-lg">
-                <a class="w-full sm:w-auto inline-flex items-center justify-center font-label-md text-label-md px-6 py-3 rounded-lg bg-gradient-to-r from-primary-container to-secondary text-on-primary font-semibold shadow-lg hover:shadow-primary-container/25 hover:-translate-y-0.5 transition-all"
+              <div class="hero-ctas flex flex-wrap items-center gap-space-sm w-full sm:w-auto mb-space-lg">
+                <a class="hero-cta-btn w-full sm:w-auto inline-flex items-center justify-center font-label-md text-label-md px-6 py-3 rounded-lg bg-gradient-to-r from-primary-container to-secondary text-on-primary font-semibold shadow-lg hover:shadow-primary-container/25 hover:-translate-y-0.5 transition-all"
                   href="#projetos">
                   <span class="material-symbols-outlined text-[18px] mr-space-xs">terminal</span>
                   Ver meus projetos
                 </a>
-                <a class="w-full sm:w-auto inline-flex items-center justify-center font-label-md text-label-md px-6 py-3 rounded-lg bg-surface-container-high/80 backdrop-blur-md text-on-surface hover:bg-surface-variant hover:text-primary transition-all shadow-sm"
+                <a class="hero-cta-btn w-full sm:w-auto inline-flex items-center justify-center font-label-md text-label-md px-6 py-3 rounded-lg bg-surface-container-high/80 backdrop-blur-md text-on-surface hover:bg-surface-variant hover:text-primary transition-all shadow-sm"
                   href="#contato">
                   <span class="material-symbols-outlined text-[18px] mr-space-xs">mail</span>
                   Entrar em contato
@@ -487,7 +497,7 @@
               </div>
 
               <!-- Direct Social Connections -->
-              <div class="flex items-center gap-space-sm flex-wrap">
+              <div class="hero-social-links flex items-center gap-space-sm flex-wrap">
                 <span class="font-label-sm text-label-sm text-outline mr-space-xs">LINKS //</span>
                 <a aria-label="GitHub de Paulo Cid"
                   class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container/60 hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all"
@@ -529,7 +539,7 @@
             </div>
 
             <!-- Right Side: ProfileCard (React Bits) & Terminal Showcase -->
-            <div class="lg:col-span-5 relative mt-space-lg lg:mt-0 flex flex-col items-center">
+            <div class="lg:col-span-5 relative mt-space-lg lg:mt-0 flex flex-col items-center hero-showcase-col">
 
               <!-- Tab Switcher -->
               <div class="flex items-center justify-between w-full max-w-[380px] mb-3 px-1">
@@ -1877,6 +1887,11 @@
   <script>
     (function () {
       function startGlowCursor() {
+        const isTouchOrMobile = window.matchMedia('(max-width: 768px), (hover: none), (pointer: coarse)').matches;
+        if (isTouchOrMobile) {
+          // Desativado estritamente em dispositivos móveis e telas de toque
+          return;
+        }
         const cursorContainer = document.getElementById('glow-cursor-container');
         if (cursorContainer && window.GlowCursor) {
           window.GlowCursor.init(cursorContainer, {
@@ -2023,6 +2038,7 @@
   <script src="SplashParticles.js"></script>
   <script src="WarpText.js"></script>
   <script src="AudioPlayer.js"></script>
+  <script src="TouchRipple.js"></script>
   <script>
     // Inicialização da Splash Screen: Efeitos WarpText & SplashParticles HUD
     (function () {

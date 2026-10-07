@@ -1,0 +1,214 @@
+/* =========================================================================
+   Mobile.css - Otimizações Exclusivas para Dispositivos Móveis e Touch (< 768px)
+   Todas as regras de layout residem estritamente dentro de @media (max-width: 768px).
+   Nenhuma alteração afeta a versão Desktop.
+   ========================================================================= */
+
+/* Desktop Reset: Garante que os elementos mobile nunca apareçam ou afetem telas > 768px */
+.hero-mobile-photo-wrap {
+  display: none !important;
+}
+
+.hero-intro-header {
+  display: contents;
+}
+
+.hero-intro-text {
+  display: contents;
+}
+
+/* =========================================================================
+   REGRAS EXCLUSIVAS MOBILE (@media (max-width: 768px))
+   ========================================================================= */
+@media (max-width: 768px) {
+  /* 1. SEÇÃO HERO: Layout em Linha (Foto + Apresentação lado a lado) */
+  .hero-section {
+    padding-top: 1.25rem !important;
+    padding-bottom: 2rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-text-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Status Pill Compacta */
+  .hero-status-pill {
+    margin-bottom: 12px !important;
+    padding: 4px 10px !important;
+    max-width: 100% !important;
+  }
+
+  .hero-status-pill span:last-child {
+    font-size: 11px !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  /* Container em linha: flex-direction: row, flex-wrap: nowrap, align-items: center */
+  .hero-intro-header {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 14px !important;
+    width: 100% !important;
+    margin-bottom: 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Foto de Perfil Diminuída com Glow Cibernético */
+  .hero-mobile-photo-wrap {
+    display: block !important;
+    position: relative !important;
+    flex-shrink: 0 !important;
+    width: 72px !important;
+    height: 72px !important;
+    border-radius: 50% !important;
+  }
+
+  .hero-mobile-photo {
+    width: 72px !important;
+    height: 72px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    border: 2px solid #38bdf8 !important;
+    box-shadow: 
+      0 0 16px rgba(56, 189, 248, 0.45),
+      0 0 28px rgba(56, 189, 248, 0.2) !important;
+    display: block !important;
+  }
+
+  .hero-photo-glow-ring {
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 1px dashed rgba(56, 189, 248, 0.45);
+    pointer-events: none;
+    animation: heroRingRotate 14s linear infinite;
+  }
+
+  @keyframes heroRingRotate {
+    100% { transform: rotate(360deg); }
+  }
+
+  /* Bloco de Texto de Introdução Alinhado Horizontalmente */
+  .hero-intro-text {
+    flex: 1 !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  .hero-title {
+    font-size: 26px !important;
+    line-height: 1.15 !important;
+    margin-bottom: 4px !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  .hero-subtitle {
+    font-size: 13.5px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 0 !important;
+    font-weight: 600 !important;
+  }
+
+  .hero-description {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+    margin-bottom: 16px !important;
+    max-width: 100% !important;
+  }
+
+  .hero-ctas {
+    width: 100% !important;
+    margin-bottom: 16px !important;
+    gap: 10px !important;
+  }
+
+  .hero-cta-btn {
+    width: 100% !important;
+    padding: 12px 18px !important;
+    font-size: 13.5px !important;
+  }
+
+  .hero-social-links {
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  /* Coluna Direita (ProfileCard / Terminal) adaptada sem estourar a tela */
+  .hero-showcase-col {
+    margin-top: 1.5rem !important;
+    width: 100% !important;
+  }
+
+  .hero-showcase-col .pc-card-wrapper {
+    max-width: 285px !important;
+  }
+
+  .hero-showcase-col .pc-card {
+    max-height: 390px !important;
+  }
+}
+
+/* =========================================================================
+   SCI-FI TOUCH RIPPLE EFFECT (Mobile & Touch Devices)
+   ========================================================================= */
+.scifi-touch-ripple {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  margin-left: -25px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999999;
+  box-sizing: border-box;
+  will-change: transform, opacity;
+  animation: scifiRippleAnim 500ms cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+.scifi-touch-ripple::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid #00f0ff;
+  box-shadow: 
+    0 0 14px #00f0ff,
+    0 0 28px rgba(56, 189, 248, 0.6),
+    inset 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+.scifi-touch-ripple::after {
+  content: '';
+  position: absolute;
+  inset: 28%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #38bdf8 0%, rgba(0, 240, 255, 0.4) 60%, transparent 100%);
+  filter: blur(1px);
+}
+
+@keyframes scifiRippleAnim {
+  0% {
+    transform: translate3d(var(--touch-x), var(--touch-y), 0) scale(0.2);
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate3d(var(--touch-x), var(--touch-y), 0) scale(2.6);
+    opacity: 0;
+  }
+}

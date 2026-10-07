@@ -41,3 +41,15 @@
   user-select: none;
   opacity: 0.8;
 }
+
+/* Desativação estrita em telas mobile / dispositivos sem hover */
+@media (max-width: 768px), (hover: none), (pointer: coarse) {
+  .glow-cursor--fullscreen,
+  .glow-cursor__canvas,
+  #glow-cursor-container {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+  }
+}

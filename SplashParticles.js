@@ -101,15 +101,16 @@
       for (let i = 0; i < count; i++) {
         let hx, hy, color;
 
+        const scaleFactor = isMobile ? 0.45 : 1.0;
         if (type === 'mysql') {
           // MySQL aspect ratio is ~205x106 (wider)
           const u = (Math.random() - 0.5) * 2;
           const v = (Math.random() - 0.5) * 2;
-          hx = u * 85 + (Math.random() - 0.5) * 8;
-          hy = v * 44 + (Math.random() - 0.5) * 8;
+          hx = (u * 85 + (Math.random() - 0.5) * 8) * scaleFactor;
+          hy = (v * 44 + (Math.random() - 0.5) * 8) * scaleFactor;
 
           // Sakila Dolphin and "My" are on the left & top; "SQL" is on the right & bottom
-          if (hx < -5 || hy < -10) {
+          if (hx < -5 * scaleFactor || hy < -10 * scaleFactor) {
             color = palette.blueColors[Math.floor(Math.random() * palette.blueColors.length)];
           } else {
             color = palette.orangeColors[Math.floor(Math.random() * palette.orangeColors.length)];
@@ -117,8 +118,8 @@
         } else {
           const u = (Math.random() - 0.5) * 2;
           const v = (Math.random() - 0.5) * 2;
-          hx = u * 62 + (Math.random() - 0.5) * 12;
-          hy = v * 62 + (Math.random() - 0.5) * 12;
+          hx = (u * 62 + (Math.random() - 0.5) * 12) * scaleFactor;
+          hy = (v * 62 + (Math.random() - 0.5) * 12) * scaleFactor;
           color = palette.colors[Math.floor(Math.random() * palette.colors.length)];
         }
 
@@ -130,7 +131,7 @@
           vx: 0,
           vy: 0,
           color: color,
-          size: Math.random() * 2 + 1.4,
+          size: Math.random() * (isMobile ? 1.4 : 2) + 1.2,
           burstPower: 0.85 + Math.random() * 0.75,
           mass: 0.8 + Math.random() * 0.4
         });
@@ -205,9 +206,12 @@
       mouse.y = -9999;
     }
 
-    // Direct card hover trigger
+    // Direct card hover and touch trigger
     logoNodes.forEach((node) => {
       node.card.addEventListener('pointerenter', () => {
+        triggerDisperse(node);
+      });
+      node.card.addEventListener('pointerdown', () => {
         triggerDisperse(node);
       });
     });
