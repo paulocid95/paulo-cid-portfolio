@@ -160,8 +160,8 @@
 
       canvas.width = Math.round(width * dpr);
       canvas.height = Math.round(height * dpr);
-      canvas.style.width = width + 'px';
-      canvas.style.height = height + 'px';
+      canvas.style.width = '100%';
+      canvas.style.height = '100%';
 
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 

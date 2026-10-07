@@ -248,12 +248,16 @@
             });
         }
 
-        // 2. Transição suave de fade-out da Splash Screen
+        // 2. Transição suave de fade-out da Splash Screen e liberação do scroll
         splashScreen.classList.add('splash-screen--fade-out');
+        document.documentElement.classList.remove('splash-active');
+        document.body.classList.remove('splash-active');
 
         // 3. Remover/Ocultar do DOM e liberar recursos do WebGL WarpText e SplashParticles
         setTimeout(function () {
           splashScreen.style.display = 'none';
+          document.documentElement.classList.remove('splash-active');
+          document.body.classList.remove('splash-active');
           if (window.splashWarpInstance && typeof window.splashWarpInstance.destroy === 'function') {
             window.splashWarpInstance.destroy();
           }
