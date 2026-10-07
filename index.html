@@ -370,25 +370,16 @@
 
       <!-- Botões de Ação & Mobile Menu Trigger -->
       <div class="flex items-center gap-space-sm">
-        <!-- WhatsApp Top Button -->
-        <a aria-label="WhatsApp de Paulo Cid"
-          class="inline-flex items-center justify-center font-label-md text-label-md px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-[#25D366]/20 hover:text-[#25D366] hover:border-[#25D366]/40 border border-transparent transition-all"
-          href="https://wa.me/5511974309264" target="_blank" rel="noopener noreferrer" title="Conversar no WhatsApp">
-          <svg class="w-4 h-4 sm:mr-1.5 fill-current text-[#25D366]" viewBox="0 0 24 24">
-            <path
-              d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.584 1.961.949 2.796.949 3.182 0 5.768-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm3.36 8.163c-.144.405-.837.774-1.17.823-.312.045-.694.062-2.12-.528-1.571-.65-2.585-2.257-2.664-2.361-.079-.105-.638-.85-.638-1.621 0-.771.405-1.15.549-1.307.144-.157.315-.196.42-.196.105 0 .21.001.301.006.097.005.227-.037.355.27.131.315.459 1.12.499 1.202.04.082.066.178.013.283-.053.105-.079.171-.157.263-.079.092-.165.205-.236.275-.079.079-.161.164-.069.322.092.158.409.675.877 1.092.602.536 1.109.702 1.267.781.158.079.25.069.342-.037.092-.105.394-.459.499-.617.105-.158.21-.131.354-.079.144.053.918.433 1.076.512.158.079.263.118.302.184.04.066.04.38-.104.785zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.666 0-3.21-.497-4.506-1.352l-.323-.213-2.966.778.792-2.893-.234-.372A8.175 8.175 0 013.8 12c0-4.521 3.679-8.2 8.2-8.2 4.521 0 8.2 3.679 8.2 8.2 0 4.521-3.679 8.2-8.2 8.2z" />
-          </svg>
-          <span class="hidden sm:inline">WhatsApp</span>
-        </a>
-        <a class="inline-flex items-center justify-center font-label-md text-label-md px-space-md py-space-sm rounded-lg bg-surface-container-high text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-all"
-          href="#contato">
-          <span class="material-symbols-outlined text-[16px] mr-space-xs">description</span>Currículo
-        </a>
-        <a href="#contato"
-          class="w-8 h-8 rounded-full overflow-hidden border border-primary/50 flex items-center justify-center hover:opacity-90 transition-opacity"
-          title="Perfil de Paulo Cid">
-          <img src="./assets/paulo_cid.jpg" alt="Paulo Cid" class="w-full h-full object-cover" />
-        </a>
+        <!-- Mobile Audio Mini Controller (Exclusivo Mobile <= 768px na Navbar) -->
+        <button id="mobile-nav-audio-btn" class="mobile-nav-audio-btn" type="button" aria-label="Controle de Áudio Ambiente" title="Áudio Ambiente">
+          <span id="mobile-audio-icon" class="material-symbols-outlined mobile-audio-icon">play_arrow</span>
+          <span class="mobile-audio-label">BGM</span>
+          <div class="mobile-sound-wave" aria-hidden="true">
+            <span class="mobile-sound-bar"></span>
+            <span class="mobile-sound-bar"></span>
+            <span class="mobile-sound-bar"></span>
+          </div>
+        </button>
 
         <!-- Mobile Menu Button -->
         <button id="mobile-menu-btn"

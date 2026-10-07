@@ -358,14 +358,15 @@
   100% { transform: scale(0.9); opacity: 0.8; }
 }
 
-/* Responsiveness on small screens */
-@media (max-width: 640px) {
-  .audio-player-widget {
-    bottom: 16px;
-    right: 16px;
-  }
-  .audio-player-card {
-    width: calc(100vw - 32px);
-    max-width: 290px;
+/* =========================================================================
+   RESPONSIVIDADE: EM MOBILE (<= 768px) OCULTA O WIDGET FLUTUANTE INFERIOR
+   ========================================================================= */
+@media (max-width: 768px) {
+  .audio-player-widget,
+  #audio-player-widget {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
   }
 }

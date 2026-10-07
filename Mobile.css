@@ -17,10 +17,101 @@
   display: contents;
 }
 
+/* Desktop Reset: Botão de áudio da navbar oculto em telas > 768px */
+.mobile-nav-audio-btn {
+  display: none !important;
+}
+
 /* =========================================================================
    REGRAS EXCLUSIVAS MOBILE (@media (max-width: 768px))
    ========================================================================= */
 @media (max-width: 768px) {
+  /* Controle Compacto de Áudio na Navbar (Exclusivo Mobile <= 768px) */
+  .mobile-nav-audio-btn {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(24, 27, 37, 0.85);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: #38bdf8;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.15);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mobile-nav-audio-btn:hover,
+  .mobile-nav-audio-btn:active {
+    background: rgba(56, 189, 248, 0.18);
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 0 16px rgba(56, 189, 248, 0.4);
+  }
+
+  .mobile-audio-icon {
+    font-size: 16px !important;
+    color: #38bdf8;
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-audio-label {
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    color: #8ed5ff;
+    line-height: 1;
+  }
+
+  .mobile-sound-wave {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 12px;
+    padding-bottom: 1px;
+  }
+
+  .mobile-sound-bar {
+    width: 2px;
+    background: #38bdf8;
+    border-radius: 1px;
+    height: 3px;
+    transition: height 0.2s ease, opacity 0.2s ease;
+    opacity: 0.5;
+  }
+
+  .mobile-nav-audio-btn.is-playing .mobile-audio-icon {
+    color: #ffffff;
+  }
+
+  .mobile-nav-audio-btn.is-playing .mobile-sound-bar {
+    opacity: 1;
+  }
+
+  .mobile-nav-audio-btn.is-playing .mobile-sound-bar:nth-child(1) {
+    animation: mobileWave 0.75s ease-in-out infinite alternate;
+  }
+
+  .mobile-nav-audio-btn.is-playing .mobile-sound-bar:nth-child(2) {
+    animation: mobileWave 0.75s ease-in-out infinite alternate 0.2s;
+  }
+
+  .mobile-nav-audio-btn.is-playing .mobile-sound-bar:nth-child(3) {
+    animation: mobileWave 0.75s ease-in-out infinite alternate 0.4s;
+  }
+
+  @keyframes mobileWave {
+    0% { height: 3px; }
+    50% { height: 11px; }
+    100% { height: 5px; }
+  }
+
   /* 1. SEÇÃO HERO: Layout em Linha (Foto + Apresentação lado a lado) */
   .hero-section {
     padding-top: 1.25rem !important;

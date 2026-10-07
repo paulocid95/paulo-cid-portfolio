@@ -37,6 +37,8 @@
     const trackTitle = document.getElementById('audio-track-title');
     const toggleMinimizeBtn = document.getElementById('audio-minimize-btn');
     const minimizedBubble = document.getElementById('audio-minimized-bubble');
+    const mobileAudioBtn = document.getElementById('mobile-nav-audio-btn');
+    const mobileAudioIcon = document.getElementById('mobile-audio-icon');
 
     if (!audioElement || !widget) return;
 
@@ -55,12 +57,28 @@
         if (playIcon) playIcon.textContent = 'pause';
         if (playBtn) playBtn.title = 'Pausar música';
         if (statusText) statusText.textContent = 'Em reprodução';
+
+        if (mobileAudioBtn) {
+          mobileAudioBtn.classList.add('is-playing');
+          mobileAudioBtn.title = 'Pausar música ambiente';
+        }
+        if (mobileAudioIcon) {
+          mobileAudioIcon.textContent = 'pause';
+        }
       } else {
         // Está pausado: exibe ícone de Play e desativa animações
         widget.classList.remove('is-playing');
         if (playIcon) playIcon.textContent = 'play_arrow';
         if (playBtn) playBtn.title = 'Tocar música';
         if (statusText) statusText.textContent = 'Pausado';
+
+        if (mobileAudioBtn) {
+          mobileAudioBtn.classList.remove('is-playing');
+          mobileAudioBtn.title = 'Tocar música ambiente';
+        }
+        if (mobileAudioIcon) {
+          mobileAudioIcon.textContent = 'play_arrow';
+        }
       }
     }
 
@@ -125,7 +143,7 @@
       }
     });
 
-    // Botão de Play / Pause
+    // Botão de Play / Pause (Desktop)
     if (playBtn) {
       playBtn.addEventListener('click', function (e) {
         e.stopPropagation();
@@ -141,6 +159,24 @@
           }
         } else {
           // Se estava tocando, pausa
+          audioElement.pause();
+        }
+      });
+    }
+
+    // Botão de Play / Pause Compacto (Mobile Navbar)
+    if (mobileAudioBtn) {
+      mobileAudioBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+
+        if (audioElement.paused) {
+          const playPromise = audioElement.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(function () {
+              syncPlaybackUI();
+            });
+          }
+        } else {
           audioElement.pause();
         }
       });
