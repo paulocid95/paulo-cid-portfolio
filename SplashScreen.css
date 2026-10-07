@@ -8,13 +8,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #090c14;
-  background-image: 
-    radial-gradient(circle at 50% 40%, rgba(56, 189, 248, 0.08) 0%, transparent 60%),
-    radial-gradient(circle at 80% 80%, rgba(167, 139, 250, 0.05) 0%, transparent 50%),
-    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+  background: #070a10;
   overflow: hidden;
   user-select: none;
   transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), 
@@ -39,30 +33,260 @@
   inset: 0;
   background: repeating-linear-gradient(
     0deg,
-    rgba(0, 0, 0, 0.12) 0px,
-    rgba(0, 0, 0, 0.12) 1px,
+    rgba(0, 0, 0, 0.15) 0px,
+    rgba(0, 0, 0, 0.15) 1px,
     transparent 1px,
     transparent 3px
   );
   pointer-events: none;
-  opacity: 0.6;
+  opacity: 0.55;
+  z-index: 10;
+}
+
+/* =========================================================================
+   CYBERPUNK SCI-FI ATMOSPHERE: 3D GRID, THICK LASER BEAMS & HUD CORNERS
+   ========================================================================= */
+
+/* High-Contrast Sci-Fi Cyber Grid */
+.splash-grid-3d {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image: 
+    linear-gradient(rgba(0, 240, 255, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.09) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.45) 65%, transparent 95%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.45) 65%, transparent 95%);
+}
+
+
+
+/* Interactive HUD & Particle Mesh Canvas */
+.splash-hud-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
 }
 
 /* Ambient glow orb behind text */
 .splash-ambient-glow {
   position: absolute;
-  width: 450px;
-  height: 250px;
-  background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.15) 0%, rgba(167, 139, 250, 0.08) 45%, transparent 70%);
-  filter: blur(40px);
+  width: 500px;
+  height: 300px;
+  background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.18) 0%, rgba(167, 139, 250, 0.08) 45%, transparent 70%);
+  filter: blur(48px);
   pointer-events: none;
   z-index: 1;
 }
 
-/* Central Content Container */
+/* =========================================================================
+   4 VOLUMINOUS NEON HOLOGRAPHIC LOGOS (2x LARGER, INWARD, NO BOXES)
+   ========================================================================= */
+
+.splash-floating-logos {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  perspective: 1000px;
+}
+
+.splash-logo-card {
+  position: absolute;
+  pointer-events: auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform-style: preserve-3d;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.splash-logo-card.is-dispersed {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.splash-svg-icon {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  display: block;
+}
+
+/* =========================================================================
+   1. PYTHON (Top-Left): Alinhamento Frontal Nítido & Levitação Suave
+   ========================================================================= */
+
+.splash-logo-card--python {
+  top: clamp(40px, 12vh, 120px);
+  left: clamp(45px, 11vw, 210px);
+  width: 220px;
+  height: 220px;
+}
+
+.splash-logo-card--python .splash-logo-visual {
+  position: relative;
+  z-index: 1;
+  width: 175px;
+  height: 175px;
+  filter:
+    drop-shadow(0 4px 14px rgba(0, 0, 0, 0.45))
+    drop-shadow(0 0 10px rgba(56, 189, 248, 0.5))
+    drop-shadow(0 0 20px rgba(0, 255, 135, 0.3));
+  transition: filter 0.35s ease, transform 0.35s ease;
+  animation: floatPython 3.4s ease-in-out infinite alternate;
+}
+
+.splash-logo-card--python:hover .splash-logo-visual {
+  transform: scale(1.05);
+  filter:
+    drop-shadow(0 6px 18px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 0 14px rgba(56, 189, 248, 0.7))
+    drop-shadow(0 0 28px rgba(0, 255, 135, 0.45));
+}
+
+@keyframes floatPython {
+  0% { transform: translateY(-6px); }
+  100% { transform: translateY(6px); }
+}
+
+/* =========================================================================
+   2. POSTGRESQL (Top-Right): Alinhamento Frontal Nítido & Levitação Slonik
+   ========================================================================= */
+
+.splash-logo-card--postgresql {
+  top: clamp(40px, 12vh, 120px);
+  right: clamp(45px, 11vw, 210px);
+  width: 220px;
+  height: 220px;
+}
+
+.splash-logo-card--postgresql .splash-logo-visual {
+  position: relative;
+  width: 175px;
+  height: 175px;
+  filter:
+    drop-shadow(0 4px 14px rgba(0, 0, 0, 0.45))
+    drop-shadow(0 0 10px rgba(0, 240, 255, 0.5))
+    drop-shadow(0 0 20px rgba(56, 189, 248, 0.3));
+  transition: filter 0.35s ease, transform 0.35s ease;
+  animation: floatPostgres 3.8s ease-in-out infinite alternate 0.5s;
+}
+
+.splash-logo-card--postgresql:hover .splash-logo-visual {
+  transform: scale(1.05);
+  filter:
+    drop-shadow(0 6px 18px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 0 14px rgba(0, 240, 255, 0.7))
+    drop-shadow(0 0 28px rgba(56, 189, 248, 0.45));
+}
+
+@keyframes floatPostgres {
+  0% { transform: translateY(6px); }
+  100% { transform: translateY(-6px); }
+}
+
+/* =========================================================================
+   3. GITHUB (Bottom-Left): Alinhamento Frontal Nítido & Levitação Octocat
+   ========================================================================= */
+
+.splash-logo-card--github {
+  bottom: clamp(40px, 12vh, 120px);
+  left: clamp(45px, 11vw, 210px);
+  width: 220px;
+  height: 220px;
+}
+
+.splash-logo-card--github .splash-logo-visual {
+  position: relative;
+  z-index: 1;
+  width: 165px;
+  height: 165px;
+  filter:
+    drop-shadow(0 4px 14px rgba(0, 0, 0, 0.45))
+    drop-shadow(0 0 10px rgba(240, 249, 255, 0.55))
+    drop-shadow(0 0 20px rgba(56, 189, 248, 0.35));
+  transition: filter 0.35s ease, transform 0.35s ease;
+  animation: floatGithub 3.5s ease-in-out infinite alternate 0.2s;
+}
+
+.splash-logo-card--github:hover .splash-logo-visual {
+  transform: scale(1.05);
+  filter:
+    drop-shadow(0 6px 18px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 0 14px rgba(255, 255, 255, 0.75))
+    drop-shadow(0 0 28px rgba(56, 189, 248, 0.5));
+}
+
+@keyframes floatGithub {
+  0% { transform: translateY(-5px); }
+  100% { transform: translateY(5px); }
+}
+
+/* =========================================================================
+   4. MYSQL (Bottom-Right): Alinhamento Frontal Nítido & Levitação Bicolor
+   ========================================================================= */
+
+.splash-logo-card--mysql {
+  bottom: clamp(40px, 12vh, 120px);
+  right: clamp(45px, 11vw, 210px);
+  width: 220px;
+  height: 220px;
+}
+
+.splash-logo-card--mysql .splash-logo-visual {
+  position: relative;
+  z-index: 1;
+  width: 205px;
+  height: 110px;
+  filter:
+    drop-shadow(0 4px 14px rgba(0, 0, 0, 0.45))
+    drop-shadow(-4px 0 10px rgba(0, 117, 143, 0.55))
+    drop-shadow(4px 0 10px rgba(242, 145, 17, 0.5));
+  transition: filter 0.35s ease, transform 0.35s ease;
+  animation: floatMysql 4.0s ease-in-out infinite alternate 0.7s;
+}
+
+.splash-logo-card--mysql:hover .splash-logo-visual {
+  transform: scale(1.05);
+  filter:
+    drop-shadow(0 6px 18px rgba(0, 0, 0, 0.55))
+    drop-shadow(-6px 0 14px rgba(56, 189, 248, 0.7))
+    drop-shadow(6px 0 14px rgba(242, 145, 17, 0.7));
+}
+
+.mysql-dolphin-official,
+.mysql-text-my {
+  filter: drop-shadow(0 0 4px rgba(56, 189, 248, 0.45));
+}
+
+.mysql-text-sql {
+  filter: drop-shadow(0 0 4px rgba(242, 145, 17, 0.5));
+}
+
+@keyframes floatMysql {
+  0% { transform: translateY(5px); }
+  100% { transform: translateY(-5px); }
+}
+
+/* =========================================================================
+   CENTRAL CONTENT CONTAINER
+   ========================================================================= */
+
 .splash-content {
   position: relative;
-  z-index: 2;
+  z-index: 5;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -227,4 +451,14 @@
 
 .splash-audio-hint .material-symbols-outlined {
   color: #38bdf8;
+}
+
+/* =========================================================================
+   RESPONSIVE MOBILE RULES (< 768px)
+   ========================================================================= */
+
+@media (max-width: 767px) {
+  .splash-floating-logos {
+    display: none !important;
+  }
 }

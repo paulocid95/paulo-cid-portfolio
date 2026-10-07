@@ -251,11 +251,14 @@
         // 2. Transição suave de fade-out da Splash Screen
         splashScreen.classList.add('splash-screen--fade-out');
 
-        // 3. Remover/Ocultar do DOM e liberar recursos do WebGL WarpText
+        // 3. Remover/Ocultar do DOM e liberar recursos do WebGL WarpText e SplashParticles
         setTimeout(function () {
           splashScreen.style.display = 'none';
           if (window.splashWarpInstance && typeof window.splashWarpInstance.destroy === 'function') {
             window.splashWarpInstance.destroy();
+          }
+          if (window.splashParticlesInstance && typeof window.splashParticlesInstance.destroy === 'function') {
+            window.splashParticlesInstance.destroy();
           }
         }, 800);
       });
