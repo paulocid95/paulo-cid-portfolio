@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paulo Victor Cid - Currículo Profissional</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-canvas: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-card-subtle: #f1f5f9;
+            --bg-badge: #e0e7ff;
+            --text-badge: #3730a3;
+            --border-color: #e2e8f0;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --text-light: #64748b;
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-gradient: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #0284c7 100%);
+            --accent: #0284c7;
+            --accent-glow: rgba(37, 99, 235, 0.12);
+            --tag-bg: #f1f5f9;
+            --tag-border: #cbd5e1;
+            --tag-text: #1e293b;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            --shadow-lg: 0 10px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+        }
+
+        [data-theme="dark"] {
+            --bg-canvas: #090d16;
+            --bg-card: #111827;
+            --bg-card-subtle: #1f2937;
+            --bg-badge: rgba(59, 130, 246, 0.18);
+            --text-badge: #93c5fd;
+            --border-color: #2e384d;
+            --text-main: #f8fafc;
+            --text-muted: #cbd5e1;
+            --text-light: #94a3b8;
+            --primary: #3b82f6;
+            --primary-dark: #60a5fa;
+            --primary-gradient: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #38bdf8 100%);
+            --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --tag-bg: #1e293b;
+            --tag-border: #334155;
+            --tag-text: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+            --shadow-md: 0 4px 12px rgb(0 0 0 / 0.4);
+            --shadow-lg: 0 12px 28px rgb(0 0 0 / 0.55);
+        }
+
+        @page {
+            size: A4;
+            margin: 10mm 12mm 10mm 12mm;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-canvas);
+            color: var(--text-main);
+            line-height: 1.45;
+            font-size: 9.6pt;
+            min-height: 100vh;
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+
+        /* Top Action Bar (Screen Only) */
+        .action-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(15, 23, 42, 0.82);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .action-bar-brand {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 13pt;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #f8fafc;
+        }
+
+        .action-bar-brand span {
+            background: linear-gradient(135deg, #60a5fa, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .action-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
+            border-radius: 8px;
+            font-size: 9pt;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.5);
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #f1f5f9;
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+
+        /* CV Sheet / Wrapper */
+        .cv-wrapper {
+            max-width: 960px;
+            margin: 28px auto;
+            background: var(--bg-card);
+            border-radius: 18px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Top Accent Decorative Line */
+        .cv-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--primary-gradient);
+        }
+
+        /* Header Section */
+        .cv-header {
+            padding: 28px 32px 20px 32px;
+            background: linear-gradient(180deg, var(--bg-card-subtle) 0%, var(--bg-card) 100%);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .candidate-info h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 23pt;
+            font-weight: 800;
+            letter-spacing: -0.6px;
+            color: var(--text-main);
+            line-height: 1.15;
+            margin-bottom: 4px;
+        }
+
+        .candidate-title {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: -0.2px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 3px 9px;
+            background: var(--bg-badge);
+            color: var(--text-badge);
+            font-size: 7.8pt;
+            font-weight: 700;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-status::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 6px #10b981;
+        }
+
+        /* Contact Pill Grid */
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 12px;
+            margin-top: 16px;
+            padding-top: 14px;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 8.8pt;
+            color: var(--text-muted);
+            text-decoration: none;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 4px 10px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .contact-item svg {
+            width: 13px;
+            height: 13px;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .contact-item:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+            background: var(--bg-card-subtle);
+            transform: translateY(-1px);
+        }
+
+        /* Layout Grid */
+        .cv-grid {
+            display: grid;
+            grid-template-columns: 310px 1fr;
+            min-height: 800px;
+        }
+
+        /* Sidebar Column */
+        .cv-sidebar {
+            background-color: var(--bg-card-subtle);
+            border-right: 1px solid var(--border-color);
+            padding: 24px 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        /* Main Content Column */
+        .cv-main {
+            padding: 24px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Section Headings */
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 10.8pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--border-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 32px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .section-title svg {
+            width: 15px;
+            height: 15px;
+            color: var(--primary);
+        }
+
+        /* Highlight Card (Objetivo) */
+        .goal-box {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 12px 14px;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .goal-box p {
+            font-size: 8.9pt;
+            line-height: 1.45;
+            color: var(--text-muted);
+        }
+
+        .goal-box strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* Tech Skills Category Group */
+        .skills-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .skill-category-card {
+            background: var(--bg-card);
+            border-radius: 10px;
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .skill-cat-header {
+            font-size: 8.6pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .skill-cat-header svg {
+            width: 12px;
+            height: 12px;
+        }
+
+        .pill-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .tech-pill {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 7.6pt;
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            border: 1px solid var(--tag-border);
+            padding: 2.5px 7px;
+            border-radius: 5px;
+            font-weight: 500;
+            letter-spacing: -0.2px;
+            transition: all 0.15s ease;
+        }
+
+        .tech-pill.highlight {
+            background: var(--bg-badge);
+            color: var(--text-badge);
+            border-color: rgba(37, 99, 235, 0.25);
+            font-weight: 600;
+        }
+
+        .tech-pill:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Academic & Courses Block */
+        .edu-item {
+            background: var(--bg-card);
+            border-radius: 10px;
+            padding: 11px 13px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 8px;
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-degree {
+            font-size: 9.2pt;
+            font-weight: 700;
+            color: var(--text-main);
+            line-height: 1.3;
+        }
+
+        .edu-school {
+            font-size: 8.4pt;
+            color: var(--primary);
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .edu-date {
+            font-size: 7.9pt;
+            color: var(--text-light);
+            font-family: 'JetBrains Mono', monospace;
+            margin-top: 3px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Language & Misc Badges */
+        .badge-list {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .badge-row {
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: 8px 10px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            font-size: 8.3pt;
+        }
+
+        .badge-row-title {
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .badge-row-desc {
+            color: var(--text-muted);
+            line-height: 1.35;
+        }
+
+        /* Main Section: Resumo */
+        .summary-box {
+            font-size: 9.3pt;
+            line-height: 1.55;
+            color: var(--text-muted);
+            text-align: justify;
+            background: var(--bg-card-subtle);
+            border-left: 3px solid var(--primary);
+            padding: 12px 16px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .summary-box strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* Featured Project Card */
+        .project-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            padding: 16px 18px;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .project-card+.project-card {
+            margin-top: 14px;
+        }
+
+        .project-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .project-title-wrap {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .project-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 11pt;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .badge-featured {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(2, 132, 199, 0.15));
+            color: var(--primary);
+            font-size: 7.3pt;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 4px;
+            border: 1px solid rgba(37, 99, 235, 0.25);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-link {
+            font-size: 8.4pt;
+            color: var(--primary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: 600;
+            padding: 3px 8px;
+            background: var(--bg-card-subtle);
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            transition: all 0.15s ease;
+        }
+
+        .project-link:hover {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+        }
+
+        .project-year {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 8.2pt;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .project-tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin: 8px 0 10px 0;
+        }
+
+        .bullet-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 6px;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 17px;
+            font-size: 9pt;
+            color: var(--text-muted);
+            line-height: 1.45;
+            text-align: justify;
+        }
+
+        .bullet-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 10pt;
+            top: -1px;
+        }
+
+        .bullet-list code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 8.2pt;
+            background: var(--tag-bg);
+            border: 1px solid var(--tag-border);
+            padding: 1px 4px;
+            border-radius: 4px;
+            color: var(--text-main);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            position: relative;
+            padding-left: 4px;
+        }
+
+        .timeline-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            padding: 15px 18px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 2px;
+        }
+
+        .company-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 10.5pt;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .timeline-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 8.2pt;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .job-title {
+            font-size: 9.3pt;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Footer inside print */
+        .cv-footer {
+            padding: 10px 32px 14px 32px;
+            background: var(--bg-card-subtle);
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 7.8pt;
+            color: var(--text-light);
+        }
+
+        .cv-footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* PRINT OPTIMIZATIONS (A4 Perfect Fit) */
+        @media print {
+            .action-bar {
+                display: none !important;
+            }
+
+            body {
+                background: #ffffff !important;
+                color: #0f172a !important;
+                font-size: 8.9pt !important;
+                line-height: 1.34 !important;
+            }
+
+            .cv-wrapper {
+                max-width: 100% !important;
+                margin: 0 !important;
+                border-radius: 0 !important;
+                border: none !important;
+                box-shadow: none !important;
+            }
+
+            .cv-wrapper::before {
+                height: 4px !important;
+            }
+
+            .cv-header {
+                padding: 10px 14px 10px 14px !important;
+                background: #ffffff !important;
+            }
+
+            .candidate-info h1 {
+                font-size: 20pt !important;
+                margin-bottom: 2px !important;
+            }
+
+            .candidate-title {
+                font-size: 9.8pt !important;
+            }
+
+            .contact-grid {
+                margin-top: 8px !important;
+                padding-top: 8px !important;
+                gap: 6px 10px !important;
+            }
+
+            .contact-item {
+                font-size: 8pt !important;
+                padding: 2px 7px !important;
+                border-color: #cbd5e1 !important;
+                background: #ffffff !important;
+                color: #334155 !important;
+            }
+
+            .cv-grid {
+                grid-template-columns: 245px 1fr !important;
+                min-height: auto !important;
+            }
+
+            .cv-sidebar {
+                padding: 12px 12px !important;
+                background-color: #f8fafc !important;
+                border-right: 1px solid #e2e8f0 !important;
+                gap: 10px !important;
+            }
+
+            .cv-main {
+                padding: 12px 14px !important;
+                gap: 11px !important;
+            }
+
+            .section-title {
+                font-size: 9.4pt !important;
+                margin-bottom: 6px !important;
+                padding-bottom: 3px !important;
+            }
+
+            .goal-box {
+                padding: 8px 10px !important;
+            }
+
+            .goal-box p {
+                font-size: 8.1pt !important;
+                line-height: 1.35 !important;
+            }
+
+            .skill-category-card {
+                padding: 6px 8px !important;
+            }
+
+            .skill-cat-header {
+                font-size: 7.9pt !important;
+                margin-bottom: 4px !important;
+            }
+
+            .tech-pill {
+                font-size: 7pt !important;
+                padding: 1px 5px !important;
+            }
+
+            .edu-item {
+                padding: 7px 9px !important;
+                margin-bottom: 5px !important;
+            }
+
+            .edu-degree {
+                font-size: 8.4pt !important;
+            }
+
+            .edu-school {
+                font-size: 7.8pt !important;
+            }
+
+            .edu-date {
+                font-size: 7.3pt !important;
+            }
+
+            .badge-row {
+                padding: 5px 7px !important;
+                font-size: 7.6pt !important;
+            }
+
+            .summary-box {
+                font-size: 8.3pt !important;
+                line-height: 1.4 !important;
+                padding: 8px 12px !important;
+            }
+
+            .project-card {
+                padding: 10px 12px !important;
+            }
+
+            .project-card+.project-card {
+                margin-top: 8px !important;
+            }
+
+            .project-title {
+                font-size: 9.8pt !important;
+            }
+
+            .project-link {
+                font-size: 7.6pt !important;
+                padding: 1px 5px !important;
+            }
+
+            .bullet-list {
+                gap: 3.5px !important;
+                margin-top: 4px !important;
+            }
+
+            .bullet-list li {
+                font-size: 8.1pt !important;
+                line-height: 1.35 !important;
+                padding-left: 14px !important;
+            }
+
+            .timeline-card {
+                padding: 9px 12px !important;
+            }
+
+            .company-name {
+                font-size: 9.3pt !important;
+            }
+
+            .job-title {
+                font-size: 8.3pt !important;
+                margin-bottom: 5px !important;
+            }
+
+            .cv-footer {
+                padding: 6px 14px !important;
+                font-size: 7pt !important;
+            }
+        }
+
+        /* Responsive Mobile Layout */
+        @media (max-width: 820px) {
+            .cv-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cv-sidebar {
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .cv-wrapper {
+                margin: 12px;
+                border-radius: 12px;
+            }
+
+            .cv-header {
+                padding: 20px 18px;
+            }
+
+            .cv-main {
+                padding: 20px 18px;
+            }
+
+            .action-bar {
+                flex-direction: column;
+                gap: 10px;
+                align-items: stretch;
+            }
+
+            .action-buttons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sticky Toolbar (Screen only, excluded in print/PDF) -->
+    <header class="action-bar">
+        <div class="action-bar-brand">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            <span>Currículo Interativo</span>
+        </div>
+        <div class="action-buttons">
+            <a class="btn btn-secondary" href="../index.html" title="Voltar ao Portfólio">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Voltar ao Portfólio
+            </a>
+            <button class="btn btn-secondary" id="themeToggleBtn" onclick="toggleTheme()"
+                title="Alternar tema claro/escuro">
+                <span id="themeIcon">🌙</span> <span id="themeText">Modo Escuro</span>
+            </button>
+            <a class="btn btn-secondary" href="curriculo.pdf" download="Paulo_Victor_Cid_Curriculo.pdf"
+                title="Baixar arquivo PDF direto">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Baixar PDF
+            </a>
+            <button class="btn btn-primary" onclick="window.print()" title="Salvar como PDF ou Imprimir direto">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                    <rect x="6" y="14" width="12" height="8"></rect>
+                </svg>
+                Imprimir / Salvar PDF
+            </button>
+        </div>
+    </header>
+
+    <div class="cv-wrapper">
+
+        <!-- HEADER: Identity & Quick Contacts -->
+        <header class="cv-header">
+            <div class="header-top">
+                <div class="candidate-info">
+                    <h1>Paulo Victor Cid</h1>
+                    <div class="candidate-title">
+                        Ciência da Computação &bull; Engenharia & Análise de Dados &bull; Software
+                    </div>
+                </div>
+                <div class="badge-status">
+                    Disponível para Estágio / Oportunidade Inicial
+                </div>
+            </div>
+
+            <!-- Contact Grid with modern icons -->
+            <div class="contact-grid">
+                <!-- Location -->
+                <div class="contact-item" title="Localização">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>São Paulo, SP</span>
+                </div>
+
+                <!-- Phone / WhatsApp -->
+                <a href="https://wa.me/5511974309264" target="_blank" class="contact-item" title="Telefone / WhatsApp">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                    <span>(11) 97430-9264</span>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:paulocid95@gmail.com" class="contact-item" title="Enviar Email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <span>paulocid95@gmail.com</span>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/paulo-victor-cid-55564123b" target="_blank" rel="noopener noreferrer"
+                    class="contact-item" title="Perfil no LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                    <span>linkedin.com/in/paulo-victor-cid-55564123b</span>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/paulocid95?tab=repositories" target="_blank" rel="noopener noreferrer"
+                    class="contact-item" title="Repositórios GitHub">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                        </path>
+                    </svg>
+                    <span>github.com/paulocid95</span>
+                </a>
+
+                <!-- Portfólio -->
+                <a href="https://paulocid.vercel.app/" target="_blank" rel="noopener noreferrer" class="contact-item"
+                    title="Portfólio Online">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                        </path>
+                    </svg>
+                    <span>paulocid.vercel.app</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- 2-COLUMN STRUCTURE -->
+        <div class="cv-grid">
+
+            <!-- LEFT SIDEBAR -->
+            <aside class="cv-sidebar">
+
+                <!-- Objetivo -->
+                <div>
+                    <h2 class="section-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                        Objetivo
+                    </h2>
+                    <div class="goal-box">
+                        <p>
+                            Estágio ou oportunidade inicial em <strong>Tecnologia da Informação</strong> com foco em
+                            <strong>Engenharia de Dados</strong>, <strong>Análise de Dados</strong> ou
+                            <strong>Desenvolvimento de Software</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Competências Técnicas (Categorizadas em Tags Modernas) -->
+                <div>
+                    <h2 class="section-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                        Competências
+                    </h2>
+                    <div class="skills-group">
+
+                        <!-- Linguagens, Bibliotecas & IA -->
+                        <div class="skill-category-card">
+                            <div class="skill-cat-header">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="4 17 10 11 4 5"></polyline>
+                                    <line x1="12" y1="19" x2="20" y2="19"></line>
+                                </svg>
+                                Linguagens, Bibliotecas & IA
+                            </div>
+                            <div class="pill-container">
+                                <span class="tech-pill highlight">Python 3</span>
+                                <span class="tech-pill highlight">SQL</span>
+                                <span class="tech-pill highlight">Google Gemini API</span>
+                                <span class="tech-pill highlight">LLM / IA Generativa</span>
+                                <span class="tech-pill">Pandas</span>
+                            </div>
+                        </div>
+
+                        <!-- Engenharia & Banco de Dados -->
+                        <div class="skill-category-card">
+                            <div class="skill-cat-header">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                                </svg>
+                                Bancos & Engenharia
+                            </div>
+                            <div class="pill-container">
+                                <span class="tech-pill highlight">PostgreSQL (Neon Cloud)</span>
+                                <span class="tech-pill highlight">SQLAlchemy</span>
+                                <span class="tech-pill">Modelagem Star Schema</span>
+                                <span class="tech-pill">Normalização (3FN)</span>
+                                <span class="tech-pill">Data Profiling & Limpeza</span>
+                                <span class="tech-pill">Cargas Idempotentes (Upsert)</span>
+                                <span class="tech-pill">MySQL</span>
+                                <span class="tech-pill">Oracle</span>
+                            </div>
+                        </div>
+
+                        <!-- Visualização & Analytics -->
+                        <div class="skill-category-card">
+                            <div class="skill-cat-header">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                                </svg>
+                                Visualização & Analytics
+                            </div>
+                            <div class="pill-container">
+                                <span class="tech-pill highlight">Streamlit</span>
+                                <span class="tech-pill">Plotly</span>
+                                <span class="tech-pill">Matplotlib</span>
+                                <span class="tech-pill">Seaborn</span>
+                                <span class="tech-pill">Métricas de Estoque/Operação</span>
+                            </div>
+                        </div>
+
+                        <!-- Ferramentas & Metodologias -->
+                        <div class="skill-category-card">
+                            <div class="skill-cat-header">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                    <path
+                                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                    </path>
+                                </svg>
+                                Práticas & Ferramentas
+                            </div>
+                            <div class="pill-container">
+                                <span class="tech-pill highlight">Git / GitHub</span>
+                                <span class="tech-pill highlight">CI/CD</span>
+                                <span class="tech-pill">Deploy (Vercel)</span>
+                                <span class="tech-pill">PEP 8 & Clean Code</span>
+                                <span class="tech-pill">Ambientes Virtuais</span>
+                                <span class="tech-pill">GitHub Copilot</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Formação Acadêmica -->
+                <div>
+                    <h2 class="section-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                        </svg>
+                        Formação
+                    </h2>
+                    <div class="edu-item">
+                        <div class="edu-degree">Bacharelado em Ciência da Computação</div>
+                        <div class="edu-school">FAM - Faculdade das Américas</div>
+                        <div class="edu-date">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Previsão: 2º Semestre / 2028 &bull; Paulista
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cursos & Idiomas -->
+                <div>
+                    <h2 class="section-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                            </polygon>
+                        </svg>
+                        Cursos & Idiomas
+                    </h2>
+                    <div class="badge-list">
+                        <div class="badge-row">
+                            <div class="badge-row-title">
+                                💻 Lógica de Programação
+                            </div>
+                            <div class="badge-row-desc">Impacta Tecnologia</div>
+                        </div>
+                        <div class="badge-row">
+                            <div class="badge-row-title">
+                                🌐 Inglês Intermediário (B2)
+                            </div>
+                            <div class="badge-row-desc">Cultura Inglesa e CNA</div>
+                        </div>
+                    </div>
+                </div>
+
+            </aside>
+
+            <!-- RIGHT MAIN CONTENT -->
+            <main class="cv-main">
+
+                <!-- Resumo Profissional -->
+                <section>
+                    <h2 class="section-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        Resumo Profissional
+                    </h2>
+                    <div class="summary-box">
+                        Estudante de <strong>Ciência da Computação</strong> em transição para a área de Tecnologia,
+                        unindo sólida trajetória analítica, precisão operacional e integridade de registros a
+                        competências práticas em <strong>Engenharia de Dados</strong> e <strong>Inteligência Artificial
+                            Aplicada</strong>.
+                        Experiência no desenvolvimento de esteiras automatizadas de dados em <strong>Python e
+                            Pandas</strong>,
+                        modelagem dimensional (<strong>Star Schema</strong>) persistida em banco relacional
+                        <strong>PostgreSQL (Neon Cloud)</strong>
+                        via <strong>SQLAlchemy</strong> e disponibilização de interfaces analíticas em
+                        <strong>Streamlit</strong>.
+                        Experiência prática na integração de <strong>Assistentes de IA Generativa (Google
+                            Gemini)</strong>
+                        em tempo real via streaming para tomada de decisão ágil e triagem proativa de rupturas críticas
+                        de estoque.
+                        Prática com versionamento via <strong>Git / GitHub</strong>, esteiras de <strong>CI/CD</strong>
+                        e boas práticas de engenharia de software (Clean Code / PEP 8).
+                    </div>
+                </section>
+
+                <!-- Projetos Técnicos em Destaque -->
+                <section>
+                    <h2 class="section-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                        Projetos Técnicos em Destaque
+                    </h2>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title-wrap">
+                                <span class="project-title">Supply Intelligence: Pipeline & Assistente de IA</span>
+                                <span class="badge-featured">Full Pipeline & IA Generativa</span>
+                            </div>
+                            <span class="project-year">2026</span>
+                        </div>
+
+                        <div class="project-tech-tags">
+                            <span class="tech-pill highlight">Python 3</span>
+                            <span class="tech-pill highlight">Google Gemini API</span>
+                            <span class="tech-pill highlight">PostgreSQL (Neon Cloud)</span>
+                            <span class="tech-pill highlight">Streamlit</span>
+                            <span class="tech-pill">SQLAlchemy</span>
+                            <span class="tech-pill">Pandas</span>
+                            <span class="tech-pill">Star Schema</span>
+                            <a href="https://github.com/paulocid95?tab=repositories" target="_blank"
+                                rel="noopener noreferrer" class="project-link" title="Acessar código-fonte no GitHub">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                                Repositório GitHub
+                            </a>
+                        </div>
+
+                        <ul class="bullet-list">
+                            <li>
+                                <strong>Plataforma de Dados & IA de Ponta a Ponta:</strong> Arquitetura robusta em
+                                <strong>Python</strong> e <strong>Pandas</strong> para higienização e modelagem
+                                dimensional
+                                (<strong>Star Schema</strong>) persistida em <strong>PostgreSQL (Neon Cloud)</strong>
+                                via
+                                <strong>SQLAlchemy</strong>.
+                            </li>
+                            <li>
+                                <strong>Dashboard Executivo & IA Conversacional:</strong> Aplicação interativa em
+                                <strong>Streamlit</strong> integrada em tempo real via streaming à API do
+                                <strong>Google Gemini</strong> (<code>gemini-3.8-flash</code>) para análise automatizada
+                                de
+                                rupturas críticas, comparação de fornecedores (lead time vs. preço) e geração de planos
+                                de suprimentos
+                                estruturados em Markdown.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Segundo Projeto: Portfólio Web Interativo & UI Architecture -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title-wrap">
+                                <span class="project-title">Portfólio Web Interativo & UI Architecture</span>
+                                <span class="badge-featured">Desenvolvimento Front-End & UI/UX</span>
+                            </div>
+                            <span class="project-year">2026</span>
+                        </div>
+
+                        <div class="project-tech-tags">
+                            <span class="tech-pill highlight">JavaScript (ES6+)</span>
+                            <span class="tech-pill highlight">HTML5</span>
+                            <span class="tech-pill highlight">CSS3</span>
+                            <span class="tech-pill highlight">Tailwind CSS</span>
+                            <span class="tech-pill highlight">Canvas 2D</span>
+                            <span class="tech-pill">UI/UX Engineering</span>
+                            <span class="tech-pill">Vercel CI/CD</span>
+                            <a href="https://paulocid.vercel.app/" target="_blank" rel="noopener noreferrer"
+                                class="project-link" title="Acessar Portfólio Online">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                                    <path
+                                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                    </path>
+                                </svg>
+                                paulocid.vercel.app
+                            </a>
+                        </div>
+
+                        <ul class="bullet-list">
+                            <li>
+                                <strong>Aplicação Web Autoral:</strong> Desenvolvimento de portfólio profissional em
+                                arquitetura responsiva com Dark UI imersiva.
+                            </li>
+                            <li>
+                                <strong>Engenharia de UI & Animações Procedurais:</strong> Implementação de efeitos
+                                visuais em
+                                Canvas 2D (<code>SplashParticles</code>, <code>GhostFibers</code>), microinterações
+                                reativas de cursor e toque (<code>GlowCursor</code>, <code>TouchRipple</code>,
+                                <code>StarBorder</code>), tipografia dinâmica e player de áudio ambiente customizado com
+                                persistência de estado.
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Experiência Profissional -->
+                <section>
+                    <h2 class="section-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                        Experiência Profissional
+                    </h2>
+
+                    <div class="timeline">
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="company-name">Edtesp Clanesp / Lista Fácil / Editora Nacional de
+                                    Guias</span>
+                                <span class="timeline-date">2012 – Atual</span>
+                            </div>
+                            <div class="job-title">
+                                <span>Auxiliar Administrativo</span>
+                                <span style="color: var(--text-light); font-weight: normal; font-size: 8pt;">• Gestão
+                                    Analítica & Operações de Dados</span>
+                            </div>
+                            <ul class="bullet-list">
+                                <li>
+                                    <strong>Conferência e Higienização de Dados:</strong> Validação, saneamento e
+                                    preparação de bases de dados e conteúdos para disponibilização e publicação nos
+                                    portais digitais corporativos.
+                                </li>
+                                <li>
+                                    <strong>Conciliação e Integridade Cadastral:</strong> Processamento de liquidações e
+                                    baixas financeiras em sistema corporativo, assegurando acurácia contábil e
+                                    consistência de dados históricos.
+                                </li>
+                                <li>
+                                    <strong>Operações de Registro e Cobrança:</strong> Execução de rotinas operacionais
+                                    diretas de conferência, emissão e cancelamento de títulos com rigoroso controle
+                                    transacional.
+                                </li>
+                                <li>
+                                    <strong>Comunicação Técnica & Contratual:</strong> Redação formal de instrumentos
+                                    contratuais, notificações operacionais e interface direta com clientes corporativos.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="cv-footer">
+            <span>Paulo Victor Cid &bull; São Paulo, SP</span>
+            <span>Documento otimizado para visualização digital e impressão em A4</span>
+        </footer>
+
+    </div>
+
+    <!-- Theme Toggle Logic & Print Handling -->
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+
+            const themeIcon = document.getElementById('themeIcon');
+            const themeText = document.getElementById('themeText');
+            if (newTheme === 'dark') {
+                themeIcon.textContent = '☀️';
+                themeText.textContent = 'Modo Claro';
+            } else {
+                themeIcon.textContent = '🌙';
+                themeText.textContent = 'Modo Escuro';
+            }
+            try {
+                localStorage.setItem('cv-theme', newTheme);
+            } catch (e) { }
+        }
+
+        // Initialize preferred theme if stored
+        try {
+            const savedTheme = localStorage.getItem('cv-theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                if (savedTheme === 'dark') {
+                    document.getElementById('themeIcon').textContent = '☀️';
+                    document.getElementById('themeText').textContent = 'Modo Claro';
+                }
+            }
+        } catch (e) { }
+
+        // Auto print trigger if requested via URL (?print=true or #print)
+        try {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('print') === 'true' || window.location.hash === '#print') {
+                window.addEventListener('load', () => {
+                    setTimeout(() => window.print(), 350);
+                });
+            }
+        } catch (e) { }
+    </script>
+</body>
+
+</html>
