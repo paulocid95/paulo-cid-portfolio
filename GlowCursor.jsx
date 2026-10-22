@@ -130,7 +130,7 @@ const GlowCursor = ({
   trailLength = 32,
   trailWidth = 5,
   trailTaper = 0.85,
-  followSpeed = 0.16,
+  followSpeed = 0.65,
   glowIntensity = 0.75,
   glowSpread = 0.55,
   hotspot = 0.2,
@@ -276,7 +276,7 @@ const GlowCursor = ({
 
       if (initialized) {
         const headEase = 1 - Math.pow(1 - clamp(config.followSpeed, 0.01, 0.99), delta);
-        const chainBase = clamp(0.28 + config.followSpeed * 0.35, 0.08, 0.92);
+        const chainBase = clamp(0.38 + config.followSpeed * 0.45, 0.1, 0.95);
         const chainEase = 1 - Math.pow(1 - chainBase, delta);
         head.x += (target.x - head.x) * headEase;
         head.y += (target.y - head.y) * headEase;
