@@ -117,8 +117,9 @@ paulo-cid-portfolio/
 │   ├── 🎨 ProfileCard.css      # Camadas de gradiente e sombra do cartão de perfil
 │   ├── ⚡ SplashParticles.js   # Sistema de partículas do HUD da Splash Screen
 │   ├── 🎨 SplashScreen.css     # Estilos da grade 3D, neon e logos da tela de abertura
-│   ├── ⚛️ StarBorder.jsx       # Componente de borda estelar com gradiente giratório
-│   ├── 🎨 StarBorder.css       # Animação keyframe da rotação cônica de borda
+│   ├── ⚛️ StarBorder.jsx       # Componente React Bits de borda estelar dinâmica com estrelas em rotação
+│   ├── ⚡ StarBorder.js        # Versão Vanilla JS + Canvas com suporte a hover lap e click pulse
+│   ├── 🎨 StarBorder.css       # Estilização e isolamento de camadas da borda estelar
 │   ├── ⚡ TouchRipple.js       # Tratamento de toques móveis e microinterações
 │   ├── ⚡ WarpText.js          # Efeito de distorção fluida e refração do título
 │   ├── ⚛️ WarpText.jsx         # Componente React do texto com distorção interativa
