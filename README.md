@@ -102,6 +102,9 @@ paulo-cid-portfolio/
 ├── 📄 README.md               # Documentação técnica de alto impacto do repositório
 │
 ├── 🎨 Componentes & Módulos Visuais:
+│   ├── ⚛️ AnimatedContent.jsx  # Componente React Bits de animação fluida orientada a scroll (GSAP)
+│   ├── ⚡ AnimatedContent.js   # Versão Vanilla JS + GSAP com suporte a scroll e stagger
+│   ├── 🎨 AnimatedContent.css  # Estilização complementar do wrapper e otimização GPU
 │   ├── ⚡ AudioPlayer.js       # Lógica do reprodutor de áudio, equalizador e controle de volume
 │   ├── 🎨 AudioPlayer.css      # Estilização do widget flutuante e animações do equalizador
 │   ├── ⚡ GhostFibers.js       # Implementação em Canvas das fibras óticas etéreas

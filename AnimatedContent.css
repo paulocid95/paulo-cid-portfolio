@@ -1,0 +1,6 @@
+/* AnimatedContent.css - React Bits AnimatedContent styling */
+.animated-content-wrapper {
+  will-change: transform, opacity, filter;
+  display: block;
+  position: relative;
+}

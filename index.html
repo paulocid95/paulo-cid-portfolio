@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="AudioPlayer.css" />
   <link rel="stylesheet" href="SplashScreen.css" />
   <link rel="stylesheet" href="Mobile.css" />
+  <link rel="stylesheet" href="AnimatedContent.css" />
 
   <style>
     @layer base {
@@ -2065,6 +2066,18 @@
   <script src="WarpText.js"></script>
   <script src="AudioPlayer.js"></script>
   <script src="TouchRipple.js"></script>
+  <!-- GSAP & ScrollTrigger for React Bits AnimatedContent -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="AnimatedContent.js"></script>
+  <script>
+    // Inicialização do AnimatedContent (React Bits)
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.AnimatedContent && typeof window.AnimatedContent.autoInit === 'function') {
+        window.AnimatedContent.autoInit();
+      }
+    });
+  </script>
   <script>
     // Inicialização da Splash Screen: Efeitos WarpText & SplashParticles HUD
     (function () {

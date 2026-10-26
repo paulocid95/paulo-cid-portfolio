@@ -1,0 +1,28 @@
+{
+  "name": "portifolio",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">",
+  "main": "AudioPlayer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulocid95/paulo-cid-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/paulocid95/paulo-cid-portfolio/issues"
+  },
+  "homepage": "https://github.com/paulocid95/paulo-cid-portfolio#readme",
+  "dependencies": {
+    "gsap": "^3.15.0"
+  },
+  "devDependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  }
+}
