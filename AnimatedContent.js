@@ -216,18 +216,76 @@
 
   /**
    * Automatically initializes all elements with data-animated-content attributes.
+   * If a splash screen is currently active, waits for dismissal so animations don't play invisibly behind it.
    */
   function autoInit() {
-    const elements = document.querySelectorAll('[data-animated-content]');
-    elements.forEach(el => {
-      try {
-        const rawOptions = el.getAttribute('data-animated-content');
-        const opts = rawOptions ? JSON.parse(rawOptions) : {};
-        init(el, opts);
-      } catch (err) {
-        init(el);
+    const isSplashActive = () => {
+      const splash = document.getElementById('splash-screen');
+      const hasClass =
+        document.documentElement.classList.contains('splash-active') ||
+        document.body.classList.contains('splash-active');
+      return Boolean(hasClass && splash && getComputedStyle(splash).display !== 'none');
+    };
+
+    const runInit = () => {
+      const elements = document.querySelectorAll('[data-animated-content]');
+      elements.forEach(el => {
+        if (el.__animatedContentInit) return;
+        el.__animatedContentInit = true;
+        try {
+          const rawOptions = el.getAttribute('data-animated-content');
+          const opts = rawOptions ? JSON.parse(rawOptions) : {};
+          init(el, opts);
+        } catch (err) {
+          console.warn('AnimatedContent parse error:', err);
+          init(el);
+        }
+      });
+
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
       }
-    });
+    };
+
+    if (isSplashActive()) {
+      let triggered = false;
+      const onSplashExit = () => {
+        if (triggered) return;
+        triggered = true;
+        // Wait slightly for splash fade-out to reveal the main viewport
+        setTimeout(() => {
+          runInit();
+        }, 350);
+      };
+
+      window.addEventListener('splash:dismissed', onSplashExit, { once: true });
+
+      const splashBtn = document.getElementById('splash-enter-btn');
+      if (splashBtn) {
+        splashBtn.addEventListener('click', () => {
+          setTimeout(onSplashExit, 350);
+        }, { once: true });
+      }
+
+      // Safety MutationObserver: observe when splash-active class is removed
+      const observer = new MutationObserver(() => {
+        if (!isSplashActive()) {
+          observer.disconnect();
+          onSplashExit();
+        }
+      });
+      observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+      observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+
+      // Fallback timer: if splash was somehow already dismissed
+      setTimeout(() => {
+        if (!triggered && !isSplashActive()) {
+          onSplashExit();
+        }
+      }, 3000);
+    } else {
+      runInit();
+    }
   }
 
   return {

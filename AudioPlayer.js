@@ -288,6 +288,7 @@
         splashScreen.classList.add('splash-screen--fade-out');
         document.documentElement.classList.remove('splash-active');
         document.body.classList.remove('splash-active');
+        window.dispatchEvent(new CustomEvent('splash:dismissed'));
 
         // 3. Remover/Ocultar do DOM e liberar recursos do WebGL WarpText e SplashParticles
         setTimeout(function () {
@@ -300,6 +301,10 @@
           if (window.splashParticlesInstance && typeof window.splashParticlesInstance.destroy === 'function') {
             window.splashParticlesInstance.destroy();
           }
+          if (window.ScrollTrigger) {
+            window.ScrollTrigger.refresh();
+          }
+          window.dispatchEvent(new CustomEvent('splash:dismissed'));
         }, 800);
       });
     }
