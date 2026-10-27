@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="Mobile.css" />
   <link rel="stylesheet" href="AnimatedContent.css" />
   <link rel="stylesheet" href="StarBorder.css" />
+  <link rel="stylesheet" href="ElectricBorder.css" />
 
   <style>
     @layer base {
@@ -363,8 +364,9 @@
         <span>Computer Science Student</span>
       </div>
 
-      <!-- Botão Tech de Entrada com Cantos Angulados -->
-      <button id="splash-enter-btn" class="splash-enter-btn" type="button" aria-label="Entrar no Portfólio">
+      <!-- Botão Tech de Entrada com Cantos Angulados & React Bits ElectricBorder -->
+      <button id="splash-enter-btn" class="splash-enter-btn electric-border" type="button" aria-label="Entrar no Portfólio"
+        data-electric-border='{"color": "#7df9ff", "glowColor": "#38bdf8", "speed": 1.15, "chaos": 0.5, "spread": 0.6, "strands": 3, "thickness": 1.6, "glow": 0.8, "intensity": 0.95, "arcs": 2, "borderRadius": 8}'>
         <span class="splash-corner splash-corner-tl"></span>
         <span class="splash-corner splash-corner-tr"></span>
         <span class="splash-corner splash-corner-bl"></span>
@@ -2121,6 +2123,8 @@
   <script src="AnimatedContent.js"></script>
   <!-- React Bits StarBorder Component -->
   <script src="StarBorder.js"></script>
+  <!-- React Bits ElectricBorder Component -->
+  <script src="ElectricBorder.js"></script>
   <script>
     // Inicialização dos Componentes React Bits
     document.addEventListener('DOMContentLoaded', function () {
@@ -2129,6 +2133,9 @@
       }
       if (window.StarBorder && typeof window.StarBorder.autoInit === 'function') {
         window.StarBorder.autoInit();
+      }
+      if (window.ElectricBorder && typeof window.ElectricBorder.autoInit === 'function') {
+        window.ElectricBorder.autoInit();
       }
     });
   </script>
@@ -2168,12 +2175,30 @@
     })();
   </script>
   <script>
-    // Inicialização da Splash Screen: Efeitos WarpText & SplashParticles HUD
+    // Inicialização da Splash Screen: Efeitos WarpText, SplashParticles HUD & ElectricBorder
     (function () {
       function startSplashEffects() {
         const splashScreen = document.getElementById('splash-screen');
         if (splashScreen && window.SplashParticles) {
           window.splashParticlesInstance = window.SplashParticles.init(splashScreen);
+        }
+
+        const enterBtn = document.getElementById('splash-enter-btn');
+        if (enterBtn && window.ElectricBorder) {
+          window.splashElectricBorderInstance = window.ElectricBorder.init(enterBtn, {
+            color: '#7df9ff',
+            glowColor: '#38bdf8',
+            speed: 1.15,
+            chaos: 0.5,
+            spread: 0.6,
+            thickness: 1.6,
+            strands: 3,
+            glow: 0.8,
+            intensity: 0.95,
+            arcs: 2,
+            flicker: 0.5,
+            borderRadius: 8
+          });
         }
 
         const container = document.getElementById('splash-warp-container');

@@ -301,6 +301,9 @@
           if (window.splashParticlesInstance && typeof window.splashParticlesInstance.destroy === 'function') {
             window.splashParticlesInstance.destroy();
           }
+          if (window.splashElectricBorderInstance && typeof window.splashElectricBorderInstance.destroy === 'function') {
+            window.splashElectricBorderInstance.destroy();
+          }
           if (window.ScrollTrigger) {
             window.ScrollTrigger.refresh();
           }

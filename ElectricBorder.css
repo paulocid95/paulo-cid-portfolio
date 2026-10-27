@@ -1,0 +1,20 @@
+/* ElectricBorder Component Styles - React Bits */
+
+.electric-border {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: visible !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.electric-border__canvas {
+  position: absolute !important;
+  z-index: 1 !important;
+  display: block !important;
+  pointer-events: none !important;
+}
+
+.electric-border > *:not(.electric-border__canvas) {
+  position: relative;
+  z-index: 3;
+}

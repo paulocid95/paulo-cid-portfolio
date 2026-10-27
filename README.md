@@ -52,6 +52,7 @@ A interface foi concebida para oferecer uma experiência marcante logo no primei
 ### 1. 🌌 Splash Screen & Partículas (`SplashParticles.js` & `SplashScreen.css`)
 - **HUD Interativo & Grid 3D:** Tela de entrada com perspectiva tridimensional, brilho atmosférico sci-fi e grade de fundo imersiva.
 - **Sistema de Partículas em Canvas:** Partículas dinâmicas e reativas ao ponteiro/toque geradas por cálculo trigonométrico em 60 FPS.
+- **Borda Elétrica Procedural em WebGL2 (`ElectricBorder.js` / `ElectricBorder.jsx` / `ElectricBorder.css`):** Corrente de plasma elétrico de alta intensidade percorrendo o perímetro do botão "Entrar no Portfólio", com filamentos dinâmicos, aceleração reativa ao cursor (*surge speed*), emissão de arcos elétricos e shaders GLSL.
 - **Logotipos Neon Flutuantes:** Ícones de tecnologias centrais (Python, PostgreSQL, MySQL e GitHub) com efeitos de iluminação e reflexos cibernéticos.
 
 ### 2. ⚡ Efeitos Visuais Reativos e Tipografia Fluida
@@ -122,6 +123,9 @@ paulo-cid-portfolio/
 │   ├── 🎨 AnimatedContent.css  # Estilização complementar do wrapper e otimização GPU
 │   ├── ⚡ AudioPlayer.js       # Lógica do reprodutor de áudio, equalizador e controle de volume
 │   ├── 🎨 AudioPlayer.css      # Estilização do widget flutuante e animações do equalizador
+│   ├── ⚡ ElectricBorder.js    # Versão Vanilla JS + WebGL2 da borda de plasma elétrico
+│   ├── ⚛️ ElectricBorder.jsx   # Componente React Bits de corrente elétrica com shaders GLSL
+│   ├── 🎨 ElectricBorder.css   # Estilização do isolamento e posicionamento do canvas elétrico
 │   ├── ⚡ GhostFibers.js       # Implementação em Canvas das fibras óticas etéreas
 │   ├── ⚛️ GhostFibers.jsx      # Versão em componente React/JSX reutilizável
 │   ├── 🎨 GhostFibers.css      # Regras de sobreposição e viewport das fibras
