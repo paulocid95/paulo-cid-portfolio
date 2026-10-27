@@ -85,21 +85,32 @@
         vec2 end = uPoints[i + 1];
         vec2 toPixel = pixel - start;
         vec2 segment = end - start;
+        float segLength = length(segment);
+
+        // Segment motion: only segments with active length/movement produce trail glow.
+        // Segments that have collapsed/caught up to the cursor produce zero light,
+        // eliminating the static circle/disc effect when the cursor stops.
+        float segmentActive = smoothstep(0.4, max(uTrailWidth * 1.5, 4.0), segLength);
+
         float along = clamp(dot(toPixel, segment) / max(dot(segment, segment), 0.0001), 0.0, 1.0);
         float progress = clamp((index + along) / denominator, 0.0, 1.0);
         float life = pow(max(1.0 - progress, 0.0), mix(0.55, 1.25, uTaper));
         float width = uTrailWidth * mix(1.0, 0.25, pow(progress, mix(0.55, 1.6, uTaper)));
         float distanceToTrail = length(toPixel - segment * along);
-        float falloff = max(width * (0.8 + uGlowSpread * 1.4), 0.5);
-        float beam = min(1.0, (falloff * falloff) / (distanceToTrail * distanceToTrail + falloff * falloff));
-        float core = exp(-pow(distanceToTrail / max(width, 0.5), 2.0) * 2.5);
+
+        // Smooth exponential glow falloff with seamless taper to zero, eliminating any hard circular cutoff
+        float glowRadius = max(width * (1.1 + uGlowSpread * 2.0), 1.0);
+        float dNorm = distanceToTrail / glowRadius;
+        float beam = exp(-dNorm * 2.0) * smoothstep(3.0, 0.2, dNorm);
+        float core = exp(-pow(distanceToTrail / max(width * 0.65, 0.4), 2.0) * 3.2);
+
         float pulseAmount = min(abs(uPulseSpeed), 1.0);
         float pulse = 1.0 + sin(uTime * uPulseSpeed * 3.0 - progress * 11.0) * 0.16 * pulseAmount;
-        float intensity = (core + beam * uGlowIntensity * 0.55) * life * pulse * active;
+        float intensity = (core + beam * uGlowIntensity * 0.65) * life * pulse * active * segmentActive;
         vec3 segmentColor = mix(uColor, uSecondaryColor, progress);
 
         strongest = max(strongest, intensity);
-        strongestCore = max(strongestCore, core * life * active);
+        strongestCore = max(strongestCore, core * life * active * segmentActive);
         colorSum += segmentColor * intensity;
         colorWeight += intensity;
       }
@@ -302,20 +313,34 @@
         }
       }
 
+      // Calculate total spread of active tail points
+      let tailSpread = 0;
+      const pointCount = clamp(Math.round(config.trailLength), 2, MAX_POINTS);
+      for (let i = 1; i < pointCount; i++) {
+        const dx = points[i].x - points[i - 1].x;
+        const dy = points[i].y - points[i - 1].y;
+        tailSpread += Math.hypot(dx, dy);
+      }
+
+      // When the tail has caught up to the cursor, tailSpread goes to 0 -> motionFade smoothly drops to 0
+      const motionFade = clamp(tailSpread / Math.max(config.trailWidth * 2.5 * dpr, 8.0), 0.0, 1.0);
+
       const idleFor = now - lastInputTime;
       const shouldFade = config.idleFade && (!pointerInside || idleFor > config.idleTimeout);
       const fadeStep = (16.667 * delta) / Math.max(config.fadeDuration, 16);
       const fadeTarget = initialized && config.enabled && !shouldFade ? 1 : 0;
       fade += (fadeTarget - fade) * Math.min(1, fadeStep * 7);
 
+      const effectiveFade = fade * motionFade;
+
       gl.clearColor(0, 0, 0, 0);
       gl.clear(gl.COLOR_BUFFER_BIT);
 
-      if (fade > 0.001) {
+      if (effectiveFade > 0.001) {
         gl.useProgram(program);
         gl.uniform2f(uResolution, canvas.width, canvas.height);
         gl.uniform2fv(uPoints, pointData);
-        gl.uniform1f(uPointCount, clamp(Math.round(config.trailLength), 2, MAX_POINTS));
+        gl.uniform1f(uPointCount, pointCount);
         gl.uniform3fv(uColor, hexToRgb(config.color));
         gl.uniform3fv(uSecondaryColor, hexToRgb(config.secondaryColor));
         gl.uniform1f(uTrailWidth, Math.max(config.trailWidth * dpr, 0.1));
@@ -329,7 +354,7 @@
         gl.uniform1f(uNoiseStrength, clamp(config.noiseStrength, 0, 1));
         gl.uniform1f(uNormalBlend, config.blendMode === 'normal' ? 1 : 0);
         gl.uniform1f(uTime, now * 0.001);
-        gl.uniform1f(uFade, fade);
+        gl.uniform1f(uFade, effectiveFade);
 
         gl.drawArrays(gl.TRIANGLES, 0, 3);
       }
