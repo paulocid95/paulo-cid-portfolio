@@ -66,6 +66,56 @@
     ::-webkit-scrollbar-thumb:hover {
       background: #38bdf8;
     }
+
+    /* Hero Contact Button - Dynamic Cycling Icons */
+    .hero-contact-icon-slot {
+      position: relative;
+      width: 18px;
+      height: 18px;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
+
+    .hero-contact-cycle-icon {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                  opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                  filter 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity: 0;
+      transform: translateY(18px) scale(0.8);
+      filter: blur(2px);
+      pointer-events: none;
+      will-change: transform, opacity, filter;
+    }
+
+    .hero-contact-cycle-icon.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0px);
+      z-index: 2;
+    }
+
+    .hero-contact-cycle-icon.prev {
+      opacity: 0;
+      transform: translateY(-18px) scale(0.8);
+      filter: blur(2px);
+      z-index: 1;
+    }
+
+    .hero-contact-cycle-icon.next {
+      opacity: 0;
+      transform: translateY(18px) scale(0.8);
+      filter: blur(2px);
+      z-index: 1;
+    }
   </style>
 
   <!-- Tailwind CSS CDN -->
@@ -484,50 +534,36 @@
                   <span class="material-symbols-outlined text-[18px] mr-space-xs">terminal</span>
                   Ver meus projetos
                 </a>
-                <a class="hero-cta-btn w-full sm:w-auto inline-flex items-center justify-center font-label-md text-label-md px-6 py-3 rounded-lg bg-surface-container-high/80 backdrop-blur-md text-on-surface hover:bg-surface-variant hover:text-primary transition-all shadow-sm"
-                  href="#contato">
-                  <span class="material-symbols-outlined text-[18px] mr-space-xs">mail</span>
-                  Entrar em contato
-                </a>
-              </div>
-
-              <!-- Direct Social Connections -->
-              <div class="hero-social-links flex items-center gap-space-sm flex-wrap">
-                <span class="font-label-sm text-label-sm text-outline mr-space-xs">LINKS //</span>
-                <a aria-label="GitHub de Paulo Cid"
-                  class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container/60 hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all"
-                  href="https://github.com/paulocid95" rel="noopener noreferrer" target="_blank">
-                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-                  </svg>
-                  <span class="font-code-sm text-code-sm">GitHub</span>
-                </a>
-                <a aria-label="LinkedIn de Paulo Cid"
-                  class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container/60 hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all"
-                  href="https://www.linkedin.com/in/paulo-victor-cid-55564123b" rel="noopener noreferrer"
-                  target="_blank">
-                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
-                      fill-rule="evenodd" />
-                  </svg>
-                  <span class="font-code-sm text-code-sm">LinkedIn</span>
-                </a>
-                <a aria-label="WhatsApp de Paulo Cid"
-                  class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container/60 hover:bg-surface-container-high text-on-surface-variant hover:text-[#25D366] transition-all"
-                  href="https://wa.me/5511974309264" rel="noopener noreferrer" target="_blank">
-                  <svg class="w-4 h-4 fill-current text-[#25D366]" viewBox="0 0 24 24">
-                    <path
-                      d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.584 1.961.949 2.796.949 3.182 0 5.768-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm3.36 8.163c-.144.405-.837.774-1.17.823-.312.045-.694.062-2.12-.528-1.571-.65-2.585-2.257-2.664-2.361-.079-.105-.638-.85-.638-1.621 0-.771.405-1.15.549-1.307.144-.157.315-.196.42-.196.105 0 .21.001.301.006.097.005.227-.037.355.27.131.315.459 1.12.499 1.202.04.082.066.178.013.283-.053.105-.079.171-.157.263-.079.092-.165.205-.236.275-.079.079-.161.164-.069.322.092.158.409.675.877 1.092.602.536 1.109.702 1.267.781.158.079.25.069.342-.037.092-.105.394-.459.499-.617.105-.158.21-.131.354-.079.144.053.918.433 1.076.512.158.079.263.118.302.184.04.066.04.38-.104.785zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.666 0-3.21-.497-4.506-1.352l-.323-.213-2.966.778.792-2.893-.234-.372A8.175 8.175 0 013.8 12c0-4.521 3.679-8.2 8.2-8.2 4.521 0 8.2 3.679 8.2 8.2 0 4.521-3.679 8.2-8.2 8.2z" />
-                  </svg>
-                  <span class="font-code-sm text-code-sm">WhatsApp</span>
-                </a>
-                <a aria-label="E-mail de Paulo Cid"
-                  class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container/60 hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all"
-                  href="mailto:paulocid95@gmail.com">
-                  <span class="material-symbols-outlined text-[18px]">alternate_email</span>
-                  <span class="font-code-sm text-code-sm">E-mail</span>
+                <a class="hero-cta-btn w-full sm:w-auto inline-flex items-center justify-center font-label-md text-label-md px-6 py-3 rounded-lg bg-surface-container-high/80 backdrop-blur-md text-on-surface hover:bg-surface-variant hover:text-primary transition-all shadow-sm border border-outline-variant/30 hover:border-primary/40 group"
+                  href="#contato" aria-label="Links para Contato">
+                  <!-- Dynamic cycling icon slot (WhatsApp -> LinkedIn -> GitHub -> E-mail) -->
+                  <span id="hero-contact-cycle-slot" class="hero-contact-icon-slot mr-2" aria-hidden="true">
+                    <!-- 1. WhatsApp -->
+                    <span class="hero-contact-cycle-icon active" data-index="0">
+                      <svg class="w-4 h-4 fill-current text-[#25D366]" viewBox="0 0 24 24">
+                        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.584 1.961.949 2.796.949 3.182 0 5.768-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm3.36 8.163c-.144.405-.837.774-1.17.823-.312.045-.694.062-2.12-.528-1.571-.65-2.585-2.257-2.664-2.361-.079-.105-.638-.85-.638-1.621 0-.771.405-1.15.549-1.307.144-.157.315-.196.42-.196.105 0 .21.001.301.006.097.005.227-.037.355.27.131.315.459 1.12.499 1.202.04.082.066.178.013.283-.053.105-.079.171-.157.263-.079.092-.165.205-.236.275-.079.079-.161.164-.069.322.092.158.409.675.877 1.092.602.536 1.109.702 1.267.781.158.079.25.069.342-.037.092-.105.394-.459.499-.617.105-.158.21-.131.354-.079.144.053.918.433 1.076.512.158.079.263.118.302.184.04.066.04.38-.104.785zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.666 0-3.21-.497-4.506-1.352l-.323-.213-2.966.778.792-2.893-.234-.372A8.175 8.175 0 013.8 12c0-4.521 3.679-8.2 8.2-8.2 4.521 0 8.2 3.679 8.2 8.2 0 4.521-3.679 8.2-8.2 8.2z"/>
+                      </svg>
+                    </span>
+                    <!-- 2. LinkedIn -->
+                    <span class="hero-contact-cycle-icon next" data-index="1">
+                      <svg class="w-4 h-4 fill-current text-[#0a66c2]" viewBox="0 0 24 24">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" fill-rule="evenodd"/>
+                      </svg>
+                    </span>
+                    <!-- 3. GitHub -->
+                    <span class="hero-contact-cycle-icon next" data-index="2">
+                      <svg class="w-4 h-4 fill-current text-[#e6edf3]" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                      </svg>
+                    </span>
+                    <!-- 4. E-mail -->
+                    <span class="hero-contact-cycle-icon next" data-index="3">
+                      <svg class="w-4 h-4 fill-current text-[#38bdf8]" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10h5v-2h-5c-4.34 0-8-3.66-8-8s3.66-8 8-8 8 3.66 8 8v1.43c0 .79-.71 1.57-1.5 1.57s-1.5-.78-1.5-1.57V12c0-2.76-2.24-5-5-5s-5 2.24-5 5 2.24 5 5 5c1.38 0 2.64-.56 3.54-1.47.65.89 1.77 1.47 2.96 1.47 1.97 0 3.5-1.6 3.5-3.57V12c0-5.52-4.48-10-10-10zm0 13c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/>
+                      </svg>
+                    </span>
+                  </span>
+                  <span>Links para Contato</span>
                 </a>
               </div>
 
@@ -2093,6 +2129,41 @@
         window.StarBorder.autoInit();
       }
     });
+  </script>
+  <script>
+    // Hero Contact Button - Transição Sequencial dos Ícones de Contato (a cada 2s)
+    (function () {
+      function startHeroContactCycle() {
+        const slot = document.getElementById('hero-contact-cycle-slot');
+        if (!slot) return;
+        const icons = slot.querySelectorAll('.hero-contact-cycle-icon');
+        if (icons.length < 2) return;
+
+        let currentIndex = 0;
+
+        setInterval(function () {
+          const prevIndex = currentIndex;
+          currentIndex = (currentIndex + 1) % icons.length;
+
+          icons[prevIndex].classList.remove('active', 'next');
+          icons[prevIndex].classList.add('prev');
+
+          icons[currentIndex].classList.remove('prev', 'next');
+          icons[currentIndex].classList.add('active');
+
+          setTimeout(function () {
+            icons[prevIndex].classList.remove('prev');
+            icons[prevIndex].classList.add('next');
+          }, 700);
+        }, 2000);
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', startHeroContactCycle);
+      } else {
+        startHeroContactCycle();
+      }
+    })();
   </script>
   <script>
     // Inicialização da Splash Screen: Efeitos WarpText & SplashParticles HUD
