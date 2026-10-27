@@ -57,15 +57,25 @@ A interface foi concebida para oferecer uma experiência marcante logo no primei
 ### 2. ⚡ Efeitos Visuais Reativos e Tipografia Fluida
 - **Refração e Distorção Fluida (`WarpText.js` / `WarpText.jsx`):** Tipografia dinâmica com shader de refração, ondulação de ondas senoidais e resposta ao movimento do cursor.
 - **Fibras Óticas Etéreas (`GhostFibers.js` / `GhostFibers.jsx` / `GhostFibers.css`):** Filamentos luminosos contínuos renderizados em canvas, simulando fibras óticas profundas que reagem à navegação.
-- **Cursor Luminoso Volumétrico (`GlowCursor.js` / `GlowCursor.jsx`):** Seguidor de ponteiro com atenuação por amortecimento (*smooth dampening*), múltiplos anéis luminosos e composição via `mix-blend-mode`.
-- **Bordas Estelares (`StarBorder.jsx` / `StarBorder.css`):** Gradientes luminosos cônicos em rotação contínua ao redor dos cartões de apresentação.
+- **Cursor Luminoso Volumétrico (`GlowCursor.js` / `GlowCursor.jsx`):** Seguidor de ponteiro com atenuação por amortecimento (*smooth dampening*), rastro com decaimento exponencial suave em velocidade e sem aberrações circulares estáticas.
+- **Bordas Estelares (`StarBorder.jsx` / `StarBorder.js` / `StarBorder.css`):** Gradientes luminosos em rotação contínua com aceleração dinâmica no hover (*hover lap*) e dispersão de pulso luminotécnico ao clique.
 - **Feedback Tátil (`TouchRipple.js` & `Mobile.css`):** Sistema de ondas de contato (*touch ripples*) e menu off-canvas responsivo construído especialmente para smartphones e tablets.
 
-### 3. 🎵 Player de Áudio Integrado (`AudioPlayer.js` & `AudioPlayer.css`)
+### 3. 🎬 Orquestração de Scroll & Animações Dinâmicas (`AnimatedContent.js` & GSAP)
+- **Revelação Procedural Orientada a Scroll:** Sistema desacoplado com GSAP e `IntersectionObserver` para entrada suave de seções e cartões com *staggered delay* e curvas `power3.out`.
+- **Eliminação de FOUC:** Prevenção de oscilações (*Flash of Unstyled Content*) sincronizada com a finalização do HUD da Splash Screen.
+- **Hero Interativo com Indicador Dinâmico de Contatos:** Microinteração com transição suave e sequencial de ícones dos canais profissionais a cada 2 segundos.
+
+### 4. 🎵 Player de Áudio Integrado (`AudioPlayer.js` & `AudioPlayer.css`)
 - **Música Ambiente Contínua:** Trilha sonora sintetizada em loop com reprodução suave e sem interrupções durante a navegação.
 - **Equalizador Gráfico Animado:** 4 barras equalizadoras reativas sincronizadas com o estado da reprodução (`playing` / `paused`).
 - **Controles Completos:** Play/Pause, Mute com salvamento de estado e controle linear deslizante de volume.
 - **Widget Retrátil:** Pode ser recolhido para uma cápsula discreta no canto inferior direito da tela, além de possuir um mini-controlador integrado à barra de navegação mobile.
+
+### 5. 📑 Currículo Profissional Interativo & Arquitetura Web-to-Print (`curriculo.html`)
+- **Interface Dual (Web & Impressão A4 Pixel-Perfect):** Diagramação vetorial responsiva desenvolvida especificamente para renderizar em alta fidelidade na tela e com encaixe perfeito em folha A4 via CSS `@media print`.
+- **Alternância Dinâmica de Tema:** Seletor de Modo Claro e Escuro com tokens customizados de contraste e persistência automática em `localStorage`.
+- **Navegação Inteligente & Sincronização de Abas:** Toolbar com atalhos diretos para impressão nativa (`window.print()`), download de PDF oficial com efeito `StarBorder` e controle de encerramento (`window.close()` com fallback para histórico).
 
 ---
 
@@ -99,6 +109,11 @@ Organização modular baseada em separação de responsabilidades para estiliza�
 ```plaintext
 paulo-cid-portfolio/
 ├── 📄 index.html              # Estrutura principal semântica (SPA) com Tailwind CSS
+├── 📄 curriculo.html          # Currículo profissional interativo e arquitetura Web-to-Print A4
+├── 📄 curriculo.pdf           # Documento PDF oficial para download direto
+├── 📁 curriculo/              # Rota espelho com fallback para deploy estático
+│   ├── 📄 index.html
+│   └── 📄 curriculo.pdf
 ├── 📄 README.md               # Documentação técnica de alto impacto do repositório
 │
 ├── 🎨 Componentes & Módulos Visuais:
@@ -174,7 +189,8 @@ Como o projeto é construído em arquitetura web nativa com importações via CD
 | :--- | :--- |
 | **Linguagens & Core Web** | HTML5 Semântico, CSS3 Moderno, JavaScript ES6+, JSX |
 | **Frameworks CSS** | Tailwind CSS (CDN com tema customizado estendido) |
-| **Renderização & Gráficos** | HTML5 Canvas 2D, Shaders de Efeito Óptico, Transformações 3D CSS |
+| **Renderização, Animações & Gráficos** | HTML5 Canvas 2D, GSAP (GreenSock), Shaders de Efeito Óptico, Transformações 3D CSS |
+| **Arquitetura Web-to-Print** | CSS Paged Media (@media print A4), Exportação Vetorial Direta, LocalStorage Theme State |
 | **Tipografia & Ícones** | Google Fonts (*Plus Jakarta Sans*, *Inter*, *JetBrains Mono*), Material Symbols |
 | **Engenharia de Dados & IA** | Python, Pandas, SQLAlchemy, PostgreSQL (Neon Cloud), Google Gemini API |
 | **Deploy & Hosting** | Vercel (Edge Network global com HTTPS contínuo e CI/CD) |
