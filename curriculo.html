@@ -11,6 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="StarBorder.css">
 
     <style>
         :root {
@@ -928,7 +929,7 @@
             <span>Currículo Interativo</span>
         </div>
         <div class="action-buttons">
-            <a class="btn btn-secondary" href="index.html" title="Voltar ao Portfólio">
+            <a class="btn btn-secondary" href="index.html" onclick="voltarAoPortfolio(event)" title="Voltar ao Portfólio">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <line x1="19" y1="12" x2="5" y2="12"></line>
@@ -940,8 +941,18 @@
                 title="Alternar tema claro/escuro">
                 <span id="themeIcon">🌙</span> <span id="themeText">Modo Escuro</span>
             </button>
-            <a class="btn btn-secondary" href="curriculo.pdf" download="Paulo_Victor_Cid_Curriculo.pdf"
-                title="Baixar arquivo PDF direto">
+            <button class="btn btn-secondary" onclick="window.print()" title="Imprimir currículo">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                    <rect x="6" y="14" width="12" height="8"></rect>
+                </svg>
+                Imprimir
+            </button>
+            <a class="btn btn-primary" href="curriculo.pdf" download="Paulo_Victor_Cid_Curriculo.pdf"
+                title="Baixar arquivo PDF direto"
+                data-star-border='{"color": "#38bdf8", "trailColor": "#0284c7", "glow": 0.8, "duration": 3.0, "sparkle": true}'>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -950,15 +961,6 @@
                 </svg>
                 Baixar PDF
             </a>
-            <button class="btn btn-primary" onclick="window.print()" title="Salvar como PDF ou Imprimir direto">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="6 9 6 2 18 2 18 9"></polyline>
-                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-                    <rect x="6" y="14" width="12" height="8"></rect>
-                </svg>
-                Imprimir / Salvar PDF
-            </button>
         </div>
     </header>
 
@@ -1453,6 +1455,35 @@
                 });
             }
         } catch (e) { }
+
+        // Fechar aba e retornar ao Portfólio sem abrir nova página
+        function voltarAoPortfolio(e) {
+            if (e) e.preventDefault();
+            window.close();
+            setTimeout(function() {
+                if (!window.closed) {
+                    if (window.history.length > 1) {
+                        window.history.back();
+                    } else {
+                        window.location.href = 'index.html';
+                    }
+                }
+            }, 150);
+        }
+    </script>
+
+    <!-- React Bits StarBorder Component -->
+    <script src="StarBorder.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.StarBorder && typeof window.StarBorder.autoInit === 'function') {
+                window.StarBorder.autoInit();
+            }
+        });
+        // Garantia de inicialização caso DOMContentLoaded já tenha disparado
+        if (window.StarBorder && typeof window.StarBorder.autoInit === 'function') {
+            window.StarBorder.autoInit();
+        }
     </script>
 </body>
 
