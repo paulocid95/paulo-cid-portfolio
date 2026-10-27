@@ -4,3 +4,22 @@
   display: block;
   position: relative;
 }
+
+/* Prevent FOUC and flashes while splash screen is active */
+html.splash-active [data-animated-content],
+body.splash-active [data-animated-content] {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+/* Hardware acceleration hints for smooth 60/120fps motion */
+[data-animated-content] {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+[data-animated-content] > * {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+

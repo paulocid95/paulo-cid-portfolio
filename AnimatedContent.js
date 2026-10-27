@@ -54,6 +54,7 @@
       trigger = 'scroll',
       once = true,
       scrub = false,
+      autoPlay = true,
       disappearAfter = 0,
       disappearDuration = 0.5,
       disappearEase = 'power3.in',
@@ -129,8 +130,18 @@
     }
     if (stagger > 0) to.stagger = { each: stagger, from: staggerFrom };
 
+    // Disable CSS transitions during animation so Tailwind classes like transition-all don't fight GSAP updates
+    targets.forEach(t => {
+      t.style.transition = 'none';
+      t.style.willChange = 'transform, opacity';
+    });
+
     const settle = () => {
       if (scrub) return;
+      targets.forEach(t => {
+        t.style.transition = '';
+        t.style.willChange = '';
+      });
       gsap.set(targets, { clearProps: mask ? 'filter,transform,maskImage,webkitMaskImage' : 'filter,transform' });
     };
 
@@ -155,6 +166,10 @@
     const tl = gsap.timeline({
       paused: true,
       onStart: () => {
+        targets.forEach(t => {
+          t.style.transition = 'none';
+          t.style.willChange = 'transform, opacity';
+        });
         if (typeof onStart === 'function') onStart();
       },
       onComplete: () => {
@@ -169,7 +184,9 @@
     let scrollTriggerInstance = null;
 
     if (trigger === 'mount') {
-      tl.play();
+      if (autoPlay) {
+        tl.play();
+      }
     } else if (typeof ScrollTrigger !== 'undefined') {
       const start = `top ${(1 - threshold) * 100}%`;
 
@@ -197,9 +214,14 @@
               }
         });
       }
+
+      if (!autoPlay && scrollTriggerInstance) {
+        scrollTriggerInstance.disable();
+      }
     } else {
-      // Fallback if ScrollTrigger is not loaded
-      tl.play();
+      if (autoPlay) {
+        tl.play();
+      }
     }
 
     return {
@@ -216,7 +238,9 @@
 
   /**
    * Automatically initializes all elements with data-animated-content attributes.
-   * If a splash screen is currently active, waits for dismissal so animations don't play invisibly behind it.
+   * Elements are initialized immediately so they start in their hidden "from" state,
+   * avoiding any FOUC or sudden popping. When a splash screen is active, animations
+   * and triggers are gracefully released as the splash begins to exit.
    */
   function autoInit() {
     const isSplashActive = () => {
@@ -227,64 +251,75 @@
       return Boolean(hasClass && splash && getComputedStyle(splash).display !== 'none');
     };
 
-    const runInit = () => {
-      const elements = document.querySelectorAll('[data-animated-content]');
-      elements.forEach(el => {
-        if (el.__animatedContentInit) return;
-        el.__animatedContentInit = true;
-        try {
-          const rawOptions = el.getAttribute('data-animated-content');
-          const opts = rawOptions ? JSON.parse(rawOptions) : {};
-          init(el, opts);
-        } catch (err) {
-          console.warn('AnimatedContent parse error:', err);
-          init(el);
-        }
-      });
+    const elements = document.querySelectorAll('[data-animated-content]');
+    const instances = [];
+    const splashActive = isSplashActive();
 
-      if (typeof ScrollTrigger !== 'undefined') {
-        ScrollTrigger.refresh();
+    elements.forEach(el => {
+      if (el.__animatedContentInit) return;
+      el.__animatedContentInit = true;
+      try {
+        const rawOptions = el.getAttribute('data-animated-content');
+        const opts = rawOptions ? JSON.parse(rawOptions) : {};
+        const inst = init(el, { ...opts, autoPlay: !splashActive });
+        if (inst) instances.push({ el, inst });
+      } catch (err) {
+        console.warn('AnimatedContent parse error:', err);
+        const inst = init(el, { autoPlay: !splashActive });
+        if (inst) instances.push({ el, inst });
       }
-    };
+    });
 
-    if (isSplashActive()) {
-      let triggered = false;
-      const onSplashExit = () => {
-        if (triggered) return;
-        triggered = true;
-        // Wait slightly for splash fade-out to reveal the main viewport
-        setTimeout(() => {
-          runInit();
-        }, 350);
+    if (splashActive) {
+      let released = false;
+      const releaseAnimations = () => {
+        if (released) return;
+        released = true;
+
+        requestAnimationFrame(() => {
+          instances.forEach(({ el, inst }) => {
+            if (inst.scrollTrigger) {
+              inst.scrollTrigger.enable();
+            }
+            // Animate elements visible in the initial viewport (like Hero)
+            const rect = el.getBoundingClientRect();
+            const isInHeroViewport = rect.top < window.innerHeight * 0.9 && rect.bottom > 0;
+            if (isInHeroViewport) {
+              inst.play();
+            }
+          });
+
+          if (typeof ScrollTrigger !== 'undefined') {
+            ScrollTrigger.refresh();
+          }
+        });
       };
 
-      window.addEventListener('splash:dismissed', onSplashExit, { once: true });
+      window.addEventListener('splash:dismissed', releaseAnimations, { once: true });
 
       const splashBtn = document.getElementById('splash-enter-btn');
       if (splashBtn) {
-        splashBtn.addEventListener('click', () => {
-          setTimeout(onSplashExit, 350);
-        }, { once: true });
+        splashBtn.addEventListener('click', releaseAnimations, { once: true });
       }
 
-      // Safety MutationObserver: observe when splash-active class is removed
       const observer = new MutationObserver(() => {
         if (!isSplashActive()) {
           observer.disconnect();
-          onSplashExit();
+          releaseAnimations();
         }
       });
       observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
       observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
 
-      // Fallback timer: if splash was somehow already dismissed
       setTimeout(() => {
-        if (!triggered && !isSplashActive()) {
-          onSplashExit();
+        if (!released && !isSplashActive()) {
+          releaseAnimations();
         }
       }, 3000);
     } else {
-      runInit();
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
+      }
     }
   }
 
