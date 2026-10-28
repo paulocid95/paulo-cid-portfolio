@@ -1325,14 +1325,14 @@
               <div
                 class="px-space-lg py-3.5 bg-surface-container-high/40 flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-2.5 sm:gap-3 border-t border-surface-container-high/40">
                 <!-- Botão Primário: Ver App Online -->
-                <a aria-label="Ver App Online do projeto Portfólio Interativo &amp; Arquitetura de UI Imersiva"
-                  class="group inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-gradient-to-r from-primary-container via-[#0284c7] to-[#1d4ed8] text-white font-semibold font-label-md text-label-md shadow-[0_0_18px_rgba(56,189,248,0.35)] hover:shadow-[0_0_26px_rgba(56,189,248,0.6)] hover:scale-[1.03] hover:brightness-110 active:scale-[0.98] transition-all duration-300 w-full sm:w-auto"
-                  href="https://paulocid.vercel.app" rel="noopener noreferrer" target="_blank"
+                <button type="button" aria-label="Ver App Online do projeto Portfólio Interativo &amp; Arquitetura de UI Imersiva (recarregar página)"
+                  onclick="window.location.reload();"
+                  class="group inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-gradient-to-r from-primary-container via-[#0284c7] to-[#1d4ed8] text-white font-semibold font-label-md text-label-md shadow-[0_0_18px_rgba(56,189,248,0.35)] hover:shadow-[0_0_26px_rgba(56,189,248,0.6)] hover:scale-[1.03] hover:brightness-110 active:scale-[0.98] transition-all duration-300 w-full sm:w-auto cursor-pointer border-0"
                   data-star-border='{"color": "#38bdf8", "trailColor": "#60a5fa", "glow": 0.8, "duration": 3.0, "sparkle": true}'>
                   <span class="material-symbols-outlined text-[18px] transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:rotate-12">rocket_launch</span>
                   <span>Ver App Online</span>
-                  <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">arrow_outward</span>
-                </a>
+                  <span class="material-symbols-outlined text-[16px] transition-transform duration-500 group-hover:rotate-180">refresh</span>
+                </button>
                 <!-- Botão Secundário: Código-fonte no GitHub -->
                 <a aria-label="Código-fonte no GitHub do projeto Portfólio Interativo &amp; Arquitetura de UI Imersiva"
                   class="inline-flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-lg border border-outline-variant/60 bg-surface-container/50 hover:bg-surface-container-high/80 text-on-surface-variant hover:text-primary hover:border-primary/40 font-label-md text-label-md transition-all duration-200 w-full sm:w-auto"
