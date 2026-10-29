@@ -4,7 +4,9 @@
   "description": "<div align=\"center\">",
   "main": "AudioPlayer.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate-pdf": "node scripts/generate-pdf.js",
+    "build:pdf": "node scripts/generate-pdf.js"
   },
   "repository": {
     "type": "git",

@@ -77,6 +77,7 @@ A interface foi concebida para oferecer uma experiência marcante logo no primei
 - **Interface Dual (Web & Impressão A4 Pixel-Perfect):** Diagramação vetorial responsiva desenvolvida especificamente para renderizar em alta fidelidade na tela e com encaixe perfeito em folha A4 via CSS `@media print`.
 - **Alternância Dinâmica de Tema:** Seletor de Modo Claro e Escuro com tokens customizados de contraste e persistência automática em `localStorage`.
 - **Navegação Inteligente & Sincronização de Abas:** Toolbar com atalhos diretos para impressão nativa (`window.print()`), download de PDF oficial com efeito `StarBorder` e controle de encerramento (`window.close()` com fallback para histórico).
+- **Geração e Sincronização de PDF (`npm run generate-pdf`):** Script automatizado em Node.js (`scripts/generate-pdf.js`) que compila `curriculo.html` diretamente para `curriculo.pdf` e `curriculo/curriculo.pdf` via browser headless, assegurando que o arquivo baixado esteja sempre idêntico à página web.
 
 ---
 
