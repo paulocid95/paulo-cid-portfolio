@@ -117,6 +117,109 @@
       filter: blur(2px);
       z-index: 1;
     }
+
+    /* EF SET certificate badge (animated logo next to the button) */
+    .efset-logo {
+      position: relative;
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      animation: efset-float 3.2s ease-in-out infinite;
+    }
+
+    .efset-logo__core {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      border-radius: 9999px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ff1fa0, #e6007e 45%, #b0129c);
+      background-size: 200% 200%;
+      box-shadow: 0 0 14px rgba(230, 0, 126, 0.55), inset 0 -3px 8px rgba(80, 0, 60, 0.35);
+      animation: efset-gradient 4s ease-in-out infinite, efset-glow 2.4s ease-in-out infinite;
+      transition: transform 0.3s ease;
+    }
+
+    .efset-logo:hover .efset-logo__core {
+      transform: scale(1.12) rotate(-6deg);
+    }
+
+    .efset-logo__text {
+      font-family: 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 900;
+      font-style: italic;
+      font-size: 17px;
+      letter-spacing: -0.5px;
+      color: #fff;
+      line-height: 1;
+      transform: skewX(-6deg);
+    }
+
+    /* light sweep across the badge */
+    .efset-logo__core::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent 35%, rgba(255, 255, 255, 0.55) 50%, transparent 65%);
+      transform: translateX(-120%);
+      animation: efset-shine 3.6s ease-in-out infinite;
+    }
+
+    /* expanding rings */
+    .efset-logo__ring {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      border-radius: 9999px;
+      border: 2px solid rgba(255, 31, 160, 0.7);
+      animation: efset-ring 2.4s ease-out infinite;
+    }
+
+    .efset-logo__ring--delay {
+      animation-delay: 1.2s;
+    }
+
+    @keyframes efset-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    @keyframes efset-gradient {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    @keyframes efset-glow {
+      0%, 100% { box-shadow: 0 0 10px rgba(230, 0, 126, 0.45), inset 0 -3px 8px rgba(80, 0, 60, 0.35); }
+      50% { box-shadow: 0 0 22px rgba(255, 31, 160, 0.85), inset 0 -3px 8px rgba(80, 0, 60, 0.35); }
+    }
+
+    @keyframes efset-shine {
+      0%, 55% { transform: translateX(-120%); }
+      85%, 100% { transform: translateX(120%); }
+    }
+
+    @keyframes efset-ring {
+      0% { transform: scale(1); opacity: 0.8; }
+      100% { transform: scale(1.7); opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .efset-logo,
+      .efset-logo__core,
+      .efset-logo__core::after,
+      .efset-logo__ring {
+        animation: none;
+      }
+    }
   </style>
 
   <!-- Tailwind CSS CDN -->
@@ -1589,6 +1692,25 @@
                     data-star-border='{"color": "#38bdf8", "trailColor": "#0284c7", "glow": 0.8, "duration": 3.5, "sparkle": true}'>
                     <span class="material-symbols-outlined text-[20px] mr-2 group-hover:scale-110 transition-transform">description</span>
                     Meu Currículo
+                  </a>
+
+                  <!-- EF SET Certificate Button with StarBorder Effect -->
+                  <a class="inline-flex items-center justify-center font-label-md text-label-md px-6 py-3 rounded-lg bg-gradient-to-r from-[#e6007e] to-[#a21caf] text-white font-bold shadow-lg hover:shadow-[#e6007e]/30 hover:-translate-y-0.5 transition-all cursor-pointer group"
+                    href="https://cert.efset.org/pt/ZthiXU" target="_blank" rel="noopener noreferrer"
+                    title="Ver certificado de inglês EF SET (C1)"
+                    data-star-border='{"color": "#ff4fc3", "trailColor": "#c026d3", "glow": 0.8, "duration": 3.5, "sparkle": true}'>
+                    <span class="material-symbols-outlined text-[20px] mr-2 group-hover:scale-110 transition-transform">workspace_premium</span>
+                    Certificado EF SET
+                  </a>
+
+                  <!-- Animated EF logo -->
+                  <a class="efset-logo" href="https://cert.efset.org/pt/ZthiXU" target="_blank" rel="noopener noreferrer"
+                    aria-label="EF SET" title="EF SET · C1 Proficiência eficaz">
+                    <span class="efset-logo__ring" aria-hidden="true"></span>
+                    <span class="efset-logo__ring efset-logo__ring--delay" aria-hidden="true"></span>
+                    <span class="efset-logo__core" aria-hidden="true">
+                      <span class="efset-logo__text">EF</span>
+                    </span>
                   </a>
                 </div>
               </div>
